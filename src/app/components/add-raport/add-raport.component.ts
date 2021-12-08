@@ -43,6 +43,7 @@ export class AddRaportComponent implements OnInit {
       team: "",
       materialsUsed: [],
       description: "",
+      materialsQuantity: this.fb.array([this.fb.control('')])
     });
   }
 
@@ -55,9 +56,17 @@ export class AddRaportComponent implements OnInit {
       description: this.addRaportForm.value.description,
       projectId: this.projectId,
     };
-  
-    this.filterMaterials();
-  
+	 console.log(this.addRaportForm.value.materialsQuantity);
+	 let newObject = this.materialsFiltered.map((el) => ({
+      ...el,
+      quantity:
+        el.quantity -
+        this.addRaportForm.value.materialsQuantity[
+          this.materialsFiltered.indexOf(el)
+        ],
+    }));
+	 console.log(newObject);
+    
     this.onAddRaport.emit(newRaport);
     this.addRaportForm.reset();
   }
@@ -67,12 +76,12 @@ export class AddRaportComponent implements OnInit {
       .subscribe((materials) => (this.materialsParsed = materials));
   }
   filterMaterials() {
-    
     this.materialsParsed.forEach((material) => {
       if (this.addRaportForm.value.materialsUsed.includes(material.text)) {
         this.materialsFiltered.push(material);
       }
     });
-    
+	 
+
   }
 }

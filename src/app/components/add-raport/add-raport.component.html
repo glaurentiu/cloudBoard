@@ -20,6 +20,14 @@
 <select name="materials" id="materials"  formControlName="materialsUsed" multiple class="form-control">
     <option *ngFor="let material of materials" value="{{material}}">{{material}}</option>
   </select>
+  <input type="button" value="Adauga Cantitate Materiale" class="form-control" (click)="filterMaterials()">
+  <label for="materialsQuantity">Cantitate Materiale:</label>
+  
+ <div  *ngFor="let matItem of materialsFiltered" formArrayName="materialsQuantity">
+
+   <input type="number" class="form-control" name="materialsQuantity" formControlName="0" placeholder="{{matItem.text}}">
+
+ </div>
 
   <input type="submit" value="Salveaza" class="form-control">
 

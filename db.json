@@ -96,13 +96,13 @@
     },
     {
       "projectAndClient": "",
-      "date": "12",
-      "team": "teste",
+      "date": "",
+      "team": "",
       "materialsUsed": [
         "CABLU UTP CAT 5 E",
-        "Cablu NHXH 3x2.5"
+        "Copex metalic 25mm"
       ],
-      "description": "teste",
+      "description": "",
       "projectId": 1,
       "id": 5
     },
@@ -120,13 +120,13 @@
     },
     {
       "projectAndClient": "",
-      "date": "",
-      "team": "",
+      "date": "asd",
+      "team": "asd",
       "materialsUsed": [
         "CABLU UTP CAT 5 E",
         "Copex metalic 25mm"
       ],
-      "description": "",
+      "description": "asda",
       "projectId": 1,
       "id": 7
     },
@@ -135,7 +135,7 @@
       "date": "",
       "team": "",
       "materialsUsed": [
-        "Cablu NHXH 3x2.5",
+        "CABLU UTP CAT 5 E",
         "Copex metalic 25mm"
       ],
       "description": "",
@@ -147,7 +147,7 @@
       "date": "",
       "team": "",
       "materialsUsed": [
-        "Cablu NHXH 3x2.5",
+        "CABLU UTP CAT 5 E",
         "Copex metalic 25mm"
       ],
       "description": "",
@@ -159,7 +159,8 @@
       "date": "",
       "team": "",
       "materialsUsed": [
-        "Cablu NHXH 3x2.5"
+        "CABLU UTP CAT 5 E",
+        "Copex metalic 25mm"
       ],
       "description": "",
       "projectId": 1,
@@ -170,11 +171,25 @@
       "date": "",
       "team": "",
       "materialsUsed": [
-        "Cablu NHXH 3x2.5"
+        "CABLU UTP CAT 5 E",
+        "Cablu NHXH 3x2.5",
+        "Copex metalic 25mm"
       ],
       "description": "",
       "projectId": 1,
       "id": 11
+    },
+    {
+      "projectAndClient": "",
+      "date": "",
+      "team": "",
+      "materialsUsed": [
+        "CABLU UTP CAT 5 E",
+        "Copex metalic 25mm"
+      ],
+      "description": "",
+      "projectId": 1,
+      "id": 12
     }
   ]
 }
