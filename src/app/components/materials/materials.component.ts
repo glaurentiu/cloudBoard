@@ -3,7 +3,7 @@ import { MaterialService } from 'src/app/services/material.service';
 import { Material } from '../../Material';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
-import {faTimes} from '@fortawesome/free-solid-svg-icons'
+import {faMinusSquare} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-materials',
@@ -14,7 +14,7 @@ export class MaterialsComponent implements OnInit {
   materials: Material[] = [];
   showAddMaterial: boolean = false;
   subscription?: Subscription;
-  faTimes = faTimes;
+  faMinusSquare = faMinusSquare;
   constructor(private materialService: MaterialService,private uiService: UiService){
     this.subscription = this.uiService.onToggle().subscribe(value => this.showAddMaterial = value);
   }

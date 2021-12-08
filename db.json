@@ -1,22 +1,10 @@
 {
   "materials": [
     {
-      "text": "CABLU COAXIAL ",
-      "price": 58,
-      "quantity": 1200,
-      "id": 1
-    },
-    {
       "text": "CABLU UTP CAT 5 E",
       "price": 23,
       "quantity": 4300,
       "id": 2
-    },
-    {
-      "text": "Cablu incendiu 2x2x0.8",
-      "price": 29,
-      "quantity": 968340,
-      "id": 3
     },
     {
       "text": "Cablu NHXH 3x2.5",
