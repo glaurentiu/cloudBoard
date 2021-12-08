@@ -1,0 +1,41 @@
+<div *ngIf="hasRoute('/raports')">
+  <div *ngIf="raport" class="material">
+
+    <div class="row">
+
+      <div class="column">
+        <h2 [ngStyle]="{color: 'red'}">{{raport?.projectAndClient}}</h2>
+        <h3>Data: {{raport?.date}}</h3>
+        <h3>Echipa: {{raport?.team}}</h3>
+        <h3>Materiale Folosite: {{raport?.materialsUsed}}</h3>
+      </div>
+      <div class="column">
+        <h3 [ngStyle]="{color: 'red'}">Descriere</h3>
+        <p>{{raport?.description}}</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="hasRouteDetail('/raports')" class="container">
+  <div *ngIf="raportDetail" class="material">
+
+    <div class="row">
+
+      <div class="column">
+        <h2 [ngStyle]="{color: 'red'}">{{raportDetail?.projectAndClient}}</h2>
+        <h3>Data: {{raportDetail?.date}}</h3>
+        <h3>Echipa: {{raportDetail?.team}}</h3>
+        <h3>Materiale Folosite: {{raportDetail?.materialsUsed}}</h3>
+      </div>
+      <div class="column">
+        <h3 [ngStyle]="{color: 'red'}">Descriere</h3>
+        <p>{{raportDetail?.description}}</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,99 @@
+{
+  "materials": [
+    {
+      "text": "CABLU COAXIAL ",
+      "price": 58,
+      "quantity": 1200,
+      "id": 1
+    },
+    {
+      "text": "CABLU UTP CAT 5 E",
+      "price": 23,
+      "quantity": 4300,
+      "id": 2
+    },
+    {
+      "text": "Cablu incendiu 2x2x0.8",
+      "price": 29,
+      "quantity": 968340,
+      "id": 3
+    },
+    {
+      "text": "Cablu NHXH 3x2.5",
+      "price": 12,
+      "quantity": 456,
+      "id": 4
+    },
+    {
+      "text": "Copex metalic 25mm",
+      "price": 56,
+      "quantity": 2490,
+      "id": 5
+    }
+  ],
+  "projects": [
+    {
+      "title": "SISTEM DE ALARMA",
+      "client": "ION POPESCU",
+      "location": "CRAIOVA",
+      "status": "oferta",
+      "date": "12/12/12",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id": 1
+    },
+    {
+      "title": "SISTEM CCTV",
+      "client": "IONEL TITU",
+      "location": "BUCURESTI",
+      "status": "oferta",
+      "date": "12/12/22",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id": 2
+    },
+    {
+      "title": "SISTEM INCENDIU",
+      "client": "SC.FIRMA.SRL",
+      "location": "CLUJ",
+      "status": "oferta",
+      "date": "20/04/21",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id": 3
+    }
+  ],
+  "raports": [
+    {
+      "projectAndClient": "IONEL TITU --- SISTEM CCTV",
+      "date": "12/05/21",
+      "team": "Auras si Daniel",
+      "materialsUsed": [
+        "CABLU UTP CAT 5 E",
+        "Cablu incendiu 2x2x0.8",
+        "Cablu NHXH 3x2.5"
+      ],
+      "description": "S-au montat 15 camere , ",
+      "id": 1
+    },
+    {
+      "projectAndClient": "SC.FIRMA.SRL --- SISTEM INCENDIU",
+      "date": "05/08/21",
+      "team": "Daniel si Auras",
+      "materialsUsed": [
+        "Cablu incendiu 2x2x0.8"
+      ],
+      "description": "S-au montat 25 de senzori , au ramas de montat 459",
+      "id": 2
+    },
+    {
+      "projectAndClient": "SC.FIRMA.SRL --- SISTEM INCENDIU",
+      "date": "12/06/21",
+      "team": "Constantin si Emil",
+      "materialsUsed": [
+        "CABLU UTP CAT 5 E",
+        "Cablu incendiu 2x2x0.8",
+        "Cablu NHXH 3x2.5"
+      ],
+      "description": "S-au instalat 40 de camere ",
+      "id": 3
+    }
+  ]
+}

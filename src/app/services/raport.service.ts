@@ -1,0 +1,25 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Raport } from '../Raport';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
+@Injectable({
+  providedIn: 'root',
+})
+export class RaportService {
+  private apiUrl = 'http://localhost:5000/raports';
+  constructor(private http: HttpClient) {}
+
+  getRaports(): Observable<Raport[]> {
+    return this.http.get<Raport[]>(this.apiUrl);
+  }
+
+  addRaport(raport: Raport): Observable<Raport> {
+    return this.http.post<Raport>(this.apiUrl, raport, httpOptions);
+  }
+}

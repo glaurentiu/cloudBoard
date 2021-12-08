@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Adauga Lucrare</h2>
+  <app-add-project (onAddProject)="addProject($event)"></app-add-project>
+  <div *ngFor="let project of projects" class="material">
+
+    <a routerLink="/project/{{project?.id}}">
+      <app-project-detail [project]="project"></app-project-detail>
+    </a>
+  </div>
+</div>

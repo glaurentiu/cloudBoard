@@ -1,0 +1,31 @@
+<div class="container">
+<!-- <app-button color="{{showAddMaterial ? 'red': 'green'}}" text="{{showAddMaterial ? 'Inchide': 'Adauga Material'}}" (btnClick)="toggleAddMaterial()"></app-button> -->
+
+<app-add-material (onAddMaterial)="addMaterial($event)"></app-add-material>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">DENUMIRE</th>
+      <th scope="col">PRET</th>
+      <th scope="col">CANTITATE</th>
+      <th scope="col">STERGE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let material of materials">
+    <td>{{material?.text}}</td>
+    <td>{{material?.price}} lei</td>
+    <td>{{material?.quantity}} m</td>
+    <td> <fa-icon (click)="deleteMaterial(material)" [ngStyle]="{'color': 'red'}" [icon]="faTimes"></fa-icon></td>
+</tr>
+  </tbody>
+</table>
+
+
+<app-material-item *ngFor="let material of materials" [material]="material" (onDeleteMaterial)="deleteMaterial(material)"></app-material-item>
+
+</div>
+
+
+

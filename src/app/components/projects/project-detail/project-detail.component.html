@@ -1,0 +1,50 @@
+
+
+<div *ngIf="hasRoute('/projects')">
+  <div *ngIf="project" class="material">
+
+    <div class="row">
+
+      <div class="column">
+        <h2 [ngStyle]="{color: 'red'}">{{project?.client}} : {{project?.title}}</h2>
+        <h3>Locatie: {{project?.location}}</h3>
+        <h3>Status: {{project?.status}}</h3>
+        <h3>Data: {{project?.date}}</h3>
+      </div>
+      <div class="column">
+        <h3 [ngStyle]="{color: 'red'}">Descriere</h3>
+        <p>{{project?.description}}</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<div *ngIf="hasRouteDetail('/projects')" class="container">
+  <div *ngIf="projectDetail" class="material">
+
+    <div class="row">
+
+      <div class="column">
+        <h2 [ngStyle]="{color: 'red'}">{{projectDetail?.client}} > {{projectDetail?.title}}</h2>
+        <h3>Locatie: {{projectDetail?.location}}</h3>
+        <h3>Status: {{projectDetail?.status}}</h3>
+        <h3>Data: {{projectDetail?.date}}</h3>
+      </div>
+      <div class="column">
+        <h3 [ngStyle]="{color: 'red'}">Descriere</h3>
+        <p>{{projectDetail?.description}}</p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <div class="material"><h2>Procese verbale</h2></div>
+
+</div>

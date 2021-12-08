@@ -1,0 +1,37 @@
+<form class="add-form" [formGroup]="addProjectForm" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label>Titlu lucrare</label>
+    <input type="text" formControlName="title" class="form-control" />
+
+
+    <label>Client</label>
+    <input type="text" formControlName="client" class="form-control"  />
+
+
+    <label>Locatie</label>
+    <input type="text"formControlName="location"class="form-control"  />
+
+
+    <label>Data</label>
+    <input type="text"  formControlName="date" class="form-control"  />
+
+
+    <label>Descriere</label>
+    <input type="textarea" formControlName="description" class="form-control"  />
+
+    <label>Status</label>
+    <select id="status" name="status" formControlName="status" class="form-control" >
+      <option *ngFor="let type of statusType">
+        {{type}}
+      </option>
+    </select>
+    <input type="submit" value="Salveaza">
+  </div>
+
+
+
+
+
+
+
+</form>

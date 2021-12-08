@@ -1,0 +1,9 @@
+<app-add-raport (onAddRaport)="addRaport($event)" ></app-add-raport>
+<div *ngFor="let raport of raports" class="material">
+
+  <a routerLink="/raports/{{raport?.id}}">
+    <app-raport-detail [raport]="raport"></app-raport-detail>
+  </a>
+
+
+</div>

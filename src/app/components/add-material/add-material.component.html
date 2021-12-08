@@ -1,0 +1,6 @@
+<form class="form-control" [formGroup]="addMaterialForm" (ngSubmit)="onSubmit()">
+  <label>Denumire:<input type="text" formControlName="text" class="form-control" /></label>
+  <label>Pret:<input type="number" formControlName="price" class="form-control" /></label>
+  <label>Cantitate:<input type="number" formControlName="quantity" class="form-control" /> </label>
+  <input type="submit" value="Salveaza">
+</form>
