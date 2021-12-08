@@ -25,10 +25,12 @@
     <div class="row">
 
       <div class="column">
-        <h2 [ngStyle]="{color: 'red'}">{{raportDetail?.projectAndClient}}</h2>
-        <h3>Data: {{raportDetail?.date}}</h3>
+        <h2 [ngStyle]="{color: 'red'}">Data: {{raportDetail?.date}}</h2>
         <h3>Echipa: {{raportDetail?.team}}</h3>
-        <h3>Materiale Folosite: {{raportDetail?.materialsUsed}}</h3>
+        <h3>Materiale Folosite:</h3>
+        <ul>
+          <li *ngFor="let material of raportDetail?.materialsUsed">{{material}}</li>
+        </ul>
       </div>
       <div class="column">
         <h3 [ngStyle]="{color: 'red'}">Descriere</h3>

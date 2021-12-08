@@ -32,7 +32,8 @@ const appRoutes: Routes = [
   { path: 'requests', component: RequestsComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'project/:id', component: ProjectDetailComponent },
-  { path: 'raports/:id', component: RaportDetailComponent}
+  { path: 'raports/:id', component: RaportDetailComponent},
+  { path: 'project/:id', component: RaportDetailComponent}
 ];
 
 @NgModule({
