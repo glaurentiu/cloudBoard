@@ -28,12 +28,10 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'materials', component: MaterialsComponent },
   { path: 'projects', component: ProjectsComponent },
-  { path: 'raports', component: RaportsComponent },
   { path: 'requests', component: RequestsComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'project/:id', component: ProjectDetailComponent },
-  { path: 'raports/:id', component: RaportDetailComponent},
-  { path: 'project/:id', component: RaportDetailComponent}
+
 ];
 
 @NgModule({

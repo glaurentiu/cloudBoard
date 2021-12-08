@@ -1,10 +1,6 @@
+
 <form class="add-form" [formGroup]="addRaportForm" (ngSubmit)="onSubmit()">
-  <div class="form-control">
-    <label for="projectClient">Client & Lucrare : </label>
-    <select id="projectClient" name="projectClient" formControlName="projectAndClient" class="form-control">
-      <option *ngFor="let projectClient of projects">{{projectClient}}</option>
-    </select>
-  </div>
+ 
   <div class="form-control">
     <label>Data:<input type="text" formControlName="date"></label>
   </div>

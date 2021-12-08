@@ -62,38 +62,25 @@
   ],
   "raports": [
     {
-      "projectAndClient": "IONEL TITU --- SISTEM CCTV",
-      "date": "12/05/21",
-      "team": "Auras si Daniel",
+      "projectAndClient": "",
+      "date": "12/08/21",
+      "team": "Daniel si Auras",
       "materialsUsed": [
         "CABLU UTP CAT 5 E",
-        "Cablu incendiu 2x2x0.8",
-        "Cablu NHXH 3x2.5"
+        "Cablu incendiu 2x2x0.8"
       ],
-      "description": "S-au montat 15 camere , ",
+      "description": "Montaj camere",
+      "projectId": 1,
       "id": 1
     },
     {
-      "projectAndClient": "SC.FIRMA.SRL --- SISTEM INCENDIU",
-      "date": "05/08/21",
-      "team": "Daniel si Auras",
-      "materialsUsed": [
-        "Cablu incendiu 2x2x0.8"
-      ],
-      "description": "S-au montat 25 de senzori , au ramas de montat 459",
+      "projectAndClient": "",
+      "date": "12/11/20",
+      "team": "Costel",
+      "materialsUsed": null,
+      "description": "",
+      "projectId": 1,
       "id": 2
-    },
-    {
-      "projectAndClient": "SC.FIRMA.SRL --- SISTEM INCENDIU",
-      "date": "12/06/21",
-      "team": "Constantin si Emil",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Cablu incendiu 2x2x0.8",
-        "Cablu NHXH 3x2.5"
-      ],
-      "description": "S-au instalat 40 de camere ",
-      "id": 3
     }
   ]
 }

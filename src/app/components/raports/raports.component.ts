@@ -1,7 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  , Input } from '@angular/core';
 import { Raport } from 'src/app/Raport';
-import { ProjectsService } from '../../services/projects.service';
-import { MaterialService } from 'src/app/services/material.service';
 import { RaportService } from '../../services/raport.service';
 @Component({
   selector: 'app-raports',
@@ -9,6 +7,9 @@ import { RaportService } from '../../services/raport.service';
   styleUrls: ['./raports.component.css'],
 })
 export class RaportsComponent implements OnInit {
+  @Input() projectId?: Number ;
+
+
   raports: Raport[] = [];
 
   projects?: string[];
@@ -17,8 +18,6 @@ export class RaportsComponent implements OnInit {
   materials?: string[];
   material = '';
   constructor(
-    private projectService: ProjectsService,
-    private materialService: MaterialService,
     private raportService: RaportService
   ) {}
 

@@ -10,33 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./raport-detail.component.css'],
 })
 export class RaportDetailComponent implements OnInit {
-  @Input() raport?: Raport;
-  @Input() raportDetail?: Raport;
+  raportDetail?: Raport[];
+  @Input() projectId?: Number;
+  
   constructor(
     private route: ActivatedRoute,
     private raportService: RaportService,
-    private router: Router
+
   ) {}
 
   ngOnInit(): void {
     this.getRaport();
+    console.log(this.raportDetail)
+    
   }
 
   getRaport(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
     this.raportService
       .getRaports()
       .subscribe(
-        (raports) => (this.raportDetail = raports.find((r) => r.id === id))
+        (raports) => {
+          this.raportDetail = raports.filter((r) => r.projectId === this.projectId)
+          console.log('De cate ori rulez?')
+        }
       );
   };
-
-  hasRoute(route: string) {
-    return this.router.url === route;
-  }
-
-  hasRouteDetail(route: string) {
-    return this.router.url !== route;
-  }
 
 }

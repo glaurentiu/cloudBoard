@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./project-detail.component.css'],
 })
 export class ProjectDetailComponent implements OnInit {
+  projectDetail?: Project;
   @Input() project?: Project;
-  @Input() projectDetail?: Project;
 
   constructor(
     private route: ActivatedRoute,
