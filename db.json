@@ -49,51 +49,7 @@
     }
   ],
   "raports": [
-    {
-      "projectAndClient": "",
-      "date": "12/12/13",
-      "team": "Razvan si Dani",
-      "materialsUsed": [
-        "CABLU COAXIAL ",
-        "CABLU UTP CAT 5 E"
-      ],
-      "description": "S-au tras cablurile necesare pentru executarea lucrarii si s-au montat echipamentele",
-      "projectId": 1,
-      "id": 1
-    },
-    {
-      "projectAndClient": "",
-      "date": "13/12/13",
-      "team": "Razvan si Dani",
-      "materialsUsed": null,
-      "description": "S-a programat centrala de efractie si s-au facut probe cu dispeceratul",
-      "projectId": 1,
-      "id": 2
-    },
-    {
-      "projectAndClient": "",
-      "date": "12/12/22",
-      "team": "Costi si Andrei",
-      "materialsUsed": [
-        "CABLU COAXIAL ",
-        "CABLU UTP CAT 5 E",
-        "Cablu NHXH 3x2.5"
-      ],
-      "description": "S-au montat 15 camere ",
-      "projectId": 2,
-      "id": 3
-    },
-    {
-      "projectAndClient": "",
-      "date": "01/23/21",
-      "team": "Claudiu si Silviu",
-      "materialsUsed": [
-        "Cablu incendiu 2x2x0.8"
-      ],
-      "description": "S-au tras cablurile necesare",
-      "projectId": 3,
-      "id": 4
-    },
+  
     {
       "projectAndClient": "",
       "date": "12/10/21",

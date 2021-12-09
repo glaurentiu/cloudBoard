@@ -7,9 +7,9 @@
        <div class="column">
          <h2 [ngStyle]="{color: 'red'}">Data: {{raportDetail?.date}}</h2>
          <h3>Echipa: {{raportDetail?.team}}</h3>
-         <h3>Materiale Folosite:</h3>
+         <h3><strong>Materiale Folosite:</strong></h3>
          <ul>
-           <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} : {{material.quantity}}</li>
+           <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} : {{material.quantity}}m</li>
          </ul>
        </div>
        <div class="column">
