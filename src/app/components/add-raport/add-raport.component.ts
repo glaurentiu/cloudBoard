@@ -63,11 +63,16 @@ export class AddRaportComponent implements OnInit {
 
     this.onAddRaport.emit(newRaport);
     this.addRaportForm.reset();
+    this.reloadPage()
   }
 
   updateMaterials(material: Material, newMaterial: Material): void {
     this.materialService.updateMaterial(material, newMaterial).subscribe();
   }
+
+  reloadPage() {
+    window.location.reload();
+ }
 
   getMaterials() {
     this.materialService
