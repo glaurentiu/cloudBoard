@@ -31,7 +31,6 @@ export class RaportDetailComponent implements OnInit {
       .subscribe(
         (raports) => {
           this.raportDetail = raports.filter((r) => r.projectId === this.projectId)
-          console.log('De cate ori rulez?')
         }
       );
   };

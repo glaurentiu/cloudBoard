@@ -9,7 +9,7 @@
          <h3>Echipa: {{raportDetail?.team}}</h3>
          <h3>Materiale Folosite:</h3>
          <ul>
-           <li *ngFor="let material of raportDetail?.materialsUsed">{{material}}</li>
+           <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} : {{material.quantity}}</li>
          </ul>
        </div>
        <div class="column">

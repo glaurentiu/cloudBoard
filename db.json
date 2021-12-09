@@ -96,172 +96,29 @@
     },
     {
       "projectAndClient": "",
-      "date": "",
-      "team": "",
+      "date": "12/10/21",
+      "team": "Costelus si Cipri",
       "materialsUsed": [
         "CABLU UTP CAT 5 E",
         "Copex metalic 25mm"
       ],
-      "description": "",
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP CAT 5 E",
+          "price": 23,
+          "quantity": 200,
+          "id": 2
+        },
+        {
+          "text": "Copex metalic 25mm",
+          "price": 56,
+          "quantity": 50,
+          "id": 5
+        }
+      ],
+      "description": "Nu au facut nimic",
       "projectId": 1,
       "id": 5
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 6
-    },
-    {
-      "projectAndClient": "",
-      "date": "asd",
-      "team": "asd",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "asda",
-      "projectId": 1,
-      "id": 7
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 8
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 9
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 10
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Cablu NHXH 3x2.5",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 11
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 12
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 13
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 14
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 15
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "Cablu NHXH 3x2.5",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 16
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 17
-    },
-    {
-      "projectAndClient": "",
-      "date": "",
-      "team": "",
-      "materialsUsed": [
-        "CABLU UTP CAT 5 E",
-        "Copex metalic 25mm"
-      ],
-      "description": "",
-      "projectId": 1,
-      "id": 18
     }
   ]
 }

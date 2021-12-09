@@ -1,3 +1,4 @@
+import {Material} from '../app/Material';
 export interface Raport {
   id?: number;
   projectAndClient: string;
@@ -6,5 +7,6 @@ export interface Raport {
   materialsUsed: string;
   description: string;
   projectId?: Number;
+  materialsQuantity?: Material[];
 
 }

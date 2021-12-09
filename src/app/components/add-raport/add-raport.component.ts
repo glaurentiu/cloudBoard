@@ -53,20 +53,12 @@ export class AddRaportComponent implements OnInit {
       date: this.addRaportForm.value.date,
       team: this.addRaportForm.value.team,
       materialsUsed: this.addRaportForm.value.materialsUsed,
+      materialsQuantity:this.materialsFiltered,
       description: this.addRaportForm.value.description,
       projectId: this.projectId,
     };
     
 
-
-// 	 let newObject = this.materialsFiltered.map((el) => ({
-//       ...el,
-//       quantity:
-//         el.quantity -
-// [
-//           this.materialsFiltered.indexOf(el)
-//         ],
-//     }));
 	 console.log(this.materialsFiltered);
     
     this.onAddRaport.emit(newRaport);
