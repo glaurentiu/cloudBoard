@@ -1,19 +1,24 @@
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">CLIENT</th>
-        <th scope="col">ADRESA</th>
-        <th scope="col">DATA</th>
-        <th scope="col">PROBLEMA</th>
+<div class="container" >
+    <h2>Interventii de rezolvat</h2>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">CLIENT</th>
+            <th scope="col">ADRESA</th>
+            <th scope="col">DATA</th>
+            <th scope="col">PROBLEMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of requests">
+          <td>{{request?.client}}</td>
+          <td>{{request?.address}}</td>
+          <td>{{request?.date}}</td>
+          <td>{{request?.problem}}</td>
+          
       </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let request of requests">
-      <td>{{request?.client}}</td>
-      <td>{{request?.address}}</td>
-      <td>{{request?.date}}</td>
-      <td>{{request?.problem}}</td>
-      
-  </tr>
-    </tbody>
-  </table>
+        </tbody>
+      </table>  
+</div>
+  

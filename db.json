@@ -3,7 +3,7 @@
     {
       "text": "CABLU UTP CAT 5 E",
       "price": 23,
-      "quantity": 1000,
+      "quantity": 800,
       "id": 2
     },
     {
@@ -15,13 +15,13 @@
     {
       "text": "Copex metalic 25mm",
       "price": 56,
-      "quantity": 1000,
+      "quantity": 970,
       "id": 5
     },
     {
       "text": "Cablu incendiu",
       "price": 12,
-      "quantity": 1000,
+      "quantity": 985,
       "id": 6
     }
   ],
@@ -54,7 +54,41 @@
       "id": 3
     }
   ],
-  "raports": [],
+  "raports": [
+    {
+      "projectAndClient": "",
+      "date": "12/12/12",
+      "team": "Echipa 1",
+      "materialsUsed": [
+        "CABLU UTP CAT 5 E",
+        "Copex metalic 25mm",
+        "Cablu incendiu"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP CAT 5 E",
+          "price": 23,
+          "quantity": 200,
+          "id": 2
+        },
+        {
+          "text": "Copex metalic 25mm",
+          "price": 56,
+          "quantity": 30,
+          "id": 5
+        },
+        {
+          "text": "Cablu incendiu",
+          "price": 12,
+          "quantity": 15,
+          "id": 6
+        }
+      ],
+      "description": "s-au montat 5 camere",
+      "projectId": 1,
+      "id": 1
+    }
+  ],
   "requests": [
     {
       "client": "Ion Barbu",
@@ -62,6 +96,13 @@
       "date": "2021-12-10",
       "problem": "nu mai merg camerele",
       "id": 1
+    },
+    {
+      "client": "Ion popescu",
+      "address": "langa casa",
+      "date": "2021-12-31",
+      "problem": "suna sirena",
+      "id": 2
     }
   ]
 }
