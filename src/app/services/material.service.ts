@@ -30,4 +30,11 @@ export class MaterialService {
   addMaterial(material: Material): Observable<Material> {
     return this.http.post<Material>(this.apiUrl, material, httpOptions)
   }
+  updateMaterial(material:Material,newMaterial: Material): Observable<Material> {
+    const url= `${this.apiUrl}/${material.id}`
+    return this.http.patch<Material>(url,{
+      quantity: material.quantity - newMaterial.quantity
+    },
+       httpOptions)
+  }
 }

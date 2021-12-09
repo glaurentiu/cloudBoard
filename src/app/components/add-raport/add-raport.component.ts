@@ -13,6 +13,7 @@ export class AddRaportComponent implements OnInit {
   @Input() projectId?: Number;
 
   @Output() onAddRaport: EventEmitter<Raport> = new EventEmitter();
+
   addRaportForm: FormGroup = new FormGroup({});
   materialsParsed: Material[] = [];
   projects?: string[];
@@ -21,6 +22,7 @@ export class AddRaportComponent implements OnInit {
   materials?: string[];
   material = "";
   materialsFiltered: Material[] = [];
+  clonedMaterials: Material[] = [];
 
 
   constructor(
@@ -35,8 +37,9 @@ export class AddRaportComponent implements OnInit {
       let mat = materials;
       this.materials = mat.map((el) => `${el.text}`);
     });
+   
   }
-
+  
   initializeForm(): void {
     this.addRaportForm = this.fb.group({
       projectAndClient: "",
@@ -46,8 +49,9 @@ export class AddRaportComponent implements OnInit {
       description: "" 
     });
   }
-
+  
   onSubmit() {
+    
     const newRaport = {
       projectAndClient: this.addRaportForm.value.projectAndClient,
       date: this.addRaportForm.value.date,
@@ -57,25 +61,37 @@ export class AddRaportComponent implements OnInit {
       description: this.addRaportForm.value.description,
       projectId: this.projectId,
     };
-    
-
-	 console.log(this.materialsFiltered);
+    this.updateMaterials(this.clonedMaterials[0],this.materialsFiltered[0]);
     
     this.onAddRaport.emit(newRaport);
     this.addRaportForm.reset();
   }
+  
+  updateMaterials(material:Material,newMaterial: Material): void {
+    
+    console.log('material quantity',material.quantity)
+    console.log('material2 quantity', newMaterial.quantity)
+    
+    this.materialService.updateMaterial(material,newMaterial).subscribe();
+  }
+  
   getMaterials() {
     this.materialService
-      .getMaterials()
-      .subscribe((materials) => (this.materialsParsed = materials));
+    .getMaterials()
+    .subscribe((materials) => (this.materialsParsed = materials));
+  
   }
   filterMaterials() {
+    this.clonedMaterials =this.materialsParsed.map(obj => {
+      return { ...obj };
+  });
+    console.log(this.clonedMaterials)
     this.materialsParsed.forEach((material) => {
       if (this.addRaportForm.value.materialsUsed.includes(material.text)) {
         this.materialsFiltered.push(material);
       }
     });
-	 
-
+    
+    
   }
 }

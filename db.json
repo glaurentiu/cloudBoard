@@ -3,13 +3,13 @@
     {
       "text": "CABLU UTP CAT 5 E",
       "price": 23,
-      "quantity": 4300,
+      "quantity": 9900,
       "id": 2
     },
     {
       "text": "Cablu NHXH 3x2.5",
       "price": 12,
-      "quantity": 456,
+      "quantity": 10000,
       "id": 4
     },
     {
@@ -49,32 +49,38 @@
     }
   ],
   "raports": [
-  
     {
       "projectAndClient": "",
-      "date": "12/10/21",
-      "team": "Costelus si Cipri",
+      "date": "10/10/2021",
+      "team": "Auras si Saniel",
       "materialsUsed": [
         "CABLU UTP CAT 5 E",
+        "Cablu NHXH 3x2.5",
         "Copex metalic 25mm"
       ],
       "materialsQuantity": [
         {
           "text": "CABLU UTP CAT 5 E",
           "price": 23,
-          "quantity": 200,
+          "quantity": 100,
           "id": 2
+        },
+        {
+          "text": "Cablu NHXH 3x2.5",
+          "price": 12,
+          "quantity": 200,
+          "id": 4
         },
         {
           "text": "Copex metalic 25mm",
           "price": 56,
-          "quantity": 50,
+          "quantity": 190,
           "id": 5
         }
       ],
-      "description": "Nu au facut nimic",
+      "description": "S-au montat 10 camere",
       "projectId": 1,
-      "id": 5
+      "id": 1
     }
   ]
 }
