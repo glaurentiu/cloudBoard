@@ -23,6 +23,8 @@ import { AddProjectComponent } from './components/projects/add-project/add-proje
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddRaportComponent } from './components/add-raport/add-raport.component';
 import { RaportDetailComponent } from './components/raport-detail/raport-detail.component';
+import { AddRequestComponent } from './components/requests/add-request/add-request.component';
+import { RequestItemComponent } from './components/requests/request-item/request-item.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,6 +54,8 @@ const appRoutes: Routes = [
     AddProjectComponent,
     AddRaportComponent,
     RaportDetailComponent,
+    AddRequestComponent,
+    RequestItemComponent,
   ],
   imports: [
     BrowserModule,

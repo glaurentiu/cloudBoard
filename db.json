@@ -54,7 +54,14 @@
       "id": 3
     }
   ],
-  "raports": [
-    
+  "raports": [],
+  "requests": [
+    {
+      "client": "Ion Barbu",
+      "address": "Langa scoala",
+      "date": "2021-12-10",
+      "problem": "nu mai merg camerele",
+      "id": 1
+    }
   ]
 }
