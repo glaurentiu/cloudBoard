@@ -21,11 +21,11 @@
     <option *ngFor="let material of materials" value="{{material}}">{{material}}</option>
   </select>
   <input type="button" value="Adauga Cantitate Materiale" class="form-control" (click)="filterMaterials()">
-  <label for="materialsQuantity">Cantitate Materiale:</label>
   
- <div  *ngFor="let matItem of materialsFiltered" formArrayName="materialsQuantity">
-
-   <input type="number" class="form-control" name="materialsQuantity" formControlName="0" placeholder="{{matItem.text}}">
+  
+ <div  *ngFor="let matItem of materialsFiltered">
+  <label for="{{matItem.text}}">{{matItem.text}}</label>
+   <input type="number" class="form-control" name="{{matItem.text}}" [(ngModel)]="matItem.quantity"  [ngModelOptions]="{standalone: true}">
 
  </div>
 

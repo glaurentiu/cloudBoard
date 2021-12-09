@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { Raport } from "../../Raport";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl , FormArray } from "@angular/forms";
 import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../Material";
 
@@ -22,6 +22,7 @@ export class AddRaportComponent implements OnInit {
   material = "";
   materialsFiltered: Material[] = [];
 
+
   constructor(
     private fb: FormBuilder,
     private materialService: MaterialService
@@ -42,8 +43,7 @@ export class AddRaportComponent implements OnInit {
       date: "",
       team: "",
       materialsUsed: [],
-      description: "",
-      materialsQuantity: this.fb.array([this.fb.control('')])
+      description: "" 
     });
   }
 
@@ -56,16 +56,18 @@ export class AddRaportComponent implements OnInit {
       description: this.addRaportForm.value.description,
       projectId: this.projectId,
     };
-	 console.log(this.addRaportForm.value.materialsQuantity);
-	 let newObject = this.materialsFiltered.map((el) => ({
-      ...el,
-      quantity:
-        el.quantity -
-        this.addRaportForm.value.materialsQuantity[
-          this.materialsFiltered.indexOf(el)
-        ],
-    }));
-	 console.log(newObject);
+    
+
+
+// 	 let newObject = this.materialsFiltered.map((el) => ({
+//       ...el,
+//       quantity:
+//         el.quantity -
+// [
+//           this.materialsFiltered.indexOf(el)
+//         ],
+//     }));
+	 console.log(this.materialsFiltered);
     
     this.onAddRaport.emit(newRaport);
     this.addRaportForm.reset();
