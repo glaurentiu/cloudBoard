@@ -3,7 +3,7 @@
     {
       "text": "CABLU UTP CAT 5 E",
       "price": 23,
-      "quantity": 800,
+      "quantity": 500,
       "id": 2
     },
     {
@@ -87,6 +87,25 @@
       "description": "s-au montat 5 camere",
       "projectId": 1,
       "id": 1
+    },
+    {
+      "projectAndClient": "",
+      "date": "10/12/22",
+      "team": "Costel si Virgil",
+      "materialsUsed": [
+        "CABLU UTP CAT 5 E"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP CAT 5 E",
+          "price": 23,
+          "quantity": 300,
+          "id": 2
+        }
+      ],
+      "description": "s-au montat 15 camere",
+      "projectId": 2,
+      "id": 2
     }
   ],
   "requests": [

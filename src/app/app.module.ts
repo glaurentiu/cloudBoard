@@ -25,6 +25,7 @@ import { AddRaportComponent } from './components/raports/add-raport/add-raport.c
 import { RaportDetailComponent } from './components/raports/raport-detail/raport-detail.component';
 import { AddRequestComponent } from './components/requests/add-request/add-request.component';
 import { RequestItemComponent } from './components/requests/request-item/request-item.component';
+import { RaportBillingComponent } from './components/raports/raport-billing/raport-billing.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     RaportDetailComponent,
     AddRequestComponent,
     RequestItemComponent,
+    RaportBillingComponent,
   ],
   imports: [
     BrowserModule,

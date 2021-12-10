@@ -1,0 +1,37 @@
+<div class="container">
+
+
+
+    <h2>Procese Verbale de facturat</h2>
+    <div *ngIf="raportDetail" class="material">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">CLIENT</th>
+                    <th scope="col">DATA</th>
+                    <th scope="col">ECHIPA</th>
+                    <th scope="col">MATERIALE</th>
+                    <th scope="col">DESCRIERE</th>
+                    <th scope="col">STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let raportDetail of raportDetail">
+                    <td>Client si Lucrare</td>
+                    <td>{{raportDetail?.date}}</td>
+                    <td>{{raportDetail?.team}}</td>
+                    <td>
+                        <ul>
+                            <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} :
+                                {{material.quantity}}m</li>
+                        </ul>
+                    </td>
+                    <td> {{raportDetail?.description}}</td>
+                    <td>Marcheaza ca facturat</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
