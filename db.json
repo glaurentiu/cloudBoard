@@ -21,7 +21,7 @@
     {
       "text": "Cablu incendiu",
       "price": 12,
-      "quantity": 985,
+      "quantity": 670,
       "id": 6
     }
   ],
@@ -106,6 +106,25 @@
       "description": "s-au montat 15 camere",
       "projectId": 2,
       "id": 2
+    },
+    {
+      "projectAndClient": "",
+      "date": "20/04/21",
+      "team": "David si Dorin",
+      "materialsUsed": [
+        "Cablu incendiu"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "Cablu incendiu",
+          "price": 12,
+          "quantity": 315,
+          "id": 6
+        }
+      ],
+      "description": "S-au tras cablurile pentru incendiu",
+      "projectId": 3,
+      "id": 3
     }
   ],
   "requests": [
@@ -122,6 +141,13 @@
       "date": "2021-12-31",
       "problem": "suna sirena",
       "id": 2
+    },
+    {
+      "client": "Client",
+      "address": "lanaas",
+      "date": "2021-12-22",
+      "problem": "sadas",
+      "id": 3
     }
   ]
 }
