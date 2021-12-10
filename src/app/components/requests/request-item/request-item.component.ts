@@ -1,5 +1,5 @@
 import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
-import {Request} from '../../../Request';
+import {Request} from '../../../interfaces/Request.interface';
 import { faMinusSquare } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-request-item',

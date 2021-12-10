@@ -21,8 +21,8 @@ import { BillingComponent } from './components/billing/billing.component';
 import { ProjectDetailComponent } from './components/projects/project-detail/project-detail.component';
 import { AddProjectComponent } from './components/projects/add-project/add-project.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddRaportComponent } from './components/add-raport/add-raport.component';
-import { RaportDetailComponent } from './components/raport-detail/raport-detail.component';
+import { AddRaportComponent } from './components/raports/add-raport/add-raport.component';
+import { RaportDetailComponent } from './components/raports/raport-detail/raport-detail.component';
 import { AddRequestComponent } from './components/requests/add-request/add-request.component';
 import { RequestItemComponent } from './components/requests/request-item/request-item.component';
 

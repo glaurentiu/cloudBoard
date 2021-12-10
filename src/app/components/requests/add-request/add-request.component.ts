@@ -1,6 +1,6 @@
 import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import {FormGroup, FormBuilder} from '@angular/forms';
-import {Request} from '../../../Request';
+import {Request} from '../../../interfaces/Request.interface';
 
 @Component({
   selector: 'app-add-request',

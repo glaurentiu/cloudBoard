@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter  , Input } from '@angular/core';
-import { Raport } from 'src/app/Raport';
+import { Raport } from '../../interfaces/Raport.interface';
 import { RaportService } from '../../services/raport.service';
 @Component({
   selector: 'app-raports',

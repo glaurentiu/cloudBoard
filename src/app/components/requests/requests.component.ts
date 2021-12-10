@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Request} from '../../Request';
+import {Request} from '../../interfaces/Request.interface';
 import {RequestService} from '../../services/request.service'
 
 @Component({

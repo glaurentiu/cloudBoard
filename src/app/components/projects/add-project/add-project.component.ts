@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Project } from '../../../Project';
+import { Project } from '../../../interfaces/Project.interface';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MaterialService } from 'src/app/services/material.service';
-import { Material } from '../../Material';
+import { Material } from '../../interfaces/Material.interface';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 import {faMinusSquare} from '@fortawesome/free-solid-svg-icons'

@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, Output, EventEmitter } from '@angular/core';
-import { Material } from 'src/app/Material';
+import { Material } from 'src/app/interfaces/Material.interface';
 import {faTimes} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
