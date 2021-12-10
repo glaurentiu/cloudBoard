@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Material } from '../../interfaces/Material.interface';
-import {UiService} from '../../services/ui.service';
+import { Material } from '../../../interfaces/Material.interface';
+import {UiService} from '../../../services/ui.service';
 import { Subscription } from 'rxjs';
 import { FormGroup , FormBuilder } from '@angular/forms';
 @Component({

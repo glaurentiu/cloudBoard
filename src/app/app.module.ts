@@ -7,11 +7,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ButtonComponent } from './components/button/button.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { ButtonComponent } from './components/shared/button/button.component';
 import { MaterialsComponent } from './components/materials/materials.component';
 import { MaterialItemComponent } from './components/material-item/material-item.component';
-import { AddMaterialComponent } from './components/add-material/add-material.component';
+import { AddMaterialComponent } from './components/materials/add-material/add-material.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { RaportsComponent } from './components/raports/raports.component';
