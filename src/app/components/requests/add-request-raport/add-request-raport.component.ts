@@ -72,7 +72,7 @@ export class AddRequestRaportComponent implements OnInit {
 
     this.onAddRaportRequest.emit(newRaport);
     this.addRaportRequestForm.reset();
-   
+    this.reloadPage();
   }
 
   updateMaterials(material: Material, newMaterial: Material): void {

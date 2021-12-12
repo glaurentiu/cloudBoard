@@ -3,13 +3,13 @@
     {
       "text": "CABLU UTP",
       "price": 1,
-      "quantity": 25535,
+      "quantity": 25510,
       "id": 1
     },
     {
       "text": "CABLU BIFILAR",
       "price": 1,
-      "quantity": 341119,
+      "quantity": 340619,
       "id": 2
     },
     {
@@ -72,50 +72,34 @@
       "date": "2021-12-12",
       "team": "Auras si Daniel",
       "materialsUsed": [
-        "CABLU UTP",
-        "CABLU COAXIAL"
+        "CABLU BIFILAR"
       ],
       "materialsQuantity": [
         {
-          "text": "CABLU UTP",
+          "text": "CABLU BIFILAR",
           "price": 1,
-          "quantity": 30,
-          "id": 1
-        },
-        {
-          "text": "CABLU COAXIAL",
-          "price": 2,
-          "quantity": 50,
-          "id": 4
+          "quantity": 500,
+          "id": 2
         }
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "description": "S-au montat senzorii si s-au tras cablurile",
       "projectId": 1,
-      "bill": true,
+      "bill": false,
       "id": 1
     },
     {
-      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
-      "date": "2021-12-16",
-      "team": "12",
-      "materialsUsed": [
-        "CABLU UTP"
-      ],
-      "materialsQuantity": [
-        {
-          "text": "CABLU UTP",
-          "price": 1,
-          "quantity": 29,
-          "id": 1
-        }
-      ],
-      "description": "2",
-      "projectId": 2,
+      "projectAndClient": "Peco Braniste",
+      "date": "2021-12-17",
+      "team": "Auras si Daniel",
+      "materialsUsed": null,
+      "materialsQuantity": [],
+      "description": "S-a inlocuit alimentatorul",
+      "requestId": 1,
       "bill": true,
       "id": 2
     },
     {
-      "projectAndClient": "dsada",
+      "projectAndClient": "Peco Braniste",
       "date": "2021-12-31",
       "team": "Auras si Daniel",
       "materialsUsed": [
@@ -129,18 +113,18 @@
           "id": 1
         }
       ],
-      "description": "dsadsa",
+      "description": "dasdas",
       "requestId": 1,
-      "bill": false,
+      "bill": true,
       "id": 3
     }
   ],
   "requests": [
     {
-      "client": "dsada",
-      "address": "dasda",
+      "client": "Peco Braniste",
+      "address": "Braniste nr 45",
       "date": "2021-12-12",
-      "problem": "dsadsa",
+      "problem": "Nu merg camerele de supraveghere",
       "id": 1
     }
   ]
