@@ -3,31 +3,31 @@
     {
       "text": "CABLU UTP",
       "price": 1,
-      "quantity": 29357,
+      "quantity": 25535,
       "id": 1
     },
     {
       "text": "CABLU BIFILAR",
       "price": 1,
-      "quantity": 341153,
+      "quantity": 341119,
       "id": 2
     },
     {
       "text": "CABLU INCENDIU",
       "price": 1,
-      "quantity": 123122364,
+      "quantity": 123122229,
       "id": 3
     },
     {
       "text": "CABLU COAXIAL",
       "price": 2,
-      "quantity": 3804,
+      "quantity": 3766,
       "id": 4
     },
     {
       "text": "COPEX 20MM ",
       "price": 32,
-      "quantity": 800,
+      "quantity": 720,
       "id": 5
     },
     {
@@ -93,6 +93,46 @@
       "projectId": 1,
       "bill": true,
       "id": 1
+    },
+    {
+      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
+      "date": "2021-12-16",
+      "team": "12",
+      "materialsUsed": [
+        "CABLU UTP"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP",
+          "price": 1,
+          "quantity": 29,
+          "id": 1
+        }
+      ],
+      "description": "2",
+      "projectId": 2,
+      "bill": true,
+      "id": 2
+    },
+    {
+      "projectAndClient": "dsada",
+      "date": "2021-12-31",
+      "team": "Auras si Daniel",
+      "materialsUsed": [
+        "CABLU UTP"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP",
+          "price": 1,
+          "quantity": 25,
+          "id": 1
+        }
+      ],
+      "description": "dsadsa",
+      "requestId": 1,
+      "bill": false,
+      "id": 3
     }
   ],
   "requests": [

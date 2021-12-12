@@ -1,26 +1,56 @@
-<div class="container" >
-    <h2>Interventii de rezolvat</h2>
-    
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">CLIENT</th>
-            <th scope="col">ADRESA</th>
-            <th scope="col">DATA</th>
-            <th scope="col">PROBLEMA</th>
-            <th scope="col">STATUS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let request of requests">
-          <td>{{request?.client}}</td>
-          <td>{{request?.address}}</td>
-          <td>{{request?.date}}</td>
-          <td>{{request?.problem}}</td>
-          <td>Trimite la facturat</td>
-          
-      </tr>
-        </tbody>
-      </table>  
-</div>
+<div *ngIf="hasRoute('/')">
+
   
+  <div class="container" >
+      <h2>Interventii de rezolvat</h2>
+      
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">CLIENT</th>
+              <th scope="col">ADRESA</th>
+              <th scope="col">DATA</th>
+              <th scope="col">PROBLEMA</th>
+              <th scope="col">PROCES VERBAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let request of requests" routerLink="/requests/{{request.id}}">
+            <td>{{request?.client}}</td>
+            <td>{{request?.address}}</td>
+            <td>{{request?.date}}</td>
+            <td>{{request?.problem}}</td>
+            <td><button type="button" class="btn-primary btn-">Adauga proces verbal</button></td>
+            
+        </tr>
+          </tbody>
+        </table>  
+  </div>
+    
+</div>
+
+<div *ngIf="hasRouteDetail('/')">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">CLIENT</th>
+        <th scope="col">ADRESA</th>
+        <th scope="col">DATA</th>
+        <th scope="col">PROBLEMA</th>
+        <th scope="col">STATUS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>{{requestItem?.client}}</td>
+      <td>{{requestItem?.address}}</td>
+      <td>{{requestItem?.date}}</td>
+      <td>{{requestItem?.problem}}</td>
+      <td>Facturat / Nefacturat</td>
+      
+  </tr>
+    </tbody>
+  </table>  
+<app-add-request-raport [requestId]="requestItem?.id" (onAddRaportRequest)="addRaport($event)"></app-add-request-raport>
+</div>

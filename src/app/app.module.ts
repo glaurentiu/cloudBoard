@@ -26,6 +26,7 @@ import { RaportDetailComponent } from './components/raports/raport-detail/raport
 import { AddRequestComponent } from './components/requests/add-request/add-request.component';
 import { RequestItemComponent } from './components/requests/request-item/request-item.component';
 import { RaportBillingComponent } from './components/raports/raport-billing/raport-billing.component';
+import { AddRequestRaportComponent } from './components/requests/add-request-raport/add-request-raport.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   { path: 'requests', component: RequestsComponent },
   { path: 'billing', component: BillingComponent },
   { path: 'project/:id', component: ProjectDetailComponent },
+  { path: 'requests/:id', component: RequestItemComponent },
 
 ];
 
@@ -58,6 +60,7 @@ const appRoutes: Routes = [
     AddRequestComponent,
     RequestItemComponent,
     RaportBillingComponent,
+    AddRequestRaportComponent,
   ],
   imports: [
     BrowserModule,
