@@ -57,6 +57,7 @@ export class AddRaportComponent implements OnInit {
       materialsQuantity: this.materialsFiltered,
       description: this.addRaportForm.value.description,
       projectId: this.projectId,
+      bill: false
     };
 
     this.getAllMaterialsQuantity(this.materialsFiltered);

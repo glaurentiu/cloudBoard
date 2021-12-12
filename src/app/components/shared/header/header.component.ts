@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
   }
   getRaport(): void {
     this.raportService.getRaports().subscribe((raports) => {
-      this.raportDetail = raports;
+      this.raportDetail = raports.filter((raport)=> raport.bill === false)
     });
   }
 

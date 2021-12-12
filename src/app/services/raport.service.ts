@@ -22,4 +22,13 @@ export class RaportService {
   addRaport(raport: Raport): Observable<Raport> {
     return this.http.post<Raport>(this.apiUrl, raport, httpOptions);
   }
+
+  updateRaport(raport:Raport): Observable<Raport> {
+    const url=`${this.apiUrl}/${raport.id}`
+    this.reloadPage();
+    return this.http.patch<Raport>(url, {bill: true}, httpOptions)
+  }
+  reloadPage() {
+    window.location.reload();
+ }
 }

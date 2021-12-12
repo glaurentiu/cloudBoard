@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Raport } from "../../../interfaces/Raport.interface";
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
@@ -14,6 +14,7 @@ export class RaportBillingComponent implements OnInit {
   raportDetail: Raport[] = []
   numberLeft?: number;
   @Input() projectId?: Number;
+  @Output() onClick: EventEmitter<Raport> = new EventEmitter();
 
   constructor(
     private route: ActivatedRoute,
@@ -32,5 +33,11 @@ export class RaportBillingComponent implements OnInit {
   }
   getNumber(): void {
     this.numberLeft = this.raportDetail.length
+  }
+
+  markAsFinsihed(raport: Raport): void {
+    this.onClick.emit(raport)
+    this.raportService.updateRaport(raport).subscribe();
+  
   }
 }

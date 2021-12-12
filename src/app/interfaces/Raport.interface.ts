@@ -8,5 +8,6 @@ export interface Raport {
   description: string;
   projectId?: Number;
   materialsQuantity?: Material[];
+  bill: boolean;
 
 }

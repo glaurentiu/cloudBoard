@@ -15,8 +15,8 @@
                     <th scope="col">STATUS</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr *ngFor="let raportDetail of raportDetail">
+            <tbody *ngFor="let raportDetail of raportDetail">
+                <tr *ngIf="!raportDetail.bill" >
                     <td>Client si Lucrare</td>
                     <td>{{raportDetail?.date}}</td>
                     <td>{{raportDetail?.team}}</td>
@@ -27,7 +27,7 @@
                         </ul>
                     </td>
                     <td> {{raportDetail?.description}}</td>
-                    <td>Marcheaza ca facturat</td>
+                    <td><button type="button" class="btn btn-" (click)=markAsFinsihed(raportDetail)>marcheaza ca facutrat</button></td>
                 </tr>
             </tbody>
         </table>
