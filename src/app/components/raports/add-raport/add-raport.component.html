@@ -2,7 +2,7 @@
 <form class="add-form" [formGroup]="addRaportForm" (ngSubmit)="onSubmit()">
  
   <div class="form-control">
-    <label>Data:<input type="text" formControlName="date"></label>
+    <label>Data:<input type="date" formControlName="date"></label>
   </div>
 
   <div class="form-control">
@@ -18,7 +18,7 @@
 
   <label for="materials">Materiale Folosite:</label><br>
 <select name="materials" id="materials"  formControlName="materialsUsed" multiple class="form-control">
-    <option *ngFor="let material of materials" value="{{material}}">{{material}}</option>
+    <option *ngFor="let material of materials" value="{{material}}" class="form-control">{{material}}</option>
   </select>
   <input type="button" value="Adauga Cantitate Materiale" class="form-control" (click)="filterMaterials()">
   

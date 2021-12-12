@@ -17,7 +17,7 @@
             </thead>
             <tbody *ngFor="let raportDetail of raportDetail">
                 <tr *ngIf="!raportDetail.bill" >
-                    <td>Client si Lucrare</td>
+                    <td>{{raportDetail?.projectAndClient}}</td>
                     <td>{{raportDetail?.date}}</td>
                     <td>{{raportDetail?.team}}</td>
                     <td>

@@ -3,6 +3,8 @@ import { Raport } from "../../../interfaces/Raport.interface";
 import { FormGroup, FormBuilder, FormControl, FormArray } from "@angular/forms";
 import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../../interfaces/Material.interface";
+import {ProjectsService} from '../../../services/projects.service';
+import { Project } from '../../../interfaces/Project.interface';
 
 @Component({
   selector: "app-add-raport",
@@ -16,7 +18,7 @@ export class AddRaportComponent implements OnInit {
 
   addRaportForm: FormGroup = new FormGroup({});
   materialsParsed: Material[] = [];
-  projects?: string[];
+  projects?: Project[] ;
   projectClient: string = "";
   team = "";
   materials?: string[];
@@ -26,11 +28,13 @@ export class AddRaportComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private materialService: MaterialService
+    private materialService: MaterialService,
+    private projectsService: ProjectsService
   ) {}
 
   ngOnInit(): void {
     this.getMaterials();
+    this.getProjectAndClient();
     this.initializeForm();
     this.materialService.getMaterials().subscribe((materials) => {
       let mat = materials;
@@ -50,7 +54,7 @@ export class AddRaportComponent implements OnInit {
 
   onSubmit() {
     const newRaport = {
-      projectAndClient: this.addRaportForm.value.projectAndClient,
+      projectAndClient: this.projectClient,
       date: this.addRaportForm.value.date,
       team: this.addRaportForm.value.team,
       materialsUsed: this.addRaportForm.value.materialsUsed,
@@ -80,6 +84,17 @@ export class AddRaportComponent implements OnInit {
       .getMaterials()
       .subscribe((materials) => (this.materialsParsed = materials));
   }
+
+  getProjectAndClient() {
+    this.projectsService.getProjects().subscribe((projects)=> {
+    
+      this.projects = projects.filter((project) =>{ project.id === this.projectId})
+      this.projectClient = `${projects[0].client} : ${projects[0].title}`
+
+
+    })
+  }
+
   getAllMaterialsQuantity(old: Material[]) {
     console.log(this.clonedMaterials);
     console.log(this.materialsFiltered);
