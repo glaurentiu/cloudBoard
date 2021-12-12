@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class RaportDetailComponent implements OnInit {
   raportDetail?: Raport[];
   @Input() projectId?: Number;
+
+
   
   constructor(
     private route: ActivatedRoute,

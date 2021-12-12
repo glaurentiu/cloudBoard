@@ -11,6 +11,9 @@
          <ul>
            <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} : {{material.quantity}}m</li>
          </ul>
+         <span>Status: </span>
+         <span *ngIf="raportDetail.bill" [ngStyle]="{color: 'green'}">Facturat</span>
+         <span *ngIf="!raportDetail.bill" [ngStyle]="{color: 'red'}">De facturat</span>
        </div>
        <div class="column">
          <h3 [ngStyle]="{color: 'red'}">Descriere</h3>

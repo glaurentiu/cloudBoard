@@ -12,7 +12,7 @@
                     <th scope="col">ECHIPA</th>
                     <th scope="col">MATERIALE</th>
                     <th scope="col">DESCRIERE</th>
-                    <th scope="col">STATUS</th>
+                    <th scope="col">Marcheaza</th>
                 </tr>
             </thead>
             <tbody *ngFor="let raportDetail of raportDetail">
@@ -27,7 +27,7 @@
                         </ul>
                     </td>
                     <td> {{raportDetail?.description}}</td>
-                    <td><button type="button" class="btn btn-" (click)=markAsFinsihed(raportDetail)>marcheaza ca facutrat</button></td>
+                    <td><button type="button" class="btn btn-primary btn-" (click)=markAsFinsihed(raportDetail)>Facturat</button></td>
                 </tr>
             </tbody>
         </table>

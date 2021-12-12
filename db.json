@@ -3,19 +3,19 @@
     {
       "text": "CABLU UTP",
       "price": 1,
-      "quantity": 29932,
+      "quantity": 29732,
       "id": 1
     },
     {
       "text": "CABLU BIFILAR",
       "price": 1,
-      "quantity": 341221,
+      "quantity": 341153,
       "id": 2
     },
     {
       "text": "CABLU INCENDIU",
       "price": 1,
-      "quantity": 123122851,
+      "quantity": 123122720,
       "id": 3
     }
   ],
@@ -51,90 +51,73 @@
   "raports": [
     {
       "projectAndClient": "",
-      "date": "12/12/12",
-      "team": "ADAS",
+      "date": "12/12/23",
+      "team": "Cosmin si Matei",
       "materialsUsed": [
-        "CABLU UTP",
-        "CABLU BIFILAR",
-        "CABLU INCENDIU"
+        "CABLU UTP"
       ],
       "materialsQuantity": [
         {
           "text": "CABLU UTP",
           "price": 1,
-          "quantity": 10,
+          "quantity": 200,
           "id": 1
-        },
-        {
-          "text": "CABLU BIFILAR",
-          "price": 1,
-          "quantity": 10,
-          "id": 2
-        },
-        {
-          "text": "CABLU INCENDIU",
-          "price": 1,
-          "quantity": 10,
-          "id": 3
         }
       ],
-      "description": "ADASD",
-      "projectId": 1,
+      "description": "S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .S-au montat camerele de supravegherde .",
+      "projectId": 2,
       "bill": true,
       "id": 1
     },
     {
       "projectAndClient": "",
-      "date": "2",
-      "team": "2",
+      "date": "12/2/231",
+      "team": "Auras si Daiel",
       "materialsUsed": [
-        "CABLU UTP",
+        "CABLU BIFILAR",
         "CABLU INCENDIU"
       ],
       "materialsQuantity": [
         {
-          "text": "CABLU UTP",
+          "text": "CABLU BIFILAR",
           "price": 1,
-          "quantity": 29,
-          "id": 1
+          "quantity": 34,
+          "id": 2
         },
         {
           "text": "CABLU INCENDIU",
           "price": 1,
-          "quantity": 121,
+          "quantity": 131,
           "id": 3
         }
       ],
-      "description": "2",
-      "projectId": 1,
+      "description": "adsadas",
+      "projectId": 2,
       "bill": true,
       "id": 2
     },
     {
-      "projectAndClient": "",
-      "date": "dsad",
-      "team": "asdsa",
-      "materialsUsed": [
-        "CABLU UTP",
-        "CABLU INCENDIU"
-      ],
+      "projectAndClient": null,
+      "date": null,
+      "team": null,
+      "materialsUsed": null,
       "materialsQuantity": [
         {
-          "text": "CABLU UTP",
+          "text": "CABLU BIFILAR",
           "price": 1,
-          "quantity": 29,
-          "id": 1
+          "quantity": 34,
+          "id": 2
         },
         {
           "text": "CABLU INCENDIU",
           "price": 1,
-          "quantity": 231,
+          "quantity": 131,
           "id": 3
         }
       ],
-      "description": "asd",
-      "projectId": 1,
-      "bill": true,
+      "description": null,
+      "projectId": 2,
+      "bill": false,
       "id": 3
     }
   ],
