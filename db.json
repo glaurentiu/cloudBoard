@@ -3,7 +3,7 @@
     {
       "text": "CABLU UTP",
       "price": 1,
-      "quantity": 25510,
+      "quantity": 25255,
       "id": 1
     },
     {
@@ -27,7 +27,7 @@
     {
       "text": "COPEX 20MM ",
       "price": 32,
-      "quantity": 720,
+      "quantity": 644,
       "id": 5
     },
     {
@@ -64,6 +64,15 @@
       "date": "20/04/21",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "id": 3
+    },
+    {
+      "title": "AUTOMATIZARE POARTA",
+      "client": "DOREL",
+      "location": "CLUJ",
+      "status": "",
+      "date": "2021-12-12",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id": 4
     }
   ],
   "raports": [
@@ -84,23 +93,12 @@
       ],
       "description": "S-au montat senzorii si s-au tras cablurile",
       "projectId": 1,
-      "bill": false,
+      "bill": true,
       "id": 1
     },
     {
-      "projectAndClient": "Peco Braniste",
-      "date": "2021-12-17",
-      "team": "Auras si Daniel",
-      "materialsUsed": null,
-      "materialsQuantity": [],
-      "description": "S-a inlocuit alimentatorul",
-      "requestId": 1,
-      "bill": true,
-      "id": 2
-    },
-    {
-      "projectAndClient": "Peco Braniste",
-      "date": "2021-12-31",
+      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
+      "date": "2021-12-12",
       "team": "Auras si Daniel",
       "materialsUsed": [
         "CABLU UTP"
@@ -109,23 +107,15 @@
         {
           "text": "CABLU UTP",
           "price": 1,
-          "quantity": 25,
+          "quantity": 255,
           "id": 1
         }
       ],
-      "description": "dasdas",
-      "requestId": 1,
-      "bill": true,
-      "id": 3
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "projectId": 4,
+      "bill": false,
+      "id": 2
     }
   ],
-  "requests": [
-    {
-      "client": "Peco Braniste",
-      "address": "Braniste nr 45",
-      "date": "2021-12-12",
-      "problem": "Nu merg camerele de supraveghere",
-      "id": 1
-    }
-  ]
+  "requests": []
 }

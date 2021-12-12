@@ -21,8 +21,8 @@ export class RequestService {
     return this.http.get<Request[]>(this.apiUrl);
   }
 
-  deleteRequest(request: Request): Observable<Request> {
-    const url = `${this.apiUrl}/${request.id}`;
+  deleteRequest(request: Request | undefined): Observable<Request> {
+    const url = `${this.apiUrl}/${request?.id}`;
     return this.http.delete<Request>(url);
   }
 

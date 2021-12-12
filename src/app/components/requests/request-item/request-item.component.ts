@@ -18,7 +18,7 @@ export class RequestItemComponent implements OnInit {
   raports: Raport[] = [];
 
   @Input() requests?: Request[];
-  @Output() onDeleteRequest: EventEmitter<Request> = new EventEmitter();
+
 
   constructor(
     private route: ActivatedRoute,
@@ -34,9 +34,15 @@ export class RequestItemComponent implements OnInit {
     .getRaports()
     .subscribe((raports) => (this.raports = raports));
   }
-  onDelete(request:any) {
-    this.onDeleteRequest.emit(request);
-  }
+
+ deleteRequest(request: Request | undefined) {
+  this.requestService.deleteRequest(request).subscribe()
+  this.reloadPage()
+ }
+ reloadPage() {
+  window.location.reload();
+}
+
   getRequest():void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.requestService.getRequests().subscribe(

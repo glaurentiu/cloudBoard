@@ -1,30 +1,34 @@
 <div *ngIf="hasRoute('/')">
-
+<div class="container">
   
-  <div class="container" >
-      <h2>Interventii de rezolvat</h2>
-      
-      <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">CLIENT</th>
-              <th scope="col">ADRESA</th>
-              <th scope="col">DATA</th>
-              <th scope="col">PROBLEMA</th>
-              <th scope="col">PROCES VERBAL</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let request of requests" routerLink="/requests/{{request.id}}">
-            <td>{{request?.client}}</td>
-            <td>{{request?.address}}</td>
-            <td>{{request?.date}}</td>
-            <td>{{request?.problem}}</td>
-            <td><button type="button" class="btn-primary btn-">Adauga proces verbal</button></td>
-            
+  <h2>Interventii de rezolvat</h2>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">CLIENT</th>
+        <th scope="col">ADRESA</th>
+        <th scope="col">DATA</th>
+        <th scope="col">PROBLEMA</th>
+        <th scope="col">PROCES VERBAL</th>
+        <th scope="col">STERGE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests" >
+        <td>{{request?.client}}</td>
+        <td>{{request?.address}}</td>
+        <td>{{request?.date}}</td>
+        <td>{{request?.problem}}</td>
+        <td><button routerLink="/requests/{{request.id}}" type="button" class="btn btn-primary btn-">Adauga proces verbal</button></td>
+        <td> <fa-icon (click)="deleteRequest(request)" [ngStyle]="{'color': 'red'}" [icon]="
+          faMinusSquare"></fa-icon></td>
+          
+          
         </tr>
-          </tbody>
-        </table>  
+      </tbody>
+    </table>  
+    
   </div>
     
 </div>
@@ -38,7 +42,6 @@
         <th scope="col">ADRESA</th>
         <th scope="col">DATA</th>
         <th scope="col">PROBLEMA</th>
-        <th scope="col">STATUS</th>
       </tr>
     </thead>
     <tbody>
@@ -47,7 +50,7 @@
       <td>{{requestItem?.address}}</td>
       <td>{{requestItem?.date}}</td>
       <td>{{requestItem?.problem}}</td>
-      <td>Facturat / Nefacturat</td>
+     
       
   </tr>
     </tbody>
