@@ -3,37 +3,37 @@
     {
       "text": "CABLU UTP",
       "price": 1,
-      "quantity": 24930,
+      "quantity": 24664,
       "id": 1
     },
     {
       "text": "CABLU BIFILAR",
       "price": 1,
-      "quantity": 340129,
+      "quantity": 0,
       "id": 2
     },
     {
       "text": "CABLU INCENDIU",
       "price": 1,
-      "quantity": 123122106,
+      "quantity": 0,
       "id": 3
     },
     {
       "text": "CABLU COAXIAL",
       "price": 2,
-      "quantity": 3566,
+      "quantity": 0,
       "id": 4
     },
     {
       "text": "COPEX 20MM ",
       "price": 32,
-      "quantity": 444,
+      "quantity": 0,
       "id": 5
     },
     {
       "text": "COPEX 16MM",
       "price": 2,
-      "quantity": 7809,
+      "quantity": 0,
       "id": 6
     },
     {
@@ -243,6 +243,107 @@
       "projectId": 2,
       "bill": false,
       "id": 7
+    },
+    {
+      "projectAndClient": "Ionel Popescu",
+      "date": "",
+      "team": "",
+      "materialsUsed": [
+        "CABLU COAXIAL",
+        "COPEX 16MM"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU COAXIAL",
+          "price": 2,
+          "quantity": 3566,
+          "id": 4
+        },
+        {
+          "text": "COPEX 16MM",
+          "price": 2,
+          "quantity": 7809,
+          "id": 6
+        }
+      ],
+      "description": "",
+      "requestId": 1,
+      "bill": true,
+      "id": 8
+    },
+    {
+      "projectAndClient": "Ionel Popescu",
+      "date": "2021-12-31",
+      "team": "Auras si daniel",
+      "materialsUsed": [
+        "CABLU BIFILAR",
+        "CABLU COAXIAL",
+        "COPEX 20MM "
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU BIFILAR",
+          "price": 1,
+          "quantity": 340129,
+          "id": 2
+        },
+        {
+          "text": "CABLU COAXIAL",
+          "price": 2,
+          "quantity": 0,
+          "id": 4
+        },
+        {
+          "text": "COPEX 20MM ",
+          "price": 32,
+          "quantity": 0,
+          "id": 5
+        }
+      ],
+      "description": "S-au montat camerele",
+      "requestId": 1,
+      "bill": true,
+      "id": 9
+    },
+    {
+      "projectAndClient": "Ionel Popescu",
+      "date": "2021-12-16",
+      "team": "s",
+      "materialsUsed": [
+        "CABLU UTP"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP",
+          "price": 1,
+          "quantity": 24,
+          "id": 1
+        }
+      ],
+      "description": "s",
+      "requestId": 1,
+      "bill": true,
+      "id": 10
+    },
+    {
+      "projectAndClient": "Ionel Popescu",
+      "date": "2021-12-13",
+      "team": "",
+      "materialsUsed": [
+        "CABLU UTP"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP",
+          "price": 1,
+          "quantity": 242,
+          "id": 1
+        }
+      ],
+      "description": "",
+      "requestId": 1,
+      "bill": true,
+      "id": 11
     }
   ],
   "requests": [

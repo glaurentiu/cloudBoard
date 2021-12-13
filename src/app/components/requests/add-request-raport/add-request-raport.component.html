@@ -1,34 +1,53 @@
 
-<form class="add-form" [formGroup]="addRaportRequestForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="addRaportRequestForm" (ngSubmit)="onSubmit()">
  
-    <div class="form-control">
-      <label>Data:<input type="date" formControlName="date"></label>
-    </div>
+  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Data:</mat-label>
+        <input matInput type="date" formControlName="date" placeholder="">
+      </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Echipa:</mat-label>
+          <input matInput type="text" formControlName="team" placeholder="">
+        </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Descriere:</mat-label>
+            <input matInput type="text" formControlName="description" placeholder="">
+          </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Materiale Folosite:</mat-label>
+              <mat-select  formControlName="materialsUsed" multiple>
+                <mat-option *ngFor="let material of materials" value="{{material}}">{{material}}</mat-option>
+              </mat-select>
+              <input matInput type="select" formControlName="date" placeholder="">
+            </mat-form-field>
+            </p>
+  </div>
+ 
+
   
-    <div class="form-control">
-      <label for="team">Echipa</label>
-      <input type="text" name="team" formControlName="team">
-    </div>
-  
-    <div class="form-control">
-      <label>Descriere:<input type="text" formControlName="description"></label>
-    </div>
   
   
-  
-    <label for="materials">Materiale Folosite:</label><br>
-  <select name="materials" id="materials"  formControlName="materialsUsed" multiple class="form-control">
-      <option *ngFor="let material of materials" value="{{material}}" class="form-control">{{material}}</option>
-    </select>
     <input type="button" value="Adauga Cantitate Materiale" class="form-control" (click)="filterMaterials()">
     
-    
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
    <div  *ngFor="let matItem of materialsFiltered">
-    <label for="{{matItem.text}}">{{matItem.text}}</label>
-     <input type="number" class="form-control" name="{{matItem.text}}" [(ngModel)]="matItem.quantity"  [ngModelOptions]="{standalone: true}">
-  
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>{{matItem.text}}</mat-label>
+        <input matInput type="number" name="{{matItem.text}}" [(ngModel)]="matItem.quantity"  [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      </p>
+    
    </div>
-  
+  </div>
     <input type="submit" value="Salveaza" class="form-control">
   
   </form>
