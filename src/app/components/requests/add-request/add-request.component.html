@@ -1,8 +1,35 @@
-<form class="form-control" [formGroup]="addRequestForm" (ngSubmit)="onSubmit()">
-    <label>Client:<input type="text" formControlName="client" class="form-control" /></label>
-    <label>Adresa:<input type="text" formControlName="address" class="form-control" /></label>
-    <label>Data Programare:<input type="date" formControlName="date" class="form-control" /> </label>
-    <label>Problema:<input type="text" formControlName="problem" class="form-control" /></label>
+<h2 [ngStyle]="{color: '#3f51b5'}">Adauga interventie</h2>
+<form [formGroup]="addRequestForm" (ngSubmit)="onSubmit()">
 
-    <input type="submit" value="Salveaza">
+    <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+
+
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Client</mat-label>
+            <input matInput formControlName="client" placeholder="">
+          </mat-form-field>
+          </p><p>
+          <mat-form-field appearance="outline">
+            <mat-label>Adresa:</mat-label>
+            <input matInput formControlName="address" placeholder="">
+          </mat-form-field></p><p>
+          <mat-form-field appearance="outline">
+            <mat-label>Data Programare</mat-label>
+            <input matInput type="date" formControlName="date" placeholder="">
+          </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Problema</mat-label>
+              <input matInput type="text" formControlName="problem" placeholder="">
+            </mat-form-field>
+          </p>
+     
+      </div>
+
+      <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+        <button type="submit" mat-raised-button color="primary">Salveaza</button>
+  
+    </div>
 </form>

@@ -3,23 +3,103 @@
     {
       "text": "Cablu FTP CCA Cat5",
       "price": "1,69",
-      "quantity": "600",
+      "quantity": 501,
       "id": 1
     },
     {
       "text": "Cablu FTP CAT5e Cupru",
       "price": "1.89",
-      "quantity": "1000",
+      "quantity": 988,
       "id": 2
     },
     {
       "text": "Cablu UTP Cat6 ",
       "price": "3.89",
-      "quantity": "1000",
+      "quantity": 958,
       "id": 3
     }
   ],
-  "projects": [],
-  "raports": [],
-  "requests": []
+  "projects": [
+    {
+      "title": "Montaj sistem supraveghere 4 camere",
+      "client": "Ion Barbu",
+      "location": "Craiova",
+      "status": "in curs",
+      "date": "2021-12-16",
+      "description": "De montat 4 camere cu ir la 40 metri , dvr cu 8 canale, sursa de 14amp , ",
+      "id": 1
+    }
+  ],
+  "raports": [
+    {
+      "projectAndClient": "Ion Barbu : Montaj sistem supraveghere 4 camere",
+      "date": "2021-12-15",
+      "team": "Ion si Alin",
+      "materialsUsed": [
+        "Cablu FTP CCA Cat5",
+        "Cablu UTP Cat6 "
+      ],
+      "materialsQuantity": [
+        {
+          "text": "Cablu FTP CCA Cat5",
+          "price": "1,69",
+          "quantity": 87,
+          "id": 1
+        },
+        {
+          "text": "Cablu UTP Cat6 ",
+          "price": "3.89",
+          "quantity": 30,
+          "id": 3
+        }
+      ],
+      "description": "s-au tras cablurile si s-au montat dozele de conexiuni",
+      "projectId": 1,
+      "bill": false,
+      "id": 1
+    },
+    {
+      "projectAndClient": "Ion Barbu : Montaj sistem supraveghere 4 camere",
+      "date": "2021-12-13",
+      "team": "adas",
+      "materialsUsed": [
+        "Cablu FTP CCA Cat5",
+        "Cablu FTP CAT5e Cupru",
+        "Cablu UTP Cat6 "
+      ],
+      "materialsQuantity": [
+        {
+          "text": "Cablu FTP CCA Cat5",
+          "price": "1,69",
+          "quantity": 12,
+          "id": 1
+        },
+        {
+          "text": "Cablu FTP CAT5e Cupru",
+          "price": "1.89",
+          "quantity": 12,
+          "id": 2
+        },
+        {
+          "text": "Cablu UTP Cat6 ",
+          "price": "3.89",
+          "quantity": 12,
+          "id": 3
+        }
+      ],
+      "description": "dasdas",
+      "projectId": 1,
+      "bill": false,
+      "id": 2
+    }
+  ],
+  "requests": [
+    {
+      "client": "Ion Popescu",
+      "address": "Str. Primvaerii nr 9",
+      "date": "2021-12-31",
+      "problem": "de instalat aplicatia pe telefon",
+      "id": 1
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 import {FormGroup, FormBuilder} from '@angular/forms';
+import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import {Request} from '../../../interfaces/Request.interface';
 
 @Component({
@@ -43,5 +44,6 @@ export class AddRequestComponent implements OnInit {
 
     this.onAddRequest.emit(newRequest);
     this.addRequestForm.reset();
+    window.location.reload();
   }
 }
