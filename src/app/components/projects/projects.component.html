@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Adauga Lucrare</h2>
+  <h2 [ngStyle]="{color: '#3f51b5'}" >Adauga Lucrare</h2>
   <app-add-project (onAddProject)="addProject($event)"></app-add-project>
   <div *ngFor="let project of projects" class="material">
 
