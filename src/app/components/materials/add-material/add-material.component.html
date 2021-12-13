@@ -1,6 +1,32 @@
-<form class="form-control" [formGroup]="addMaterialForm" (ngSubmit)="onSubmit()">
-  <label>Denumire:<input type="text" formControlName="text" class="form-control" /></label>
-  <label>Pret:<input type="number" formControlName="price" class="form-control" /></label>
-  <label>Cantitate:<input type="number" formControlName="quantity" class="form-control" /> </label>
-  <input type="submit" value="Salveaza">
+<p>
+  <ngb-alert  *ngIf="alertSucces" type="success" [dismissible]=false ><strong>Materialul a fost adaugat cu succes</strong></ngb-alert>
+  <ngb-alert  *ngIf="alertFailed" type="danger" [dismissible]=false ><strong>Introduce numele materialului</strong></ngb-alert>
+</p>
+<form [formGroup]="addMaterialForm" (ngSubmit)="onSubmit()">
+
+  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Denumire material</mat-label>
+        <input matInput formControlName="text" placeholder="ex: CABLU UTP">
+      </mat-form-field>
+      </p><p>
+      <mat-form-field appearance="outline">
+        <mat-label>Pret:</mat-label>
+        <input matInput formControlName="price" placeholder="ex: 10">
+      </mat-form-field></p><p>
+      <mat-form-field appearance="outline">
+        <mat-label>Cantitate:</mat-label>
+        <input matInput formControlName="quantity" placeholder="ex: 1000">
+      </mat-form-field>
+    </p>
+ 
+  </div>
+  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+  <p>
+    <button type="submit" mat-raised-button color="primary">Adauga material</button>
+</p>
+</div>
 </form>

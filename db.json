@@ -3,31 +3,31 @@
     {
       "text": "CABLU UTP",
       "price": 1,
-      "quantity": 25255,
+      "quantity": 24930,
       "id": 1
     },
     {
       "text": "CABLU BIFILAR",
       "price": 1,
-      "quantity": 340619,
+      "quantity": 340129,
       "id": 2
     },
     {
       "text": "CABLU INCENDIU",
       "price": 1,
-      "quantity": 123122229,
+      "quantity": 123122106,
       "id": 3
     },
     {
       "text": "CABLU COAXIAL",
       "price": 2,
-      "quantity": 3766,
+      "quantity": 3566,
       "id": 4
     },
     {
       "text": "COPEX 20MM ",
       "price": 32,
-      "quantity": 644,
+      "quantity": 444,
       "id": 5
     },
     {
@@ -35,6 +35,24 @@
       "price": 2,
       "quantity": 7809,
       "id": 6
+    },
+    {
+      "text": "CABLU CYF 3X1.5",
+      "price": "2",
+      "quantity": "1000",
+      "id": 7
+    },
+    {
+      "text": "CABLU ALIMENTARE",
+      "price": "200",
+      "quantity": "1500",
+      "id": 8
+    },
+    {
+      "text": "CABLU ALIMENTARE 2",
+      "price": "20",
+      "quantity": "1500",
+      "id": 9
     }
   ],
   "projects": [
@@ -113,9 +131,127 @@
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "projectId": 4,
-      "bill": false,
+      "bill": true,
       "id": 2
+    },
+    {
+      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
+      "date": "2021-12-13",
+      "team": "dasda",
+      "materialsUsed": [
+        "CABLU UTP"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP",
+          "price": 1,
+          "quantity": 25,
+          "id": 1
+        }
+      ],
+      "description": "asd",
+      "projectId": 1,
+      "bill": true,
+      "id": 3
+    },
+    {
+      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
+      "date": "2021-12-13",
+      "team": "asdsa",
+      "materialsUsed": null,
+      "materialsQuantity": [],
+      "description": "",
+      "projectId": 1,
+      "bill": true,
+      "id": 4
+    },
+    {
+      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
+      "date": "2021-12-13",
+      "team": "Auras si Daniel",
+      "materialsUsed": [
+        "CABLU BIFILAR",
+        "CABLU INCENDIU"
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU BIFILAR",
+          "price": 1,
+          "quantity": 340,
+          "id": 2
+        },
+        {
+          "text": "CABLU INCENDIU",
+          "price": 1,
+          "quantity": 123,
+          "id": 3
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "projectId": 1,
+      "bill": false,
+      "id": 5
+    },
+    {
+      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
+      "date": "2021-12-13",
+      "team": "Bogdan si George",
+      "materialsUsed": [
+        "CABLU UTP",
+        "CABLU BIFILAR",
+        "CABLU COAXIAL",
+        "COPEX 20MM "
+      ],
+      "materialsQuantity": [
+        {
+          "text": "CABLU UTP",
+          "price": 1,
+          "quantity": 300,
+          "id": 1
+        },
+        {
+          "text": "CABLU BIFILAR",
+          "price": 1,
+          "quantity": 150,
+          "id": 2
+        },
+        {
+          "text": "CABLU COAXIAL",
+          "price": 2,
+          "quantity": 200,
+          "id": 4
+        },
+        {
+          "text": "COPEX 20MM ",
+          "price": 32,
+          "quantity": 200,
+          "id": 5
+        }
+      ],
+      "description": "S-au instalat camerele de supraveghere si s-au configurat echipamentele",
+      "projectId": 2,
+      "bill": true,
+      "id": 6
+    },
+    {
+      "projectAndClient": "ION POPESCU : SISTEM DE ALARMA",
+      "date": "2021-12-13",
+      "team": "George si Costi",
+      "materialsUsed": null,
+      "materialsQuantity": [],
+      "description": "s-au montat camerle",
+      "projectId": 2,
+      "bill": false,
+      "id": 7
     }
   ],
-  "requests": []
+  "requests": [
+    {
+      "client": "Ionel Popescu",
+      "address": "Str 1 Decembrie 1918",
+      "date": "2021-12-13",
+      "problem": "nu merg camerele",
+      "id": 1
+    }
+  ]
 }

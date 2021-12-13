@@ -2,34 +2,33 @@
 <div class="container">
 
     <h2>Procese Verbale de facturat</h2>
-    <div *ngIf="raportDetail" class="material">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">CLIENT</th>
-                    <th scope="col">DATA</th>
-                    <th scope="col">ECHIPA</th>
-                    <th scope="col">MATERIALE</th>
-                    <th scope="col">DESCRIERE</th>
-                    <th scope="col">MARCHEAZA</th>
-                </tr>
-            </thead>
-            <tbody *ngFor="let raportDetail of raportDetail">
-                <tr *ngIf="!raportDetail.bill" >
-                    <td>{{raportDetail?.projectAndClient}}</td>
-                    <td>{{raportDetail?.date}}</td>
-                    <td>{{raportDetail?.team}}</td>
-                    <td>
-                        <ul>
-                            <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} :
-                                {{material.quantity}}m</li>
-                        </ul>
-                    </td>
-                    <td> {{raportDetail?.description}}</td>
-                    <td><button type="button" class="btn btn-primary btn-" (click)=markAsFinsihed(raportDetail)>Facturat</button></td>
-                </tr>
-            </tbody>
-        </table>
+    <div *ngIf="raportDetail" >
 
-    </div>
-</div>
+        <div *ngFor="let raportDetail of raportDetail">
+            <div *ngIf="!raportDetail.bill">
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                {{raportDetail?.projectAndClient}}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                             Echipa: {{raportDetail?.team}} , Data: {{raportDetail?.date}}
+                            </mat-panel-description>
+                            <mat-panel-description>
+                                <span (click)=markAsFinsihed(raportDetail)><strong>Marcheaza ca facturat</strong></span>
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <strong>Descriere</strong>
+                        <p>{{raportDetail?.description}}</p>
+                        <strong>Materiale Folosite:</strong>
+                        <ul>
+                            <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} : {{material.quantity}}m</li>
+                          </ul>
+                    </mat-expansion-panel>
+            <mat-divider></mat-divider>
+        
+
+
+    
+

@@ -5,6 +5,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -27,6 +39,8 @@ import { AddRequestComponent } from './components/requests/add-request/add-reque
 import { RequestItemComponent } from './components/requests/request-item/request-item.component';
 import { RaportBillingComponent } from './components/raports/raport-billing/raport-billing.component';
 import { AddRequestRaportComponent } from './components/requests/add-request-raport/add-request-raport.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -70,6 +84,19 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatListModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatBadgeModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule,
+    NgbModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

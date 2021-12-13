@@ -3,7 +3,7 @@
 
 <app-add-material (onAddMaterial)="addMaterial($event)"></app-add-material>
 
-<table class="table">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th scope="col">DENUMIRE</th>
@@ -17,8 +17,8 @@
     <td>{{material?.text}}</td>
     <td>{{material?.price}} lei</td>
     <td>{{material?.quantity}} m</td>
-    <td> <fa-icon (click)="deleteMaterial(material)" [ngStyle]="{'color': 'red'}" [icon]="
-      faMinusSquare"></fa-icon></td>
+    <td> <mat-icon (click)="deleteMaterial(material)" [ngStyle]="{'color': 'red'}">delete</mat-icon></td>
+ 
 </tr>
   </tbody>
 </table>

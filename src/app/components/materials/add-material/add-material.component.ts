@@ -13,7 +13,8 @@ export class AddMaterialComponent implements OnInit {
   addMaterialForm: FormGroup = new FormGroup({})
   showAddMaterial: boolean = false;
   subscription: Subscription;
-
+  alertSucces = false;
+  alertFailed = false;
   constructor(private uiService: UiService , private fb: FormBuilder) {
     this.subscription = this.uiService.onToggle().subscribe((value=> this.showAddMaterial = value))
 
@@ -33,7 +34,8 @@ export class AddMaterialComponent implements OnInit {
 
   onSubmit() {
     if(!this.addMaterialForm.value.text) {
-      alert("Introduce o denumire ");
+      this.alertFailed = true;
+      setTimeout(() => {this.alertFailed = false},2000)
       return;
     }
     const newMaterial = {
@@ -44,5 +46,11 @@ export class AddMaterialComponent implements OnInit {
     };
     this.onAddMaterial.emit(newMaterial);
     this.addMaterialForm.reset();
+    this.alertSucces = true;
+    setTimeout(() => {this.alertSucces = false},2000)
+  }
+
+  close(alert: boolean) {
+    alert = false;
   }
 }
