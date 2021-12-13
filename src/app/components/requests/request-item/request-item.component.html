@@ -3,7 +3,7 @@
   
   <h2>Interventii de rezolvat</h2>
   
-  <table class="table">
+  <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th scope="col">CLIENT</th>
@@ -16,13 +16,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let request of requests" >
-        <td>{{request?.client}}</td>
+        <td >{{request?.client}}</td>
         <td>{{request?.address}}</td>
         <td>{{request?.date}}</td>
         <td>{{request?.problem}}</td>
-        <td><button routerLink="/requests/{{request.id}}" type="button" class="btn btn-primary btn-">Adauga proces verbal</button></td>
-        <td> <fa-icon (click)="deleteRequest(request)" [ngStyle]="{'color': 'red'}" [icon]="
-          faMinusSquare"></fa-icon></td>
+        <td ><a routerLink="/requests/{{request.id}}">Adauga proces verbal</a></td>
+        <td style="text-align:center"> <mat-icon (click)="deleteRequest(request)" [ngStyle]="{'color': 'red'}" >delete</mat-icon></td>
           
           
         </tr>
