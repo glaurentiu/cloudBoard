@@ -52,9 +52,11 @@ export class MaterialService {
     return deleteDoc(materialDocRef)
   }
 
-  updateMaterialFromFirebase(material: Material) {
+  updateMaterialFromFirebase(material:Material,newMaterial: Material) {
+    console.log('material',material);
+    console.log('newMaterial',newMaterial);
     const materialDocRef = doc(this.firestore, `materials/${material.id}`);
-    return updateDoc(materialDocRef, { quantity: material.quantity});
+    return updateDoc(materialDocRef, { quantity: material.quantity - newMaterial.quantity});
   }
 
 ///////

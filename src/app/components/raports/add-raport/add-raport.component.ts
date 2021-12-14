@@ -36,9 +36,9 @@ export class AddRaportComponent implements OnInit {
     this.getMaterials();
     this.getProjectAndClient();
     this.initializeForm();
-    this.materialService.getMaterials().subscribe((materials) => {
+    this.materialService.getMaterialsFromFireBase().subscribe((materials) => {
       let mat = materials;
-      this.materials = mat.map((el) => `${el.text}`);
+      this.materials = mat.map((el) => `${el['text']}`);
     });
   }
 
@@ -68,11 +68,11 @@ export class AddRaportComponent implements OnInit {
 
     this.onAddRaport.emit(newRaport);
     this.addRaportForm.reset();
-    this.reloadPage()
+    setTimeout(this.reloadPage,1000)
   }
 
   updateMaterials(material: Material, newMaterial: Material): void {
-    this.materialService.updateMaterial(material, newMaterial).subscribe();
+    this.materialService.updateMaterialFromFirebase(material,newMaterial)
   }
 
   reloadPage() {
@@ -81,8 +81,8 @@ export class AddRaportComponent implements OnInit {
 
   getMaterials() {
     this.materialService
-      .getMaterials()
-      .subscribe((materials) => (this.materialsParsed = materials));
+      .getMaterialsFromFireBase()
+      .subscribe((materials) => (this.materialsParsed = materials as Material[]));
   }
 
   getProjectAndClient() {
