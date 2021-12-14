@@ -26,11 +26,11 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   getProject(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.projectService
       .getProjects()
       .subscribe(
-        (projects) => (this.projectDetail = projects.find((p) => p.id === id))
+        (projects) => (this.projectDetail = projects.find((p) => p['id'] === id) as Project)
       );
   }
   hasRoute(route: string) {

@@ -14,7 +14,7 @@ export class RequestsComponent implements OnInit {
   constructor(private requestService: RequestService) { }
 
   ngOnInit(): void {
-    this.requestService.getRequests().subscribe((requests)=> (this.requests = requests))
+    this.requestService.getRequests().subscribe((requests)=> (this.requests = requests as Request[]));
   
     
   }
@@ -22,6 +22,5 @@ export class RequestsComponent implements OnInit {
   addRequest(request: Request) {
     this.requestService
       .addRequest(request)
-      .subscribe((request) => this.requests.push(request));
   }
 }

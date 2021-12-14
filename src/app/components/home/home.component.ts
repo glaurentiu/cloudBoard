@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import {Request} from '../../interfaces/Request.interface';
-import {RequestService} from '../../services/request.service'
+import { Component, OnInit } from "@angular/core";
+import { Request } from "../../interfaces/Request.interface";
+import { RequestService } from "../../services/request.service";
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
+  requests: Request[] = [];
 
-  requests: Request[] =[];
-
-  constructor(private requestService: RequestService) { }
+  constructor(private requestService: RequestService) {}
 
   ngOnInit(): void {
-    this.requestService.getRequests().subscribe((requests)=> (this.requests = requests))
+    this.requestService
+      .getRequests()
+      .subscribe((requests) => (this.requests = requests as Request[]));
   }
-
 }

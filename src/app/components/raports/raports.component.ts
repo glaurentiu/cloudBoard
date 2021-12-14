@@ -7,7 +7,7 @@ import { RaportService } from '../../services/raport.service';
   styleUrls: ['./raports.component.css'],
 })
 export class RaportsComponent implements OnInit {
-  @Input() projectId?: Number ;
+  @Input() projectId?: string ;
 
 
   raports: Raport[] = [];

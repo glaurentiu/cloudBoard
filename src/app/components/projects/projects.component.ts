@@ -15,11 +15,10 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.projectService
       .getProjects()
-      .subscribe((projects) => (this.projects = projects));
+      .subscribe((projects) => (this.projects = projects as Project[]));
   }
   addProject(project: Project) {
     this.projectService
       .addProject(project)
-      .subscribe((project) => this.projects.push(project));
   }
 }

@@ -35,18 +35,18 @@ export class RequestItemComponent implements OnInit {
     .subscribe((raports) => (this.raports = raports));
   }
 
- deleteRequest(request: Request | undefined) {
-  this.requestService.deleteRequest(request).subscribe()
-  this.reloadPage()
+ deleteRequest(request: Request) {
+  this.requestService.deleteRequest(request)
+  setTimeout(this.reloadPage,1000)
  }
  reloadPage() {
   window.location.reload();
 }
 
   getRequest():void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.requestService.getRequests().subscribe(
-      (requests: Request[]) =>(this.requestItem = requests.find((p) => p.id === id))
+      (requests) =>(this.requestItem = requests.find((p) => p['id'] === id) as Request)
     );
   }
   addRaport(raport: Raport) {

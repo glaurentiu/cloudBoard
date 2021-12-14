@@ -12,7 +12,7 @@ import { Project } from '../../../interfaces/Project.interface';
   styleUrls: ["./add-raport.component.css"],
 })
 export class AddRaportComponent implements OnInit {
-  @Input() projectId?: Number;
+  @Input() projectId?: string;
 
   @Output() onAddRaport: EventEmitter<Raport> = new EventEmitter();
 
@@ -88,8 +88,8 @@ export class AddRaportComponent implements OnInit {
   getProjectAndClient() {
     this.projectsService.getProjects().subscribe((projects)=> {
     
-      this.projects = projects.filter((project) =>{ project.id === this.projectId})
-      this.projectClient = `${projects[0].client} : ${projects[0].title}`
+      this.projects = projects.filter((project) =>{ project['id'] === this.projectId}) as Project[]
+      this.projectClient = `${projects[0]['client']} : ${projects[0]['title']}`
 
 
     })

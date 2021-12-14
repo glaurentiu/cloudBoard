@@ -43,7 +43,7 @@
       ],
       "description": "12313",
       "projectId": 1,
-      "bill": false,
+      "bill": true,
       "id": 1
     },
     {
@@ -70,8 +70,35 @@
       ],
       "description": "das",
       "projectId": 1,
-      "bill": false,
+      "bill": true,
       "id": 2
+    },
+    {
+      "projectAndClient": "Ionel POpescu : Instalare Sistem de supraveghere",
+      "date": "2021-12-14",
+      "team": "asda",
+      "materialsUsed": [
+        "Cablu Bifilar ",
+        "Cablu UTP"
+      ],
+      "materialsQuantity": [
+        {
+          "quantity": 10,
+          "text": "Cablu Bifilar ",
+          "price": "10",
+          "id": "1Zez941AuXnpekHsvrlY"
+        },
+        {
+          "text": "Cablu UTP",
+          "quantity": 50,
+          "price": "2",
+          "id": "cu6jrFypf68GpcxlbGvh"
+        }
+      ],
+      "description": "asdasd",
+      "projectId": "Qb2z4869UDldHknOfvXG",
+      "bill": true,
+      "id": 3
     }
   ],
   "requests": []

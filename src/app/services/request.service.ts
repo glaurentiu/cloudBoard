@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Request} from '../interfaces/Request.interface';
+import { addDoc, collection, collectionData, deleteDoc, doc, DocumentData, Firestore } from '@angular/fire/firestore';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,19 +16,22 @@ const httpOptions = {
 export class RequestService {
   private apiUrl = 'http://localhost:5000/requests';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private firestore: Firestore) { }
 
-  getRequests(): Observable<Request[]> {
-    return this.http.get<Request[]>(this.apiUrl);
+  getRequests(): Observable<DocumentData[]> {
+    const requestRef = collection(this.firestore,'requests');
+    return collectionData(requestRef, { idField: "id" })
+
   }
 
-  deleteRequest(request: Request | undefined): Observable<Request> {
-    const url = `${this.apiUrl}/${request?.id}`;
-    return this.http.delete<Request>(url);
+  deleteRequest(request: Request){
+    const requestDocRef = doc(this.firestore, `requests/${request.id}`);
+    return deleteDoc(requestDocRef)
   }
 
-  addRequest(request: Request): Observable<Request> {
-    return this.http.post<Request>(this.apiUrl, request , httpOptions)
+  addRequest(request: Request){
+    const requestRef = collection(this.firestore,'requests');
+    return addDoc(requestRef, request)
   }
 
 

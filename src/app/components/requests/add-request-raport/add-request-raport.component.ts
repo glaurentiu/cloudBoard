@@ -91,8 +91,8 @@ export class AddRequestRaportComponent implements OnInit {
 
   getClient() {
     this.requestService.getRequests().subscribe((requests)=> {
-      let request = requests.find((r)=> r.id === this.requestId)
-     this.projectClient = request?.client
+      let request = requests.find((r)=> r["id"] === this.requestId)
+     this.projectClient = request?.["client"]
       
       console.log('this.projectClient',this.projectClient)
       console.log('this.requests',request)

@@ -6,7 +6,7 @@ export interface Raport {
   team: string;
   materialsUsed: string;
   description: string;
-  projectId?: Number;
+  projectId?: string;
   requestId?: Number;
   materialsQuantity?: Material[];
   bill: boolean;
