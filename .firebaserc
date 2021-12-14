@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cloudboard-28e8b": {
+      "hosting": {
+        "cloudBoard": [
+          "cloudboard-28e8b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cloudboard-28e8b"
+  }
+}

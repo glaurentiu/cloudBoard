@@ -43,6 +43,9 @@ import { RequestItemComponent } from './components/requests/request-item/request
 import { RaportBillingComponent } from './components/raports/raport-billing/raport-billing.component';
 import { AddRequestRaportComponent } from './components/requests/add-request-raport/add-request-raport.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 
 const appRoutes: Routes = [
@@ -102,6 +105,8 @@ const appRoutes: Routes = [
     MatExpansionModule,
     MatCardModule,
     MatSelectModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,40 +1,82 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { Material } from '../interfaces/Material.interface';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, of } from "rxjs";
+import { Material } from "../interfaces/Material.interface";
+
+import {
+  collection,
+  collectionData,
+  Firestore,
+  DocumentData,
+  docData,
+  doc,
+  addDoc,
+  deleteDoc,
+  updateDoc,
+} from "@angular/fire/firestore";
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-}
-
+    "Content-Type": "application/json",
+  }),
+};
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class MaterialService {
-  private apiUrl = 'http://localhost:5000/materials';
+  private apiUrl = "http://localhost:5000/materials";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private firestore: Firestore) {}
 
-  getMaterials(): Observable<Material[]> {
-   return this.http.get<Material[]>(this.apiUrl);
+  getMaterials() {
+    return this.http.get<Material[]>(this.apiUrl);
+  }
+  //Firebase Syntaxes : 
+
+  getMaterialsFromFireBase(): Observable<DocumentData[]> {
+    const materialRef = collection(this.firestore, "materials");
+    return collectionData(materialRef, { idField: "id" });
+  }
+  getMaterialFromFireBase(id: string): Observable<DocumentData> {
+    const materialDocRef = doc(this.firestore, `materials/${id}`);
+    return docData(materialDocRef, { idField: "id" });
+  }
+  addMaterialtoFireBase(materialParam: Material) {
+    const materialRef = collection(this.firestore, "materials");
+    return addDoc(materialRef, materialParam);
   }
 
+  deleteMaterialFromFirebBase(material: Material) {
+    const materialDocRef = doc(this.firestore, `materials/${material.id}`);
+    return deleteDoc(materialDocRef)
+  }
+
+  updateMaterialFromFirebase(material: Material) {
+    const materialDocRef = doc(this.firestore, `materials/${material.id}`);
+    return updateDoc(materialDocRef, { quantity: material.quantity});
+  }
+
+///////
   deleteMaterial(material: Material): Observable<Material> {
     const url = `${this.apiUrl}/${material.id}`;
     return this.http.delete<Material>(url);
   }
 
   addMaterial(material: Material): Observable<Material> {
-    return this.http.post<Material>(this.apiUrl, material, httpOptions)
+    return this.http.post<Material>(this.apiUrl, material, httpOptions);
   }
-  updateMaterial(material:Material,newMaterial: Material): Observable<Material> {
-    const url= `${this.apiUrl}/${material.id}`
-    return this.http.patch<Material>(url,{
-      quantity: material.quantity - newMaterial.quantity
-    },
-       httpOptions)
+  updateMaterial(
+    material: Material,
+    newMaterial: Material
+  ): Observable<Material> {
+    const url = `${this.apiUrl}/${material.id}`;
+    return this.http.patch<Material>(
+      url,
+      {
+        quantity: material.quantity - newMaterial.quantity,
+      },
+      httpOptions
+    );
   }
 }

@@ -104,6 +104,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "cloudBoard:build:production",
+            "firebaseProject": "cloudboard-28e8b",
+            "firebaseHostingSite": "cloudboard-28e8b"
+          }
         }
       }
     }

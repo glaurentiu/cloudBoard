@@ -42,7 +42,6 @@ export class AddMaterialComponent implements OnInit {
       text: this.addMaterialForm.value.text,
       price: this.addMaterialForm.value.price,
       quantity: this.addMaterialForm.value.quantity,
-      reminder: this.addMaterialForm.value.reminder,
     };
     this.onAddMaterial.emit(newMaterial);
     this.addMaterialForm.reset();

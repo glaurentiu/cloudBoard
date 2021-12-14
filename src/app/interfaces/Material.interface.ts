@@ -1,8 +1,8 @@
 export interface Material {
-  id?: number;
+  id?: string;
   text: string;
   price: number;
   quantity: number;
-  reminder: boolean;
+  reminder?: boolean;
 
 }

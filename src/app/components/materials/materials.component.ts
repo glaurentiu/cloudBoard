@@ -4,6 +4,7 @@ import { Material } from '../../interfaces/Material.interface';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
 import {faMinusSquare} from '@fortawesome/free-solid-svg-icons'
+import {MaterialF} from '../../interfaces/MaterialF.interface'
 
 @Component({
   selector: 'app-materials',
@@ -20,9 +21,23 @@ export class MaterialsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.materialService
-      .getMaterials()
-      .subscribe((materials) => (this.materials = materials));
+    // this.materialService
+    //   .getMaterials()
+    //   .subscribe((materials) => {
+    //     this.materials = materials;
+    //     console.log('Materials from json-server',this.materials);
+
+    //   });
+
+    this.materialService.getMaterialsFromFireBase()
+    .subscribe((materials)=> {
+      this.materials = materials as Material[]
+    
+      console.log(`Materiale primite din firebase`,this.materials)
+    });
+  
+  
+    
   }
 
   deleteMaterial(material: Material) {
@@ -31,6 +46,12 @@ export class MaterialsComponent implements OnInit {
 
   addMaterial(material: Material) {
     this.materialService.addMaterial(material).subscribe((material)=>this.materials.push(material))
+  }
+  addMaterialtoFireBase(material: Material) {
+    this.materialService.addMaterialtoFireBase(material)
+  }
+  deleteMaterialFromFirebBase(material: Material) {
+    this.materialService.deleteMaterialFromFirebBase(material)
   }
 
   toggleAddMaterial() {
