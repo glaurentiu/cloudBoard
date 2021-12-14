@@ -13,7 +13,7 @@ import { Router } from "@angular/router";
 export class RaportBillingComponent implements OnInit {
   raportDetail: Raport[] = []
   numberLeft?: number;
-  @Input() projectId?: Number;
+  @Input() projectId?: string;
   @Output() onClick: EventEmitter<Raport> = new EventEmitter();
 
   constructor(
@@ -28,7 +28,7 @@ export class RaportBillingComponent implements OnInit {
 
   getRaport(): void {
     this.raportService.getRaports().subscribe((raports) => {
-      this.raportDetail = raports;
+      this.raportDetail = raports as Raport[];
     });
   }
   getNumber(): void {
@@ -37,7 +37,7 @@ export class RaportBillingComponent implements OnInit {
 
   markAsFinsihed(raport: Raport): void {
     this.onClick.emit(raport)
-    this.raportService.updateRaport(raport).subscribe();
+    this.raportService.updateRaport(raport)
   
   }
 }

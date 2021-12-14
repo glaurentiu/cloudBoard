@@ -24,11 +24,10 @@ export class RaportsComponent implements OnInit {
   ngOnInit(): void {
     this.raportService
       .getRaports()
-      .subscribe((raports) => (this.raports = raports));
+      .subscribe((raports) => (this.raports = raports as Raport[]) );
   }
   addRaport(raport: Raport) {
     this.raportService
       .addRaport(raport)
-      .subscribe((raport) => this.raports.push(raport));
   }
 }

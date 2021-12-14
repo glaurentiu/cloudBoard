@@ -1,5 +1,5 @@
 export interface Request {
-    id?: Number;
+    id?: string;
     client: string ;
     address: string ;
     date: string ;

@@ -32,7 +32,7 @@ export class RequestItemComponent implements OnInit {
     this.getRequest();
     this.raportService
     .getRaports()
-    .subscribe((raports) => (this.raports = raports));
+    .subscribe((raports) => (this.raports = raports as Raport[]));
   }
 
  deleteRequest(request: Request) {
@@ -52,7 +52,6 @@ export class RequestItemComponent implements OnInit {
   addRaport(raport: Raport) {
     this.raportService
       .addRaport(raport)
-      .subscribe((raport) => this.raports.push(raport));
   }
 
   hasRoute(route: string) {

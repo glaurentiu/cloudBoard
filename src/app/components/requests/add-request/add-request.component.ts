@@ -44,6 +44,6 @@ export class AddRequestComponent implements OnInit {
 
     this.onAddRequest.emit(newRequest);
     this.addRequestForm.reset();
-    window.location.reload();
+    setTimeout(window.location.reload,1000)
   }
 }
