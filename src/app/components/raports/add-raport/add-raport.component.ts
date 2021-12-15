@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { Raport } from "../../../interfaces/Raport.interface";
-import { FormGroup, FormBuilder, FormControl, FormArray } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from "@angular/forms";
 import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../../interfaces/Material.interface";
 import {ProjectsService} from '../../../services/projects.service';
@@ -45,10 +45,10 @@ export class AddRaportComponent implements OnInit {
   initializeForm(): void {
     this.addRaportForm = this.fb.group({
       projectAndClient: "",
-      date: "",
-      team: "",
+      date: ['', Validators.required],
+      team: ['', [Validators.required, Validators.minLength(3)]],
       materialsUsed: [],
-      description: "",
+      description: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
@@ -68,6 +68,10 @@ export class AddRaportComponent implements OnInit {
 
     this.onAddRaport.emit(newRaport);
     this.addRaportForm.reset();
+    for (let control in this.addRaportForm.controls) {
+      this.addRaportForm.controls[control].setErrors(null);
+      
+    }
 
   }
 

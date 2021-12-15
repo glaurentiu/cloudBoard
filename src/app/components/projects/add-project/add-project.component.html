@@ -45,7 +45,7 @@
     </p>
   </div>
   <div  fxLayout="row" fxLayoutAlign="space-evenly center">
-  <button type="submit" mat-raised-button color="primary">Salveaza</button>
+  <button type="submit" mat-raised-button color="primary" [disabled]="!addProjectForm.valid">Salveaza</button>
 
 
 
