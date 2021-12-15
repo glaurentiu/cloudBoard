@@ -15,7 +15,7 @@
       </p><p>
       <mat-form-field appearance="outline">
         <mat-label>Pret:</mat-label>
-        <input matInput formControlName="price" placeholder="ex: 10">
+        <input matInput formControlName="price" placeholder="ex: 12.97">
       </mat-form-field></p><p>
       <mat-form-field appearance="outline">
         <mat-label>Cantitate:</mat-label>
@@ -26,7 +26,7 @@
   </div>
   <div  fxLayout="row" fxLayoutAlign="space-evenly center">
   <p>
-    <button type="submit" mat-raised-button color="primary">Adauga material</button>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!addMaterialForm.valid">Adauga material</button>
 </p>
 </div>
 </form>

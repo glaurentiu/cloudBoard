@@ -26,6 +26,7 @@ export class RequestItemComponent implements OnInit {
     private location: Location,
     private requestService: RequestService,
     private raportService: RaportService,
+ 
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +38,7 @@ export class RequestItemComponent implements OnInit {
 
  deleteRequest(request: Request) {
   this.requestService.deleteRequest(request)
-  setTimeout(this.reloadPage,1000)
+
  }
  reloadPage() {
   window.location.reload();

@@ -28,7 +28,6 @@ export class RaportService {
 
   updateRaport(raport:Raport){
   const raportDocRef = doc(this.firestore, `raports/${raport.id}`);
-  setTimeout(this.reloadPage,1000)
   return updateDoc(raportDocRef, {bill: true})
 
   }

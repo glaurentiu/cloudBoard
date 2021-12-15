@@ -72,7 +72,6 @@ export class AddRequestRaportComponent implements OnInit {
 
     this.onAddRaportRequest.emit(newRaport);
     this.addRaportRequestForm.reset();
-    setTimeout(this.reloadPage,1000)
   }
 
   updateMaterials(material: Material, newMaterial: Material): void {

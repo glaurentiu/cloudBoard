@@ -1,6 +1,5 @@
 import { Component, OnInit, Output , EventEmitter} from '@angular/core';
-import {FormGroup, FormBuilder} from '@angular/forms';
-import { faWindows } from '@fortawesome/free-brands-svg-icons';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Request} from '../../../interfaces/Request.interface';
 
 @Component({
@@ -15,7 +14,7 @@ export class AddRequestComponent implements OnInit {
   addRequestForm: FormGroup = new FormGroup({});
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -23,18 +22,27 @@ export class AddRequestComponent implements OnInit {
 
   initializeForm(): void {
     this.addRequestForm = this.fb.group({
-      client:'',
-      address: '',
-      date: '',
-      problem: '',
+      client:['', [Validators.required, Validators.minLength(3)]],
+      address:['', [Validators.required, Validators.minLength(3)]],
+      date:['', [Validators.required, Validators.minLength(3)]],
+      problem:['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
   onSubmit(){
-    if(!this.addRequestForm.value.client) {
-      alert('Introduce numele clientului');
-      return;
-    }
+
+    /************************************************************************************************
+     Old method to notify the user that the form has erros , but not using it anymore because 
+     now use the disabled submit button method
+     ************************************************************************************************
+     
+     if(!this.addRequestForm.valid) {
+       alert('Verificati formularul');
+       return;
+      }
+      
+    ************************************************************************************************/
+    
     const newRequest = {
       client: this.addRequestForm.value.client,
       address: this.addRequestForm.value.address,
@@ -43,7 +51,13 @@ export class AddRequestComponent implements OnInit {
     };
 
     this.onAddRequest.emit(newRequest);
+    /**************Reset the values of the form **************/ 
     this.addRequestForm.reset();
-    setTimeout(window.location.reload,1000)
+    /**************Reset each field errors after submit ************ */
+    for (let control in this.addRequestForm.controls) {
+      this.addRequestForm.controls[control].setErrors(null);
+      
+    }
+  
   }
 }
