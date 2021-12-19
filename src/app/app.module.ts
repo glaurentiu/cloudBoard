@@ -46,10 +46,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { LandingComponent } from './components/landing/landing.component';
+import { LoginComponent } from './components/login/login.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'materials', component: MaterialsComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'requests', component: RequestsComponent },
@@ -81,6 +86,8 @@ const appRoutes: Routes = [
     RequestItemComponent,
     RaportBillingComponent,
     AddRequestRaportComponent,
+    LandingComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,6 +114,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    HotToastModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
