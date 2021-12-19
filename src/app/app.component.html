@@ -20,7 +20,7 @@
   </mat-toolbar>
 
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="true"  *ngIf="authService.currentUser$ | async as user">
+    <mat-drawer mode="side" [opened]="true" >
         <app-header></app-header>
     </mat-drawer>
     <mat-drawer-content>

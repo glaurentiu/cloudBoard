@@ -8,15 +8,22 @@ import { from } from 'rxjs';
 })
 export class AuthenticationService {
 
-  currentUser$ = authState(this.auth)
+ 
+
+  get isLoggedIn(): boolean {
+    return !!this.auth.currentUser;
+  }
 
   constructor(private auth: Auth) {  }
 
   login(username: string, password: string) {
+   
    return from(signInWithEmailAndPassword(this.auth, username, password));
   }
 
   logout() {
+   
     return from(this.auth.signOut())
   }
+  
 }

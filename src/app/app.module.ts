@@ -19,6 +19,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import {AuthGuard} from '../app/components/shared/security/auth.guard'
 
 
 import { AppComponent } from './app.component';
@@ -53,14 +54,14 @@ import { HotToastModule } from '@ngneat/hot-toast';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent , canActivate:[AuthGuard]},
   { path: 'login', component: LoginComponent },
-  { path: 'materials', component: MaterialsComponent },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'requests', component: RequestsComponent },
-  { path: 'billing', component: BillingComponent },
-  { path: 'project/:id', component: ProjectDetailComponent },
-  { path: 'requests/:id', component: RequestItemComponent },
+  { path: 'materials', component: MaterialsComponent, canActivate:[AuthGuard] },
+  { path: 'projects', component: ProjectsComponent, canActivate:[AuthGuard] },
+  { path: 'requests', component: RequestsComponent, canActivate:[AuthGuard] },
+  { path: 'billing', component: BillingComponent, canActivate:[AuthGuard] },
+  { path: 'project/:id', component: ProjectDetailComponent, canActivate:[AuthGuard] },
+  { path: 'requests/:id', component: RequestItemComponent, canActivate:[AuthGuard] },
 
 ];
 
