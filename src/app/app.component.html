@@ -4,7 +4,7 @@
         <h1>{{title}}</h1>
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-            <ul fxLayout="row" fxLayoutGap="20px">
+            <ul fxLayout="row" fxLayoutGap="20px" *ngIf="authService.isLoggedIn">
                
                 <li>
                     <button mat-button (click)="logout()">
