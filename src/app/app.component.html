@@ -20,7 +20,7 @@
   </mat-toolbar>
 
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="true" >
+    <mat-drawer mode="side" [opened]="true" *ngIf="authService.isLoggedIn">
         <app-header></app-header>
     </mat-drawer>
     <mat-drawer-content>
