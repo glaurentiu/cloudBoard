@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { Material } from "../../../interfaces/Material.interface";
-import { UiService } from "../../../services/ui.service";
-import { Subscription } from "rxjs";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 @Component({
   selector: "app-add-material",
@@ -12,28 +10,24 @@ export class AddMaterialComponent implements OnInit {
   @Output() onAddMaterial: EventEmitter<Material> = new EventEmitter();
   addMaterialForm: FormGroup = new FormGroup({});
   showAddMaterial: boolean = false;
-  subscription: Subscription;
+
   alertSucces = false;
   alertFailed = false;
-  constructor(private uiService: UiService, private fb: FormBuilder) {
-    this.subscription = this.uiService
-      .onToggle()
-      .subscribe((value) => (this.showAddMaterial = value));
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.initializeFrom();
   }
   initializeFrom(): void {
     this.addMaterialForm = this.fb.group({
-      text: ["",Validators.required],
+      text: ["", Validators.required],
       price: [
         null,
         [
           Validators.pattern("[0-9]+(.[0-9][0-9]?)?"),
           Validators.min(0.01),
           Validators.max(1000000),
-          Validators.required
+          Validators.required,
         ],
       ],
       quantity: [
@@ -42,7 +36,7 @@ export class AddMaterialComponent implements OnInit {
           Validators.pattern("[0-9]+(.[0-9][0-9]?)?"),
           Validators.min(0.01),
           Validators.max(1000000),
-          Validators.required
+          Validators.required,
         ],
       ],
     });
@@ -70,9 +64,5 @@ export class AddMaterialComponent implements OnInit {
     setTimeout(() => {
       this.alertSucces = false;
     }, 2000);
-  }
-
-  close(alert: boolean) {
-    alert = false;
   }
 }
