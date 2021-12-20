@@ -8,7 +8,7 @@ export class MaterialSearchPipe implements PipeTransform {
   transform(list: any[], value: string) {
   
 
-    return value ? list.filter(item => item.text.includes(value)) : list;
+    return value ? list.filter(item => item.text.toLowerCase().includes(value.toLowerCase())) : list;
   }
 
 }

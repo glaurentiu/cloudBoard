@@ -26,7 +26,7 @@
     <tr *ngFor="let material of materials | materialSearch : materialName">
     <td>{{material?.text | uppercase}}</td>
     <td>{{material?.price}} lei</td>
-    <td>{{material?.quantity}} m</td>
+    <td>{{material?.quantity}} m  </td>
     <td> <mat-icon (click)="deleteMaterialFromFirebBase(material)" [ngStyle]="{'color': 'red'}">delete</mat-icon></td>
  
 </tr>
