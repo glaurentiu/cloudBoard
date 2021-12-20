@@ -2,6 +2,16 @@
 <!-- <app-button color="{{showAddMaterial ? 'red': 'green'}}" text="{{showAddMaterial ? 'Inchide': 'Adauga Material'}}" (btnClick)="toggleAddMaterial()"></app-button> -->
 
 <app-add-material (onAddMaterial)="addMaterialtoFireBase($event)"></app-add-material>
+<mat-divider></mat-divider>
+<form class="form-group margin-top">
+ 
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Cauta material</mat-label>
+      <input matInput [(ngModel)]="materialName" [ngModelOptions]="{standalone: true}" placeholder="ex: CABLU UTP">
+    </mat-form-field>
+    </p><p>
+</form>
 
 <table class="table table-striped table-bordered mat-elevation-z5">
   <thead>
@@ -13,8 +23,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let material of materials">
-    <td>{{material?.text}}</td>
+    <tr *ngFor="let material of materials | materialSearch : materialName">
+    <td>{{material?.text | uppercase}}</td>
     <td>{{material?.price}} lei</td>
     <td>{{material?.quantity}} m</td>
     <td> <mat-icon (click)="deleteMaterialFromFirebBase(material)" [ngStyle]="{'color': 'red'}">delete</mat-icon></td>

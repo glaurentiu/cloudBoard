@@ -51,6 +51,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { HotToastModule } from '@ngneat/hot-toast';
+import { MaterialSearchPipe } from './components/materials/material-search.pipe';
+import { ProjectSearchPipe } from './components/projects/project-search.pipe';
 
 
 const appRoutes: Routes = [
@@ -89,6 +91,8 @@ const appRoutes: Routes = [
     AddRequestRaportComponent,
     LandingComponent,
     LoginComponent,
+    MaterialSearchPipe,
+    ProjectSearchPipe,
   ],
   imports: [
     BrowserModule,

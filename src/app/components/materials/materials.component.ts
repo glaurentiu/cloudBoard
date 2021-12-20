@@ -12,6 +12,7 @@ import {MaterialF} from '../../interfaces/MaterialF.interface'
   styleUrls: ['./materials.component.css'],
 })
 export class MaterialsComponent implements OnInit {
+  materialName: string = '';
   materials: Material[] = [];
   showAddMaterial: boolean = false;
   subscription?: Subscription;
