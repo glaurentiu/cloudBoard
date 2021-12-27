@@ -8,21 +8,25 @@
           <mat-form-field appearance="outline">
             <mat-label>Client</mat-label>
             <input matInput formControlName="client" placeholder="">
+            <mat-error>Numele clientului nu este valid</mat-error>
           </mat-form-field>
           </p><p>
           <mat-form-field appearance="outline">
             <mat-label>Adresa:</mat-label>
             <input matInput formControlName="address" placeholder="">
+            <mat-error>Adresa nu este valida</mat-error>
           </mat-form-field></p><p>
           <mat-form-field appearance="outline">
             <mat-label>Data Programare</mat-label>
             <input matInput type="date" formControlName="date" placeholder="">
+            <mat-error>Data este invalida</mat-error>
           </mat-form-field>
         </p>
         <p>
             <mat-form-field appearance="outline">
               <mat-label>Problema</mat-label>
               <input matInput type="text" formControlName="problem" placeholder="">
+              <mat-error>Invalid</mat-error>
             </mat-form-field>
           </p>
      

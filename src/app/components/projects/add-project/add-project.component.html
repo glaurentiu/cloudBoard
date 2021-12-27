@@ -6,18 +6,21 @@
       <mat-form-field appearance="outline">
         <mat-label>Titlu Lucrare</mat-label>
         <input matInput formControlName="title" placeholder="">
+        <mat-error>Titlu lucrare nu este valid</mat-error>
       </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Client</mat-label>
           <input matInput formControlName="client" placeholder="">
+          <mat-error>Nume client nu este valid</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Locatie</mat-label>
           <input matInput formControlName="location" placeholder="">
+          <mat-error>Acest camp este necesar</mat-error>
         </mat-form-field>
       </p>
      
@@ -31,12 +34,15 @@
         <mat-form-field appearance="outline">
           <mat-label>Data</mat-label>
           <input matInput type="date" formControlName="date" placeholder="">
+          <mat-error>Acest camp este necesar</mat-error>
+    
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Descriere</mat-label>
           <input matInput formControlName="description" placeholder="">
+          <mat-error>Introduce descriere</mat-error>
         </mat-form-field>
       </p>
       <p>
@@ -46,8 +52,9 @@
           <mat-option *ngFor="let type of statusType" value="{{type}}">
             {{type}}
           </mat-option>
+         
         </mat-select>
-
+        <mat-error>Acest camp este necesar</mat-error>
       </mat-form-field>
     </p>
   </div>
