@@ -13,7 +13,7 @@
                                 {{raportDetail?.projectAndClient | uppercase}}
                             </mat-panel-title>
                             <mat-panel-description>
-                             Echipa: {{raportDetail?.team}} , Data: {{raportDetail?.date}}
+                             Echipa: {{raportDetail?.team}} , Data: {{raportDetail?.date | date}}
                             </mat-panel-description>
                             <mat-panel-description>
                                 <span (click)=markAsFinsihed(raportDetail)><strong>Marcheaza ca facturat</strong></span>
