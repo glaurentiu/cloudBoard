@@ -16,7 +16,6 @@ export class DeleteRequestComponent implements OnInit {
   ngOnInit(): void {
   }
   deleteRequest(request: Request): void {
-    console.log('requeste este ',request);
     this.requestService.deleteRequest(request);
   }
 }

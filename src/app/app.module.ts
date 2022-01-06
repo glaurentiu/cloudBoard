@@ -73,6 +73,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { appRoutes } from "../app/routes/index";
 import { DeleteRequestComponent } from './components/requests/delete-request/delete-request.component';
+import { DeleteMaterialComponent } from './components/materials/delete-material/delete-material.component';
 
 ///////////////////////////////////////////////////////////////
 
@@ -101,6 +102,7 @@ import { DeleteRequestComponent } from './components/requests/delete-request/del
     MaterialSearchPipe,
     ProjectSearchPipe,
     DeleteRequestComponent,
+    DeleteMaterialComponent,
   ],
   imports: [
     BrowserModule,

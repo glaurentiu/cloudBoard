@@ -1,6 +1,9 @@
-import { Component, OnInit, Output , EventEmitter } from '@angular/core';"@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+("@angular/core");
 import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../interfaces/Material.interface";
+import { DeleteMaterialComponent } from "./delete-material/delete-material.component";
+import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
   selector: "app-materials",
@@ -8,13 +11,15 @@ import { Material } from "../../interfaces/Material.interface";
   styleUrls: ["./materials.component.css"],
 })
 export class MaterialsComponent implements OnInit {
-
   materialName: string = "";
   materials: Material[] = [];
   editMode = false;
-  editId = '';
+  editId = "";
 
-  constructor(private materialService: MaterialService) {}
+  constructor(
+    private materialService: MaterialService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.materialService.getMaterialsFromFireBase().subscribe((materials) => {
@@ -24,28 +29,32 @@ export class MaterialsComponent implements OnInit {
   addMaterialtoFireBase(material: Material) {
     this.materialService.addMaterialtoFireBase(material);
   }
-  deleteMaterialFromFirebBase(material: Material) {
-    this.materialService.deleteMaterialFromFirebBase(material);
+ 
+  openDialog(material: Material) {
+    this.dialog.open(DeleteMaterialComponent, {
+      data: {
+        material: material,
+      },
+    });
   }
+
   editMaterialFromFirebBase(material: Material) {
-    console.log('material in functie', material)
+    console.log("material in functie", material);
     this.materialService.editMaterialFromFirebBase(material);
   }
 
-  enterEditMode(id: string){
+  enterEditMode(id: string) {
     this.editId = id;
     this.editMode = true;
-
   }
 
-  compareId(id: string,editId: string): boolean {
-    return id === editId
+  compareId(id: string, editId: string): boolean {
+    return id === editId;
   }
 
-  exitEditMode(material: Material) :void {
+  exitEditMode(material: Material): void {
     this.editMaterialFromFirebBase(material);
     this.editMode = false;
-    console.log(material)
-
+    console.log(material);
   }
 }

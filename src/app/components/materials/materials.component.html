@@ -35,7 +35,7 @@
         <td class="saveEdit">
           <mat-icon *ngIf="!editMode || !compareId(material.id,editId)" (click)="enterEditMode(material.id)" [ngStyle]="{'color': 'green'}">edit</mat-icon>
           <mat-icon *ngIf="editMode && compareId(material.id,editId)" (click)="exitEditMode(material)" [ngStyle]="{'color': 'green'}">save</mat-icon>
-          <mat-icon (click)="deleteMaterialFromFirebBase(material)" [ngStyle]="{'color': 'red'}">delete</mat-icon>
+          <mat-icon (click)="openDialog(material)" [ngStyle]="{'color': 'red'}">delete</mat-icon>
         </td>
 
       </tr>
