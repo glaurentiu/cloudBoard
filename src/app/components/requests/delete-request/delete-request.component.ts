@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { RequestService } from "../../../services/request.service";
 import { Request } from "../../../interfaces/Request.interface";
-import { MatDialog , MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {  MAT_DIALOG_DATA} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-delete-request',

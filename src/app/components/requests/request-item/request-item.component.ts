@@ -39,18 +39,13 @@ export class RequestItemComponent implements OnInit {
       .subscribe((raports) => (this.raports = raports as Raport[]));
   }
 
-  deleteRequest(request: Request) {
-    this.requestService.deleteRequest(request);
-  }
   openDialog(request: Request) {
-    const dialogRef = this.dialog.open(DeleteRequestComponent, {
+   this.dialog.open(DeleteRequestComponent, {
       data: {
         request: request,
       },
     });
-
-    dialogRef.afterOpened().subscribe(() => this.onDelete.emit(request))
-    dialogRef.afterClosed().subscribe();
+  
   
   }
 
