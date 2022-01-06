@@ -1,5 +1,4 @@
 import { Routes } from "@angular/router";
-import { BillingComponent } from "../components/billing/billing.component";
 import { HomeComponent } from "../components/home/home.component";
 import { LoginComponent } from "../components/login/login.component";
 import { MaterialsComponent } from "../components/materials/materials.component";
@@ -15,7 +14,6 @@ export const appRoutes: Routes = [
   { path: "materials", component: MaterialsComponent },
   { path: "projects", component: ProjectsComponent },
   { path: "requests", component: RequestsComponent },
-  { path: "billing", component: BillingComponent },
   { path: "project/:id", component: ProjectDetailComponent },
   { path: "requests/:id", component: RequestItemComponent },
 ];

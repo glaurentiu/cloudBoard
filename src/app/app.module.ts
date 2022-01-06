@@ -11,7 +11,6 @@ import { ProjectsComponent } from "./components/projects/projects.component";
 import { RaportsComponent } from "./components/raports/raports.component";
 import { ComponentsComponent } from "./components/components.component";
 import { RequestsComponent } from "./components/requests/requests.component";
-import { BillingComponent } from "./components/billing/billing.component";
 import { ProjectDetailComponent } from "./components/projects/project-detail/project-detail.component";
 import { AddProjectComponent } from "./components/projects/add-project/add-project.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -21,8 +20,6 @@ import { AddRequestComponent } from "./components/requests/add-request/add-reque
 import { RequestItemComponent } from "./components/requests/request-item/request-item.component";
 import { RaportBillingComponent } from "./components/raports/raport-billing/raport-billing.component";
 import { AddRequestRaportComponent } from "./components/requests/add-request-raport/add-request-raport.component";
-import { provideAuth, getAuth } from "@angular/fire/auth";
-import { LandingComponent } from "./components/landing/landing.component";
 import { LoginComponent } from "./components/login/login.component";
 
 //Angular Material 
@@ -51,6 +48,7 @@ import { MaterialSearchPipe } from "./components/materials/material-search.pipe"
 import { initializeApp, provideFirebaseApp } from "@angular/fire/app";
 import { provideFirestore, getFirestore } from "@angular/fire/firestore";
 import { environment } from "../environments/environment";
+import { provideAuth, getAuth } from "@angular/fire/auth";
 //Bootstrap
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -90,7 +88,6 @@ import { appRoutes } from "../app/routes/index";
     RaportsComponent,
     ComponentsComponent,
     RequestsComponent,
-    BillingComponent,
     ProjectDetailComponent,
     AddProjectComponent,
     AddRaportComponent,
@@ -99,7 +96,6 @@ import { appRoutes } from "../app/routes/index";
     RequestItemComponent,
     RaportBillingComponent,
     AddRequestRaportComponent,
-    LandingComponent,
     LoginComponent,
     MaterialSearchPipe,
     ProjectSearchPipe,
