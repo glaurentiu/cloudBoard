@@ -1,0 +1,17 @@
+
+<h2 mat-dialog-title>Esti sigur ca vrei sa stergi interventia?</h2>
+<mat-dialog-content class="mat-typography">
+  
+ 
+  <p>Client:</p>
+  <p style="color:red">{{data.request.client}}</p>
+  <p>Problema:</p>
+  <p style="color:red">{{data.request.problem}}</p>
+    <p>Data:</p>
+  <p style="color:red">{{data.request.date}}</p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+<button mat-button  mat-dialog-close>Anuleaza</button>
+  <button mat-button mat-dialog-close  (click)=deleteRequest(data.request) style="color:red">Sterge</button>
+</mat-dialog-actions>

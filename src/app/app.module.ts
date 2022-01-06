@@ -37,7 +37,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatCardModule } from "@angular/material/card";
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
-
+import {MatDialogModule} from '@angular/material/dialog';
 //Pipes
 
 import { ProjectSearchPipe } from "./components/projects/project-search.pipe";
@@ -72,6 +72,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 //Routes
 
 import { appRoutes } from "../app/routes/index";
+import { DeleteRequestComponent } from './components/requests/delete-request/delete-request.component';
 
 ///////////////////////////////////////////////////////////////
 
@@ -99,6 +100,7 @@ import { appRoutes } from "../app/routes/index";
     LoginComponent,
     MaterialSearchPipe,
     ProjectSearchPipe,
+    DeleteRequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -127,6 +129,7 @@ import { appRoutes } from "../app/routes/index";
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     HotToastModule.forRoot(),
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

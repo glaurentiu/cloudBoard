@@ -21,7 +21,7 @@
         <td>{{request?.date | date}} </td>
         <td>{{request?.problem}}</td>
         <td ><a routerLink="/requests/{{request.id}}">Adauga proces verbal</a></td>
-        <td style="text-align:center"> <mat-icon (click)="deleteRequest(request)" [ngStyle]="{'color': 'red'}" >delete</mat-icon></td>
+        <td style="text-align:center"> <mat-icon (click)="openDialog(request)" [ngStyle]="{'color': 'red'}" >delete</mat-icon></td>
           
           
         </tr>
