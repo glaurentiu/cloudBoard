@@ -1,71 +1,81 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatCardModule} from '@angular/material/card';
-import {MatSelectModule} from '@angular/material/select';
-import {AuthGuard} from '../app/components/shared/security/auth.guard'
+//Components
 
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./components/shared/header/header.component";
+import { ButtonComponent } from "./components/shared/button/button.component";
+import { MaterialsComponent } from "./components/materials/materials.component";
+import { MaterialItemComponent } from "./components/materials/material-item/material-item.component";
+import { AddMaterialComponent } from "./components/materials/add-material/add-material.component";
+import { HomeComponent } from "./components/home/home.component";
+import { ProjectsComponent } from "./components/projects/projects.component";
+import { RaportsComponent } from "./components/raports/raports.component";
+import { ComponentsComponent } from "./components/components.component";
+import { RequestsComponent } from "./components/requests/requests.component";
+import { BillingComponent } from "./components/billing/billing.component";
+import { ProjectDetailComponent } from "./components/projects/project-detail/project-detail.component";
+import { AddProjectComponent } from "./components/projects/add-project/add-project.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AddRaportComponent } from "./components/raports/add-raport/add-raport.component";
+import { RaportDetailComponent } from "./components/raports/raport-detail/raport-detail.component";
+import { AddRequestComponent } from "./components/requests/add-request/add-request.component";
+import { RequestItemComponent } from "./components/requests/request-item/request-item.component";
+import { RaportBillingComponent } from "./components/raports/raport-billing/raport-billing.component";
+import { AddRequestRaportComponent } from "./components/requests/add-request-raport/add-request-raport.component";
+import { provideAuth, getAuth } from "@angular/fire/auth";
+import { LandingComponent } from "./components/landing/landing.component";
+import { LoginComponent } from "./components/login/login.component";
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/shared/header/header.component';
-import { ButtonComponent } from './components/shared/button/button.component';
-import { MaterialsComponent } from './components/materials/materials.component';
-import { MaterialItemComponent } from './components/materials/material-item/material-item.component';
-import { AddMaterialComponent } from './components/materials/add-material/add-material.component';
-import { HomeComponent } from './components/home/home.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { RaportsComponent } from './components/raports/raports.component';
-import { ComponentsComponent } from './components/components.component';
-import { RequestsComponent } from './components/requests/requests.component';
-import { BillingComponent } from './components/billing/billing.component';
-import { ProjectDetailComponent } from './components/projects/project-detail/project-detail.component';
-import { AddProjectComponent } from './components/projects/add-project/add-project.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddRaportComponent } from './components/raports/add-raport/add-raport.component';
-import { RaportDetailComponent } from './components/raports/raport-detail/raport-detail.component';
-import { AddRequestComponent } from './components/requests/add-request/add-request.component';
-import { RequestItemComponent } from './components/requests/request-item/request-item.component';
-import { RaportBillingComponent } from './components/raports/raport-billing/raport-billing.component';
-import { AddRequestRaportComponent } from './components/requests/add-request-raport/add-request-raport.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { LandingComponent } from './components/landing/landing.component';
-import { LoginComponent } from './components/login/login.component';
-import { HotToastModule } from '@ngneat/hot-toast';
-import { MaterialSearchPipe } from './components/materials/material-search.pipe';
-import { ProjectSearchPipe } from './components/projects/project-search.pipe';
+//Angular Material 
 
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatBadgeModule } from "@angular/material/badge";
+import { MatButtonModule } from "@angular/material/button";
+import { MatListModule } from "@angular/material/list";
+import { MatIconModule } from "@angular/material/icon";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatCardModule } from "@angular/material/card";
+import { MatSelectModule } from "@angular/material/select";
+import { MatInputModule } from "@angular/material/input";
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent , canActivate:[AuthGuard]},
-  { path: 'login', component: LoginComponent },
-  { path: 'materials', component: MaterialsComponent,},
-  { path: 'projects', component: ProjectsComponent, },
-  { path: 'requests', component: RequestsComponent, },
-  { path: 'billing', component: BillingComponent,  },
-  { path: 'project/:id', component: ProjectDetailComponent, },
-  { path: 'requests/:id', component: RequestItemComponent,},
+//Pipes
 
-];
+import { ProjectSearchPipe } from "./components/projects/project-search.pipe";
+import { MaterialSearchPipe } from "./components/materials/material-search.pipe";
+
+//Database
+
+import { initializeApp, provideFirebaseApp } from "@angular/fire/app";
+import { provideFirestore, getFirestore } from "@angular/fire/firestore";
+import { environment } from "../environments/environment";
+//Bootstrap
+
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
+//Toast Notifications
+
+import { HotToastModule } from "@ngneat/hot-toast";
+//FontAwesomeModule
+
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+//Angular
+
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
+import { FlexLayoutModule } from "@angular/flex-layout";
+
+//Routes
+
+import { appRoutes } from "../app/routes/index";
+
+///////////////////////////////////////////////////////////////
 
 @NgModule({
   declarations: [
@@ -99,7 +109,7 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, ),
+    RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatListModule,
