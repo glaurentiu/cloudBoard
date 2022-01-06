@@ -27,11 +27,11 @@
     <tbody>
       <tr *ngFor="let material of materials | materialSearch : materialName">
         <td *ngIf="!editMode || !compareId(material.id,editId)">{{material?.text | uppercase}}</td>
-        <td *ngIf="editMode && compareId(material.id,editId)"><input type="text" [(ngModel)]="material.text"></td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input size={{material.text.length}} type="text" [(ngModel)]="material.text"></td>
         <td *ngIf="!editMode || !compareId(material.id,editId)" >{{material?.price}} lei</td>
-        <td *ngIf="editMode && compareId(material.id,editId)"><input type="text" [(ngModel)]="material.price"></td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input size={{material.price.length}} type="text" [(ngModel)]="material.price"></td>
         <td *ngIf="!editMode || !compareId(material.id,editId)" >{{material?.quantity}} m</td>
-        <td *ngIf="editMode && compareId(material.id,editId)"><input type="text" [(ngModel)]="material.quantity"></td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input size={{material.quantity.length}} type="text" [(ngModel)]="material.quantity"></td>
         <td class="saveEdit">
           <mat-icon *ngIf="!editMode || !compareId(material.id,editId)" (click)="enterEditMode(material.id)" [ngStyle]="{'color': 'green'}">edit</mat-icon>
           <mat-icon *ngIf="editMode && compareId(material.id,editId)" (click)="exitEditMode(material)" [ngStyle]="{'color': 'green'}">save</mat-icon>

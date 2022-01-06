@@ -58,12 +58,12 @@ import { ProjectSearchPipe } from './components/projects/project-search.pipe';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent , canActivate:[AuthGuard]},
   { path: 'login', component: LoginComponent },
-  { path: 'materials', component: MaterialsComponent, canActivate:[AuthGuard] },
-  { path: 'projects', component: ProjectsComponent, canActivate:[AuthGuard] },
-  { path: 'requests', component: RequestsComponent, canActivate:[AuthGuard] },
-  { path: 'billing', component: BillingComponent, canActivate:[AuthGuard] },
-  { path: 'project/:id', component: ProjectDetailComponent, canActivate:[AuthGuard] },
-  { path: 'requests/:id', component: RequestItemComponent, canActivate:[AuthGuard] },
+  { path: 'materials', component: MaterialsComponent,},
+  { path: 'projects', component: ProjectsComponent, },
+  { path: 'requests', component: RequestsComponent, },
+  { path: 'billing', component: BillingComponent,  },
+  { path: 'project/:id', component: ProjectDetailComponent, },
+  { path: 'requests/:id', component: RequestItemComponent,},
 
 ];
 
@@ -99,7 +99,7 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    RouterModule.forRoot(appRoutes, ),
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatListModule,
