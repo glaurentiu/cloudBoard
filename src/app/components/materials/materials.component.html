@@ -20,19 +20,26 @@
         <th scope="col">DENUMIRE</th>
         <th scope="col">PRET</th>
         <th scope="col">CANTITATE</th>
-        <th scope="col">STERGE</th>
+        <th scope="col"></th>
+        
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let material of materials | materialSearch : materialName">
-        <td>{{material?.text | uppercase}}</td>
-        <td>{{material?.price}} lei</td>
-        <td>{{material?.quantity}} m </td>
-        <td>
+        <td *ngIf="!editMode || !compareId(material.id,editId)">{{material?.text | uppercase}}</td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input type="text" [(ngModel)]="material.text"></td>
+        <td *ngIf="!editMode || !compareId(material.id,editId)" >{{material?.price}} lei</td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input type="text" [(ngModel)]="material.price"></td>
+        <td *ngIf="!editMode || !compareId(material.id,editId)" >{{material?.quantity}} m</td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input type="text" [(ngModel)]="material.quantity"></td>
+        <td class="saveEdit">
+          <mat-icon *ngIf="!editMode || !compareId(material.id,editId)" (click)="enterEditMode(material.id)" [ngStyle]="{'color': 'green'}">edit</mat-icon>
+          <mat-icon *ngIf="editMode && compareId(material.id,editId)" (click)="exitEditMode(material)" [ngStyle]="{'color': 'green'}">save</mat-icon>
           <mat-icon (click)="deleteMaterialFromFirebBase(material)" [ngStyle]="{'color': 'red'}">delete</mat-icon>
         </td>
 
       </tr>
+      
     </tbody>
   </table>
 

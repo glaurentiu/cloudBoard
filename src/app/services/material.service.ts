@@ -58,6 +58,11 @@ export class MaterialService {
     const materialDocRef = doc(this.firestore, `materials/${material.id}`);
     return updateDoc(materialDocRef, { quantity: material.quantity - newMaterial.quantity});
   }
+  editMaterialFromFirebBase(material:Material) {
+    console.log('material in serviciu', material)
+    const materialDocRef = doc(this.firestore, `materials/${material.id}`);
+    return updateDoc(materialDocRef, { text:material.text ,quantity: material.quantity, price: material.price})
+  }
 
 ///////
   deleteMaterial(material: Material): Observable<Material> {
