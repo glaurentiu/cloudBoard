@@ -1,5 +1,5 @@
 <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()">
-  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
 
 
     <p>
@@ -8,62 +8,75 @@
         <input matInput formControlName="title" placeholder="">
         <mat-error>Titlu lucrare nu este valid</mat-error>
       </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Client</mat-label>
-          <input matInput formControlName="client" placeholder="">
-          <mat-error>Nume client nu este valid</mat-error>
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Locatie</mat-label>
-          <input matInput formControlName="location" placeholder="">
-          <mat-error>Acest camp este necesar</mat-error>
-        </mat-form-field>
-      </p>
-     
-   
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Client</mat-label>
+        <input matInput formControlName="client" placeholder="">
+        <mat-error>Nume client nu este valid</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Locatie</mat-label>
+        <input matInput formControlName="location" placeholder="">
+        <mat-error>Acest camp este necesar</mat-error>
+      </mat-form-field>
+    </p>
+
+
   </div>
-  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
 
 
 
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Data</mat-label>
-          <input matInput type="date" formControlName="date" placeholder="">
-          <mat-error>Acest camp este necesar</mat-error>
-    
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline">
-          <mat-label>Descriere</mat-label>
-          <input matInput formControlName="description" placeholder="">
-          <mat-error>Introduce descriere</mat-error>
-        </mat-form-field>
-      </p>
-      <p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Data</mat-label>
+        <input matInput type="date" formControlName="date" placeholder="">
+        <mat-error>Acest camp este necesar</mat-error>
+
+      </mat-form-field>
+    </p>
+
+    <p>
       <mat-form-field appearance="outline">
         <mat-label>Status</mat-label>
-        <mat-select formControlName="status" >
+        <mat-select formControlName="status">
           <mat-option *ngFor="let type of statusType" value="{{type}}">
             {{type}}
           </mat-option>
-         
+
         </mat-select>
         <mat-error>Acest camp este necesar</mat-error>
       </mat-form-field>
     </p>
   </div>
-  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
-  <button type="submit" mat-raised-button color="primary" [disabled]="!addProjectForm.valid">Salveaza</button>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+
+
+    <h3>Descriere</h3>
 
 
 
-</div>
+
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+
+
+
+    <angular-editor formControlName="description"></angular-editor>
+
+
+
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <button type="submit" mat-raised-button color="primary" [disabled]="!addProjectForm.valid">Salveaza</button>
+
+
+
+  </div>
 
 
 

@@ -75,6 +75,8 @@ import { appRoutes } from "../app/routes/index";
 import { DeleteRequestComponent } from './components/requests/delete-request/delete-request.component';
 import { DeleteMaterialComponent } from './components/materials/delete-material/delete-material.component';
 
+//Angular editor
+import { AngularEditorModule } from '@kolkov/angular-editor';
 ///////////////////////////////////////////////////////////////
 
 @NgModule({
@@ -131,7 +133,8 @@ import { DeleteMaterialComponent } from './components/materials/delete-material/
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     HotToastModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
+    AngularEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -16,7 +16,7 @@
       </div>
       <div class="column">
         <h3 [ngStyle]="{color: '#3f51b5'}"><strong>Descriere:</strong></h3>
-        <p>{{project?.description}}</p>
+        <p [innerHTML]="project?.description"></p>
       </div>
 
     </div>
@@ -40,10 +40,11 @@
         <h3>Data: {{projectDetail?.date}}</h3>
         </div>
 
-        <div class="column">
-          <h3 [ngStyle]="{color: '#3f51b5'}">Descriere</h3>
-          <p>{{projectDetail?.description}}</p>
+       
         </div>
+        <div class="row">
+          <h3 [ngStyle]="{color: '#3f51b5'}">Descriere</h3>
+          <p [innerHTML]="projectDetail?.description"></p>
         </div>
       </mat-card-content>
     </mat-card>
