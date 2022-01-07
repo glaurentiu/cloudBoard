@@ -3,9 +3,9 @@ import { Raport } from "../../../interfaces/Raport.interface";
 import { FormGroup, FormBuilder, FormControl, FormArray } from "@angular/forms";
 import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../../interfaces/Material.interface";
-import {ProjectsService} from '../../../services/projects.service';
 import { RequestService } from '../../../services/request.service';
 import {Request} from '../../../interfaces/Request.interface';
+import {AngularEditorConfig} from '@kolkov/angular-editor'
 
 @Component({
   selector: 'app-add-request-raport',
@@ -27,6 +27,20 @@ export class AddRequestRaportComponent implements OnInit {
   material = "";
   materialsFiltered: Material[] = [];
   clonedMaterials: Material[] = [];
+
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+      ],
+  };
 
   constructor(
     private fb: FormBuilder,

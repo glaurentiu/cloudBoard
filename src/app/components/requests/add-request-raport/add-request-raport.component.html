@@ -14,12 +14,6 @@
           <input matInput type="text" formControlName="team" placeholder="">
         </mat-form-field>
         </p>
-        <p>
-          <mat-form-field appearance="outline">
-            <mat-label>Descriere:</mat-label>
-            <input matInput type="text" formControlName="description" placeholder="">
-          </mat-form-field>
-          </p>
           <p>
             <mat-form-field appearance="outline">
               <mat-label>Materiale Folosite:</mat-label>
@@ -30,6 +24,13 @@
             </mat-form-field>
             </p>
   </div>
+  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+
+    <angular-editor [config]="config" formControlName="description" ></angular-editor>
+
+
+</div>
+
  
 
   
