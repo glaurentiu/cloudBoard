@@ -5,6 +5,7 @@ import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../../interfaces/Material.interface";
 import {ProjectsService} from '../../../services/projects.service';
 import { Project } from '../../../interfaces/Project.interface';
+import {AngularEditorConfig} from '@kolkov/angular-editor'
 
 @Component({
   selector: "app-add-raport",
@@ -25,6 +26,19 @@ export class AddRaportComponent implements OnInit {
   material = "";
   materialsFiltered: Material[] = [];
   clonedMaterials: Material[] = [];
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+      ],
+  };
   
 
   constructor(
