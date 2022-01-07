@@ -4,6 +4,7 @@ import { LoginComponent } from "../components/login/login.component";
 import { MaterialsComponent } from "../components/materials/materials.component";
 import { ProjectDetailComponent } from "../components/projects/project-detail/project-detail.component";
 import { ProjectsComponent } from "../components/projects/projects.component";
+import { RaportBillingComponent } from "../components/raports/raport-billing/raport-billing.component";
 import { RequestItemComponent } from "../components/requests/request-item/request-item.component";
 import { RequestsComponent } from "../components/requests/requests.component";
 import { AuthGuard } from "../components/shared/security/auth.guard";
@@ -16,4 +17,5 @@ export const appRoutes: Routes = [
   { path: "requests", component: RequestsComponent },
   { path: "project/:id", component: ProjectDetailComponent },
   { path: "requests/:id", component: RequestItemComponent },
+  {path: "billing" , component: RaportBillingComponent },
 ];
