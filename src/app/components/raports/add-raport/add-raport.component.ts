@@ -25,6 +25,7 @@ export class AddRaportComponent implements OnInit {
   material = "";
   materialsFiltered: Material[] = [];
   clonedMaterials: Material[] = [];
+  
 
   constructor(
     private fb: FormBuilder,

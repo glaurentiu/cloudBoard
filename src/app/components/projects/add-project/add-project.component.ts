@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { Project } from "../../../interfaces/Project.interface";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import {AngularEditorConfig} from '@kolkov/angular-editor'
 
 @Component({
   selector: "app-add-project",
@@ -13,6 +14,19 @@ export class AddProjectComponent implements OnInit {
   addProjectForm: FormGroup = new FormGroup({});
 
   statusType = ["completa", "in curs", "oferta"];
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+    toolbarHiddenButtons: [
+      ['bold']
+      ],
+  };
 
   constructor(private fb: FormBuilder) {}
 
