@@ -10,14 +10,13 @@
                     <mat-expansion-panel>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               <p><strong>{{raportDetail?.projectAndClient | uppercase}}</strong></p>
+                               <p>{{raportDetail?.projectAndClient | uppercase}}</p>
                             
                               
                             </mat-panel-title>
                            
                            
                             <mat-panel-description>
-                                <span style="color:rgb(19, 40, 201)" (click)=markAsFinsihed(raportDetail)>Marcheaza ca facturat</span>
                                 <span><em>{{raportDetail?.date | date}}</em></span>
                           
                             </mat-panel-description>
@@ -29,6 +28,9 @@
                         <ul>
                             <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} : {{material.quantity}}m</li>
                           </ul>
+                          <mat-action-row>
+                            <button mat-button color="primary" (click)="markAsFinsihed(raportDetail)">Marcheaza ca facturat</button>
+                          </mat-action-row>
                     </mat-expansion-panel>
             <mat-divider></mat-divider>
         

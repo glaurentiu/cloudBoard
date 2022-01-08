@@ -2,17 +2,14 @@
 
 <mat-nav-list>
 
-  <h2 style="color:blue" matSubheader>Pagini</h2>
+  <h2 style="color: rgb(63 81 181)" matSubheader>Pagini</h2>
   <mat-divider></mat-divider>
-  <a mat-list-item  routerLink="">Prima Pagina</a>
-
-
+  <a mat-list-item  routerLink="">Status</a>
   <a mat-list-item routerLinkActive="list-item-active" routerLink="materials">Materiale</a>
-
   <a mat-list-item routerLinkActive="list-item-active" routerLink="projects">Lucrari</a>
-
-
   <a mat-list-item routerLinkActive="list-item-active" routerLink="billing" ><span matBadge="{{raportDetail.length}}" matBadgeOverlap="false">De facturat</span></a>
   <mat-divider></mat-divider>
- 
+  <h2 style="color: rgb(63 81 181)" matSubheader>Utile</h2>
+  <mat-divider></mat-divider>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="#">Oferta CCTV</a>
 </mat-nav-list>
