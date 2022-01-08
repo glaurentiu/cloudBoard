@@ -6,19 +6,25 @@
 
         <div *ngFor="let raportDetail of raportDetail">
             <div *ngIf="!raportDetail.bill">
-                <mat-accordion>
-                       <h4>
-                        <em>{{raportDetail?.date | date}}</em>
-                       </h4>
+                <mat-accordion class="example-headers-align">   
                     <mat-expansion-panel hideToggle>
                         <mat-expansion-panel-header>
                             <mat-panel-title>
-                               {{raportDetail?.projectAndClient | uppercase}} 
-                            </mat-panel-title>
+                               <p><strong>{{raportDetail?.projectAndClient | uppercase}}</strong></p>
                             
-                            <h4 style="text-align:right;">
+                              
+                            </mat-panel-title>
+                           
+                           
+                            <mat-panel-description>
+                                <span>
+                                    <em>{{raportDetail?.date | date}} ,
+                                    </em>
+                                </span>
                                 <span (click)=markAsFinsihed(raportDetail)><strong>Marcheaza ca facturat</strong></span>
-                            </h4>
+                          
+                            </mat-panel-description>
+                            
                         </mat-expansion-panel-header>
                         <strong>Descriere</strong>
                         <p innerHTML="{{raportDetail?.description}}"></p>
