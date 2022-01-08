@@ -1,0 +1,46 @@
+<div class="container mat-elevation-z5">
+    <h2 [ngStyle]="{color: '#3f51b5'}">Calculator minim necesar oferta CCTV</h2>
+    <form [formGroup]="cctvForm" (ngSubmit)="onSubmit()">
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Tip sistem cctv</mat-label>
+                    <mat-select formControlName="type" required>
+                        <mat-option value="IP">IP</mat-option>
+                        <mat-option value="ANALOGIC">ANALOGIC</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Numar de camere</mat-label>
+                    <mat-select formControlName="nr" required>
+                        <mat-option *ngFor="let nr of nrOfCameras" value={{nr}}>
+                            {{nr}}
+                        </mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+            </p>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+            <button type="submit" mat-raised-button color="primary" [disabled]="!cctvForm.valid">Calculeaza</button>
+
+        </div>
+    </form>
+</div>
+<div class="container mat-elevation-z5" *ngIf="dataResult">
+
+
+    <h2 [ngStyle]="{color: '#3f51b5'}">Necesar minim pentru Sistem CCTV {{dataResult.type}} cu {{dataResult.nr}} camere
+        supraveghere</h2>
+    <ul>
+        <li>{{res.recorder}}</li>
+        <li>{{res.hdd}}</li>
+        <li>{{res.amp}}</li>
+        <li>{{res.nrMufAl}} mufe de alimentare</li>
+        <li>{{res.nrMufAl}} doze pentru conexiuni</li>
+        <li>{{res.nrVideoBalun}} mufe video-balun</li>
+        <li>{{res.cable}}</li>
+    </ul>
+</div>

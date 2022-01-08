@@ -77,6 +77,7 @@ import { DeleteMaterialComponent } from './components/materials/delete-material/
 
 //Angular editor
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { CalculatorCctvComponent } from './components/calculator-cctv/calculator-cctv.component';
 ///////////////////////////////////////////////////////////////
 
 @NgModule({
@@ -105,6 +106,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     ProjectSearchPipe,
     DeleteRequestComponent,
     DeleteMaterialComponent,
+    CalculatorCctvComponent,
   ],
   imports: [
     BrowserModule,

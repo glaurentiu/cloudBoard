@@ -32,7 +32,7 @@ export class AddRequestComponent implements OnInit {
   onSubmit(){
 
     /************************************************************************************************
-     Old method to notify the user that the form has erros , but not using it anymore because 
+     Old method to notify the user that the form has errors , but not using it anymore because 
      now use the disabled submit button method
      ************************************************************************************************
      

@@ -8,6 +8,7 @@ import { RaportBillingComponent } from "../components/raports/raport-billing/rap
 import { RequestItemComponent } from "../components/requests/request-item/request-item.component";
 import { RequestsComponent } from "../components/requests/requests.component";
 import { AuthGuard } from "../components/shared/security/auth.guard";
+import { CalculatorCctvComponent } from '../components/calculator-cctv/calculator-cctv.component';
 
 export const appRoutes: Routes = [
   { path: "", component: HomeComponent, canActivate: [AuthGuard] },
@@ -17,5 +18,6 @@ export const appRoutes: Routes = [
   { path: "requests", component: RequestsComponent },
   { path: "project/:id", component: ProjectDetailComponent },
   { path: "requests/:id", component: RequestItemComponent },
-  {path: "billing" , component: RaportBillingComponent },
+  { path: "billing", component: RaportBillingComponent },
+  { path: "cctv", component: CalculatorCctvComponent },
 ];
