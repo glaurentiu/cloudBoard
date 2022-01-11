@@ -19,4 +19,9 @@ export class AppComponent {
       this.router.navigate(['login'])
     })
   }
+
+  isLoggedIn():boolean {
+    
+    return (localStorage.getItem('user') === null)? false:true;
+  }
 }

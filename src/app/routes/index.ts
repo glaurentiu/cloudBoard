@@ -13,11 +13,11 @@ import { CalculatorCctvComponent } from '../components/calculator-cctv/calculato
 export const appRoutes: Routes = [
   { path: "", component: HomeComponent, canActivate: [AuthGuard] },
   { path: "login", component: LoginComponent },
-  { path: "materials", component: MaterialsComponent },
-  { path: "projects", component: ProjectsComponent },
-  { path: "requests", component: RequestsComponent },
-  { path: "project/:id", component: ProjectDetailComponent },
-  { path: "requests/:id", component: RequestItemComponent },
-  { path: "billing", component: RaportBillingComponent },
-  { path: "cctv", component: CalculatorCctvComponent },
+  { path: "materials", component: MaterialsComponent , canActivate: [AuthGuard]  },
+  { path: "projects", component: ProjectsComponent, canActivate: [AuthGuard]  },
+  { path: "requests", component: RequestsComponent, canActivate: [AuthGuard]  },
+  { path: "project/:id", component: ProjectDetailComponent ,canActivate: [AuthGuard]  },
+  { path: "requests/:id", component: RequestItemComponent, canActivate: [AuthGuard]  },
+  { path: "billing", component: RaportBillingComponent ,canActivate: [AuthGuard] },
+  { path: "cctv", component: CalculatorCctvComponent ,canActivate: [AuthGuard] },
 ];

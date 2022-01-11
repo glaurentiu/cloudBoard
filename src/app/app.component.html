@@ -4,7 +4,7 @@
         <h1>{{title}}</h1>
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-            <ul fxLayout="row" fxLayoutGap="20px" *ngIf="authService.isLoggedIn">
+            <ul fxLayout="row" fxLayoutGap="20px" *ngIf="isLoggedIn()">
                
                 <li>
                     <button mat-button (click)="logout()">
@@ -20,7 +20,7 @@
   </mat-toolbar>
 
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="true" *ngIf="authService.isLoggedIn">
+    <mat-drawer mode="side" [opened]="true" *ngIf="isLoggedIn()">
         <app-header></app-header>
     </mat-drawer>
     <mat-drawer-content>

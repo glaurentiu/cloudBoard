@@ -7,17 +7,21 @@ import { from } from "rxjs";
   providedIn: "root",
 })
 export class AuthenticationService {
-  get isLoggedIn(): User | null {
-    return this.auth.currentUser;
-  }
+  // get isLoggedIn(): User | null {
+  //   return this.auth.currentUser;
+  // }
 
   constructor(private auth: Auth) {}
 
   login(username: string, password: string) {
-    return from(signInWithEmailAndPassword(this.auth, username, password));
+    return from(signInWithEmailAndPassword(this.auth, username, password).then((result) => {
+      localStorage.setItem('user',JSON.stringify(this.auth.currentUser))
+    }));
   }
 
   logout() {
-    return from(this.auth.signOut());
+    return from(this.auth.signOut().then((result)=>{
+      localStorage.removeItem('user')
+    }));
   }
 }
