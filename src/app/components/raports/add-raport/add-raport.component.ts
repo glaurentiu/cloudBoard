@@ -116,8 +116,7 @@ export class AddRaportComponent implements OnInit {
   }
 
   getAllMaterialsQuantity(old: Material[]) {
-    console.log(this.clonedMaterials);
-    console.log(this.materialsFiltered);
+ 
     for (let i = 0; i < old.length; i++) {
       for (let j = 0; j < this.clonedMaterials.length; j++) {
         if (this.materialsFiltered[i].id === this.clonedMaterials[j].id) {

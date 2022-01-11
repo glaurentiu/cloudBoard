@@ -949,13 +949,12 @@ export class MaterialService {
   }
 
   updateMaterialFromFirebase(material:Material,newMaterial: Material) {
-    console.log(&#x27;material&#x27;,material);
-    console.log(&#x27;newMaterial&#x27;,newMaterial);
+
     const materialDocRef &#x3D; doc(this.firestore, &#x60;materials/${material.id}&#x60;);
     return updateDoc(materialDocRef, { quantity: material.quantity - newMaterial.quantity});
   }
   editMaterialFromFirebBase(material:Material) {
-    console.log(&#x27;material in serviciu&#x27;, material)
+ 
     const materialDocRef &#x3D; doc(this.firestore, &#x60;materials/${material.id}&#x60;);
     return updateDoc(materialDocRef, { text:material.text ,quantity: material.quantity, price: material.price})
   }

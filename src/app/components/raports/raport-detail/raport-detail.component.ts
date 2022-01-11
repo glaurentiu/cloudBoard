@@ -20,7 +20,7 @@ export class RaportDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRaport();
-    console.log(this.raportDetail);
+
   }
 
   getRaport(): void {

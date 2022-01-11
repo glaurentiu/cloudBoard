@@ -53,13 +53,11 @@ export class MaterialService {
   }
 
   updateMaterialFromFirebase(material:Material,newMaterial: Material) {
-    console.log('material',material);
-    console.log('newMaterial',newMaterial);
+
     const materialDocRef = doc(this.firestore, `materials/${material.id}`);
     return updateDoc(materialDocRef, { quantity: material.quantity - newMaterial.quantity});
   }
   editMaterialFromFirebBase(material:Material) {
-    console.log('material in serviciu', material)
     const materialDocRef = doc(this.firestore, `materials/${material.id}`);
     return updateDoc(materialDocRef, { text:material.text ,quantity: material.quantity, price: material.price})
   }

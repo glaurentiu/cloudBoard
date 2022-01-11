@@ -33,9 +33,9 @@
         <td *ngIf="!editMode || !compareId(material.id,editId)" >{{material?.quantity}} m</td>
         <td *ngIf="editMode && compareId(material.id,editId)"><input size={{material.quantity.length}} type="text" [(ngModel)]="material.quantity"></td>
         <td class="saveEdit">
-          <mat-icon *ngIf="!editMode || !compareId(material.id,editId)" (click)="enterEditMode(material.id)" [ngStyle]="{'color': 'green'}">edit</mat-icon>
-          <mat-icon *ngIf="editMode && compareId(material.id,editId)" (click)="exitEditMode(material)" [ngStyle]="{'color': 'green'}">save</mat-icon>
-          <mat-icon (click)="openDialog(material)" [ngStyle]="{'color': 'red'}">delete</mat-icon>
+          <mat-icon *ngIf="!editMode || !compareId(material.id,editId)" (click)="enterEditMode(material.id)" class="green">edit</mat-icon>
+          <mat-icon *ngIf="editMode && compareId(material.id,editId)" (click)="exitEditMode(material)" class="green">save</mat-icon>
+          <mat-icon (click)="openDialog(material)" class="red">delete</mat-icon>
         </td>
 
       </tr>

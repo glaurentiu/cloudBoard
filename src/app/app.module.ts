@@ -4,7 +4,6 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/shared/header/header.component";
 import { ButtonComponent } from "./components/shared/button/button.component";
 import { MaterialsComponent } from "./components/materials/materials.component";
-import { MaterialItemComponent } from "./components/materials/material-item/material-item.component";
 import { AddMaterialComponent } from "./components/materials/add-material/add-material.component";
 import { HomeComponent } from "./components/home/home.component";
 import { ProjectsComponent } from "./components/projects/projects.component";
@@ -86,7 +85,6 @@ import { CalculatorCctvComponent } from './components/calculator-cctv/calculator
     HeaderComponent,
     ButtonComponent,
     MaterialsComponent,
-    MaterialItemComponent,
     AddMaterialComponent,
     HomeComponent,
     ProjectsComponent,

@@ -1096,7 +1096,7 @@ export class AddRequestRaportComponent implements OnInit {
 
  
   ngOnInit(): void {
-    console.log(&#x27;this requestId&#x27;, this.requestId)
+ 
     this.getMaterials();
     this.getClient();
     this.initializeForm();
@@ -1152,9 +1152,7 @@ export class AddRequestRaportComponent implements OnInit {
     this.requestService.getRequests().subscribe((requests)&#x3D;&gt; {
       let request &#x3D; requests.find((r)&#x3D;&gt; r[&quot;id&quot;] &#x3D;&#x3D;&#x3D; this.requestId)
      this.projectClient &#x3D; request?.[&quot;client&quot;]
-      
-      console.log(&#x27;this.projectClient&#x27;,this.projectClient)
-      console.log(&#x27;this.requests&#x27;,request)
+
 
 
     })

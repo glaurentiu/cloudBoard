@@ -29,7 +29,7 @@ export class MaterialsComponent implements OnInit {
   addMaterialtoFireBase(material: Material) {
     this.materialService.addMaterialtoFireBase(material);
   }
- 
+
   openDialog(material: Material) {
     this.dialog.open(DeleteMaterialComponent, {
       data: {
@@ -39,7 +39,6 @@ export class MaterialsComponent implements OnInit {
   }
 
   editMaterialFromFirebBase(material: Material) {
-    console.log("material in functie", material);
     this.materialService.editMaterialFromFirebBase(material);
   }
 
@@ -55,6 +54,6 @@ export class MaterialsComponent implements OnInit {
   exitEditMode(material: Material): void {
     this.editMaterialFromFirebBase(material);
     this.editMode = false;
-    console.log(material);
+  
   }
 }

@@ -6,3 +6,10 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.green {
+    color:green;
+}
+.red {
+    color:red;
+}
