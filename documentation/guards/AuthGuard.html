@@ -277,7 +277,7 @@ export class AuthGuard implements CanActivate {
     | UrlTree {
     let isLoggedIn &#x3D; this.authService.isLoggedIn;
     if (isLoggedIn &#x3D;&#x3D; null &amp;&amp; state.url !&#x3D;&#x3D; &#x27;/&#x27;) {
-
+  
      this.router.navigate([&#x27;/&#x27;])
       return false;
     }else if((isLoggedIn &#x3D;&#x3D; null &amp;&amp; state.url &#x3D;&#x3D; &#x27;/&#x27;)) {

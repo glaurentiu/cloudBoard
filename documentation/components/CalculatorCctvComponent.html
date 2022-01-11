@@ -1,0 +1,980 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>cloud-board documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">cloud-board documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CalculatorCctvComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/calculator-cctv/calculator-cctv.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-calculator-cctv</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./calculator-cctv.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./calculator-cctv.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cctvForm" >cctvForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#dataResult" >dataResult</a>
+                            </li>
+                            <li>
+                                <a href="#nrOfCameras" >nrOfCameras</a>
+                            </li>
+                            <li>
+                                <a href="#res" >res</a>
+                            </li>
+                            <li>
+                                <a href="#result" >result</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calculate" >calculate</a>
+                            </li>
+                            <li>
+                                <a href="#generateCamNr" >generateCamNr</a>
+                            </li>
+                            <li>
+                                <a href="#initializeForm" >initializeForm</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculate"></a>
+                    <span class="name">
+                        <span ><b>calculate</b></span>
+                        <a href="#calculate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculate(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, nr: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>type</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>nr</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateCamNr"></a>
+                    <span class="name">
+                        <span ><b>generateCamNr</b></span>
+                        <a href="#generateCamNr"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generateCamNr(nr: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nr</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Array&lt;number&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initializeForm"></a>
+                    <span class="name">
+                        <span ><b>initializeForm</b></span>
+                        <a href="#initializeForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initializeForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cctvForm"></a>
+                    <span class="name">
+                        <span ><b>cctvForm</b></span>
+                        <a href="#cctvForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({})</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dataResult"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>dataResult</b></span>
+                        <a href="#dataResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/cctv.html" target="_self" >cctv</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nrOfCameras"></a>
+                    <span class="name">
+                        <span ><b>nrOfCameras</b></span>
+                        <a href="#nrOfCameras"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;number&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="res"></a>
+                    <span class="name">
+                        <span ><b>res</b></span>
+                        <a href="#res"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/res.html" target="_self" >res</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    recorder: &quot;&quot;,
+    nrMufAl: 0,
+    nrVideoBalun: &quot;&quot;,
+    amp: &quot;&quot;,
+    cable: &quot;&quot;,
+    hdd: &quot;&quot;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="result"></a>
+                    <span class="name">
+                        <span ><b>result</b></span>
+                        <a href="#result"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { FormGroup, FormBuilder, Validators } from &quot;@angular/forms&quot;;
+
+export interface cctv {
+  type: string;
+  nr: number;
+}
+export interface res {
+  recorder: string;
+  nrMufAl: number;
+  nrVideoBalun: string;
+  amp: string;
+  cable: string;
+  hdd: string;
+}
+
+@Component({
+  selector: &quot;app-calculator-cctv&quot;,
+  templateUrl: &quot;./calculator-cctv.component.html&quot;,
+  styleUrls: [&quot;./calculator-cctv.component.css&quot;],
+})
+export class CalculatorCctvComponent implements OnInit {
+  nrOfCameras: Array&lt;number&gt; &#x3D; [];
+  dataResult?: cctv;
+  result &#x3D; &#x60;&#x60;;
+  res: res &#x3D; {
+    recorder: &quot;&quot;,
+    nrMufAl: 0,
+    nrVideoBalun: &quot;&quot;,
+    amp: &quot;&quot;,
+    cable: &quot;&quot;,
+    hdd: &quot;&quot;,
+  };
+
+  cctvForm: FormGroup &#x3D; new FormGroup({});
+
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.nrOfCameras &#x3D; this.generateCamNr(32);
+    this.initializeForm();
+  }
+
+  initializeForm(): void {
+    this.cctvForm &#x3D; this.fb.group({
+      type: &quot;&quot;,
+      nr: &quot;&quot;,
+    });
+  }
+
+  onSubmit() {
+    const data &#x3D; {
+      type: this.cctvForm.value.type,
+      nr: this.cctvForm.value.nr,
+    };
+    this.dataResult &#x3D; data;
+    this.calculate(data.type, data.nr);
+  }
+
+  generateCamNr(nr: number): Array&lt;number&gt; {
+    let result &#x3D; [];
+
+    for (let i &#x3D; 1; i &lt;&#x3D; nr; i++) {
+      result.push(i);
+    }
+
+    return result;
+  }
+
+  calculate(type: string, nr: number) {
+    if (type &#x3D;&#x3D;&#x3D; &quot;IP&quot;) {
+      if (nr &lt; 5) {
+        this.res.recorder &#x3D; &quot;NVR cu 4 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} X mufe RJ45&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;Sursa de alimentare 12v 5amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 1TB&#x60;;
+      } else if (nr &lt; 9) {
+        this.res.recorder &#x3D; &quot;NVR cu 8 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} X mufe RJ45&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;Sursa de alimentare 12v 10amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 2TB&#x60;;
+      } else if (nr &lt; 17) {
+        this.res.recorder &#x3D; &quot;NVR cu 16 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} X mufe RJ45&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;Sursa de alimentare 12v 15amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 4TB&#x60;;
+      } else if (nr &lt; 33) {
+        this.res.recorder &#x3D; &quot;NVR cu 32 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} X mufe RJ45&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;2 x Sursa de alimentare 12v 15amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 6TB&#x60;;
+      }
+    } else if (type &#x3D;&#x3D;&#x3D; &quot;ANALOGIC&quot;) {
+      if (nr &lt; 5) {
+        this.res.recorder &#x3D; &quot;DVR cu 4 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} X mufe video-balun&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;Sursa de alimentare 12v 5amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 1TB&#x60;;
+      } else if (nr &lt; 9) {
+        this.res.recorder &#x3D; &quot;DVR cu 8 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} X mufe video-balun&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;Sursa de alimentare 12v 10amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 2TB&#x60;;
+      } else if (nr &lt; 17) {
+        this.res.recorder &#x3D; &quot;DVR cu 16 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} mufe video-balun&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;Sursa de alimentare 12v 15amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 4TB&#x60;;
+      } else if (nr &lt; 33) {
+        this.res.recorder &#x3D; &quot;DVR cu 32 canale&quot;;
+        this.res.nrMufAl &#x3D; nr;
+        this.res.nrVideoBalun &#x3D; &#x60;${2 * nr} X mufe video-balun&#x60;;
+        this.res.cable &#x3D; &#x60;Cel putin ${30 * nr} metri de UTP si MYYM 2x0.75&#x60;;
+        this.res.amp &#x3D; &#x60;2 x Sursa de alimentare 12v 15amp&#x60;;
+        this.res.hdd &#x3D; &#x60;HDD 6TB&#x60;;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mat-elevation-z5&quot;&gt;
+    &lt;h2&gt;Calculator minim necesar oferta CCTV&lt;/h2&gt;
+    &lt;form [formGroup]&#x3D;&quot;cctvForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+        &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-evenly center&quot;&gt;
+            &lt;p&gt;
+                &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Tip sistem cctv&lt;/mat-label&gt;
+                    &lt;mat-select formControlName&#x3D;&quot;type&quot; required&gt;
+                        &lt;mat-option value&#x3D;&quot;IP&quot;&gt;IP&lt;/mat-option&gt;
+                        &lt;mat-option value&#x3D;&quot;ANALOGIC&quot;&gt;ANALOGIC&lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Numar de camere&lt;/mat-label&gt;
+                    &lt;mat-select formControlName&#x3D;&quot;nr&quot; required&gt;
+                        &lt;mat-option *ngFor&#x3D;&quot;let nr of nrOfCameras&quot; value&#x3D;{{nr}}&gt;
+                            {{nr}}
+                        &lt;/mat-option&gt;
+
+                    &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-evenly center&quot;&gt;
+            &lt;button type&#x3D;&quot;submit&quot; mat-raised-button color&#x3D;&quot;primary&quot; [disabled]&#x3D;&quot;!cctvForm.valid&quot;&gt;Calculeaza&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;container mat-elevation-z5&quot; *ngIf&#x3D;&quot;dataResult&quot;&gt;
+    &lt;h2&gt;Necesar minim pentru Sistem CCTV {{dataResult.type}} cu {{dataResult.nr}} camere
+        supraveghere&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;{{res.recorder}}&lt;/li&gt;
+        &lt;li&gt;{{res.hdd}}&lt;/li&gt;
+        &lt;li&gt;{{res.amp}}&lt;/li&gt;
+        &lt;li&gt;{{res.nrMufAl}} mufe de alimentare&lt;/li&gt;
+        &lt;li&gt;{{res.nrMufAl}} doze pentru conexiuni&lt;/li&gt;
+        &lt;li&gt;{{res.nrVideoBalun}} mufe video-balun&lt;/li&gt;
+        &lt;li&gt;{{res.cable}}&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./calculator-cctv.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">li {
+  width: 100%;
+  margin: 0.2em 0;
+  padding: 0.5em 0.8em;
+  list-style: none;
+  background-color: #f2f2f2;
+  border-left: 5px solid rgb(63 81 181);
+  color: #333;
+}
+
+h2 {
+  color: #3f51b5;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container mat-elevation-z5">    <h2>Calculator minim necesar oferta CCTV</h2>    <form [formGroup]="cctvForm" (ngSubmit)="onSubmit()">        <div fxLayout="row" fxLayoutAlign="space-evenly center">            <p>                <mat-form-field appearance="outline">                    <mat-label>Tip sistem cctv</mat-label>                    <mat-select formControlName="type" required>                        <mat-option value="IP">IP</mat-option>                        <mat-option value="ANALOGIC">ANALOGIC</mat-option>                    </mat-select>                </mat-form-field>            </p>            <p>                <mat-form-field appearance="outline">                    <mat-label>Numar de camere</mat-label>                    <mat-select formControlName="nr" required>                        <mat-option *ngFor="let nr of nrOfCameras" value={{nr}}>                            {{nr}}                        </mat-option>                    </mat-select>                </mat-form-field>            </p>        </div>        <div fxLayout="row" fxLayoutAlign="space-evenly center">            <button type="submit" mat-raised-button color="primary" [disabled]="!cctvForm.valid">Calculeaza</button>        </div>    </form></div><div class="container mat-elevation-z5" *ngIf="dataResult">    <h2>Necesar minim pentru Sistem CCTV {{dataResult.type}} cu {{dataResult.nr}} camere        supraveghere</h2>    <ul>        <li>{{res.recorder}}</li>        <li>{{res.hdd}}</li>        <li>{{res.amp}}</li>        <li>{{res.nrMufAl}} mufe de alimentare</li>        <li>{{res.nrMufAl}} doze pentru conexiuni</li>        <li>{{res.nrVideoBalun}} mufe video-balun</li>        <li>{{res.cable}}</li>    </ul></div></div>'
+    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CalculatorCctvComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CalculatorCctvComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -432,7 +432,7 @@
 import { FormControl, FormGroup, Validators } from &quot;@angular/forms&quot;;
 import { Router } from &quot;@angular/router&quot;;
 import { AuthenticationService } from &quot;src/app/services/authentication.service&quot;;
-import { HotToastService} from &#x27;@ngneat/hot-toast&#x27;
+import { HotToastService } from &quot;@ngneat/hot-toast&quot;;
 @Component({
   selector: &quot;app-login&quot;,
   templateUrl: &quot;./login.component.html&quot;,
@@ -465,23 +465,25 @@ export class LoginComponent implements OnInit {
       return;
     }
     const { email, password } &#x3D; this.loginForm.value;
-    this.authService.login(email, password).pipe(
-      this.toast.observe({
-        success: &#x27;Autentificare cu succes&#x27;,
-        loading: &#x27;Autentificare in curs...&#x27;,
-        error: &#x27;Datele introduse sunt incorecte&#x27;
-      })
-    ).subscribe(() &#x3D;&gt; {
-      this.router.navigate([&quot;&quot;]);
-    });
+    this.authService
+      .login(email, password)
+      .pipe(
+        this.toast.observe({
+          success: &quot;Autentificare cu succes&quot;,
+          loading: &quot;Autentificare in curs...&quot;,
+          error: &quot;Datele introduse sunt incorecte&quot;,
+        })
+      )
+      .subscribe(() &#x3D;&gt; {
+        this.router.navigate([&quot;&quot;]);
+      });
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;div class&#x3D;&quot;form-container mat-elevation-z5&quot;&gt; 
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;form-container mat-elevation-z5&quot;&gt;
     &lt;h1&gt;Autentificare&lt;/h1&gt;
     &lt;form [formGroup]&#x3D;&quot;loginForm&quot; (ngSubmit)&#x3D;&quot;submit()&quot;&gt;
         &lt;mat-form-field&gt;
@@ -493,7 +495,7 @@ export class LoginComponent implements OnInit {
                 Introduce un email corect.
             &lt;/mat-error&gt;
         &lt;/mat-form-field&gt;
-    
+
         &lt;mat-form-field&gt;
             &lt;input matInput placeholder&#x3D;&quot;Parola&quot; formControlName&#x3D;&quot;password&quot; type&#x3D;&quot;password&quot;&gt;
             &lt;mat-error *ngIf&#x3D;&quot;password?.errors?.[&#x27;required&#x27;]&quot;&gt;
@@ -509,7 +511,7 @@ export class LoginComponent implements OnInit {
         &lt;div class&#x3D;&quot;center margin-top&quot;&gt;
             &lt;p&gt;
 
-               &lt;strong&gt;email:&lt;/strong&gt; test@test.com
+                &lt;strong&gt;email:&lt;/strong&gt; test@test.com
             &lt;/p&gt;
         &lt;/div&gt;
 
@@ -528,33 +530,28 @@ export class LoginComponent implements OnInit {
                     <code>./login.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">.form-container {
-    display:block;
-    max-width: 300px;
-    margin:auto;
+  display: block;
+  max-width: 300px;
+  margin: auto;
 
-    background: #eceff1;
-    padding:48px;
-    border-radius: 16px;
+  background: #eceff1;
+  padding: 48px;
+  border-radius: 16px;
 }
 
 .form-container mat-form-field {
-
-    width:100%;
-
+  width: 100%;
 }
 
-.center{
-    display: flex;
-    justify-content: center;
+.center {
+  display: flex;
+  justify-content: center;
 }
 
 .margin-top {
-    margin-top: 16px;
+  margin-top: 16px;
 }
-
-.text-center {
-    text-align: center;
-}</code></pre>
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -582,8 +579,8 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="form-container mat-elevation-z5">     <h1>Autentificare</h1>    <form [formGroup]="loginForm" (ngSubmit)="submit()">        <mat-form-field>            <input matInput placeholder="Email" formControlName="email">            <mat-error *ngIf="email?.errors?.[\'required\']">                Acest camp este obligatoriu            </mat-error>            <mat-error *ngIf="email?.errors?.[\'email\']">                Introduce un email corect.            </mat-error>        </mat-form-field>            <mat-form-field>            <input matInput placeholder="Parola" formControlName="password" type="password">            <mat-error *ngIf="password?.errors?.[\'required\']">                Acest camp este obligatoriu            </mat-error>        </mat-form-field>        <div class="center margin-top">            <button mat-raised-button color="primary" type="submit">                Autentificare            </button>        </div>        <div class="center margin-top">            <p>               <strong>email:</strong> test@test.com            </p>        </div>        <div class="center">            <p> <strong>parola:</strong>test1234</p>        </div>    </form></div></div>'
-    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialItemComponent', 'selector': 'app-material-item'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
+        var COMPONENT_TEMPLATE = '<div><div class="form-container mat-elevation-z5">    <h1>Autentificare</h1>    <form [formGroup]="loginForm" (ngSubmit)="submit()">        <mat-form-field>            <input matInput placeholder="Email" formControlName="email">            <mat-error *ngIf="email?.errors?.[\'required\']">                Acest camp este obligatoriu            </mat-error>            <mat-error *ngIf="email?.errors?.[\'email\']">                Introduce un email corect.            </mat-error>        </mat-form-field>        <mat-form-field>            <input matInput placeholder="Parola" formControlName="password" type="password">            <mat-error *ngIf="password?.errors?.[\'required\']">                Acest camp este obligatoriu            </mat-error>        </mat-form-field>        <div class="center margin-top">            <button mat-raised-button color="primary" type="submit">                Autentificare            </button>        </div>        <div class="center margin-top">            <p>                <strong>email:</strong> test@test.com            </p>        </div>        <div class="center">            <p> <strong>parola:</strong>test1234</p>        </div>    </form></div></div>'
+    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

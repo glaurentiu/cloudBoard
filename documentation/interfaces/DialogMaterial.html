@@ -137,31 +137,31 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject } from &#x27;@angular/core&#x27;;
-import {  MAT_DIALOG_DATA} from &quot;@angular/material/dialog&quot;;
-import {MaterialService} from &#x27;../../../services/material.service&#x27;
-import {Material} from &#x27;../../../interfaces/Material.interface&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject } from &quot;@angular/core&quot;;
+import { MAT_DIALOG_DATA } from &quot;@angular/material/dialog&quot;;
+import { MaterialService } from &quot;../../../services/material.service&quot;;
+import { Material } from &quot;../../../interfaces/Material.interface&quot;;
 
 @Component({
-  selector: &#x27;app-delete-material&#x27;,
-  templateUrl: &#x27;./delete-material.component.html&#x27;,
-  styleUrls: [&#x27;./delete-material.component.css&#x27;]
+  selector: &quot;app-delete-material&quot;,
+  templateUrl: &quot;./delete-material.component.html&quot;,
+  styleUrls: [&quot;./delete-material.component.css&quot;],
 })
 export class DeleteMaterialComponent implements OnInit {
+  constructor(
+    private materialService: MaterialService,
+    @Inject(MAT_DIALOG_DATA) public data: DialogMaterial
+  ) {}
 
-  constructor(private materialService: MaterialService,@Inject(MAT_DIALOG_DATA)  public data: DialogMaterial) { }
-
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   deleteMaterialFromFirebBase(material: Material) {
     this.materialService.deleteMaterialFromFirebBase(material);
   }
-
 }
 export interface DialogMaterial {
   material: Material;
-}</code></pre>
+}
+</code></pre>
     </div>
 </div>
 
