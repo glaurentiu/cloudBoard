@@ -1,17 +1,16 @@
-
 <h2 mat-dialog-title>Esti sigur ca vrei sa stergi acest material?</h2>
 <mat-dialog-content class="mat-typography">
-  
- 
+
+
   <p>Material:</p>
-  <p style="color:red">{{data.material.text}}</p>
+  <p class="red">{{data.material.text}}</p>
   <p>Pret:</p>
-  <p style="color:red">{{data.material.price}}</p>
-    <p>Cantitate:</p>
-  <p style="color:red">{{data.material.quantity}}</p>
+  <p class="red">{{data.material.price}}</p>
+  <p>Cantitate:</p>
+  <p class="red">{{data.material.quantity}}</p>
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-<button mat-button  mat-dialog-close>Anuleaza</button>
-  <button mat-button mat-dialog-close  (click)=deleteMaterialFromFirebBase(data.material) style="color:red">Sterge</button>
+  <button mat-button mat-dialog-close>Anuleaza</button>
+  <button class="red" mat-button mat-dialog-close (click)=deleteMaterialFromFirebBase(data.material)>Sterge</button>
 </mat-dialog-actions>

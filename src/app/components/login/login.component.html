@@ -1,5 +1,4 @@
-
-<div class="form-container mat-elevation-z5"> 
+<div class="form-container mat-elevation-z5">
     <h1>Autentificare</h1>
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
         <mat-form-field>
@@ -11,7 +10,7 @@
                 Introduce un email corect.
             </mat-error>
         </mat-form-field>
-    
+
         <mat-form-field>
             <input matInput placeholder="Parola" formControlName="password" type="password">
             <mat-error *ngIf="password?.errors?.['required']">
@@ -27,7 +26,7 @@
         <div class="center margin-top">
             <p>
 
-               <strong>email:</strong> test@test.com
+                <strong>email:</strong> test@test.com
             </p>
         </div>
 

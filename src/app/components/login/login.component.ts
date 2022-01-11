@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AuthenticationService } from "src/app/services/authentication.service";
-import { HotToastService} from '@ngneat/hot-toast'
+import { HotToastService } from "@ngneat/hot-toast";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -35,14 +35,17 @@ export class LoginComponent implements OnInit {
       return;
     }
     const { email, password } = this.loginForm.value;
-    this.authService.login(email, password).pipe(
-      this.toast.observe({
-        success: 'Autentificare cu succes',
-        loading: 'Autentificare in curs...',
-        error: 'Datele introduse sunt incorecte'
-      })
-    ).subscribe(() => {
-      this.router.navigate([""]);
-    });
+    this.authService
+      .login(email, password)
+      .pipe(
+        this.toast.observe({
+          success: "Autentificare cu succes",
+          loading: "Autentificare in curs...",
+          error: "Datele introduse sunt incorecte",
+        })
+      )
+      .subscribe(() => {
+        this.router.navigate([""]);
+      });
   }
 }
