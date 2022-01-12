@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 import { Raport } from "../../../interfaces/Raport.interface";
-import { FormGroup, FormBuilder, FormControl, FormArray } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from "@angular/forms";
 import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../../interfaces/Material.interface";
 import { RequestService } from '../../../services/request.service';
@@ -62,15 +62,15 @@ export class AddRequestRaportComponent implements OnInit {
 
   initializeForm(): void {
     this.addRaportRequestForm = this.fb.group({
-      projectAndClient: "",
-      date: "",
-      team: "",
+      date: ["", Validators.required],
+      team: ["", Validators.required],
       materialsUsed: [],
-      description: "",
+      description: ""
     });
   }
 
   onSubmit() {
+ 
     const newRaport = {
       projectAndClient: this.projectClient,
       date: this.addRaportRequestForm.value.date,
