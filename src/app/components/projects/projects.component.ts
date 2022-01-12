@@ -18,6 +18,7 @@ export class ProjectsComponent implements OnInit {
       .getProjects()
       .subscribe((projects) => (this.projects = projects as Project[]));
   }
+  //Will get the "project" from the EventEmitter in AddProjectComponent
   addProject(project: Project) {
     this.projectService.addProject(project);
   }

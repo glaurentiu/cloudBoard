@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
   constructor(private requestService: RequestService) {}
 
   ngOnInit(): void {
+    // Get the requests from Firebase , store them in requests 
+    // and use them in <app-request-item [requests]=requests></app-request-item>
+    
     this.requestService
       .getRequests()
       .subscribe((requests) => (this.requests = requests as Request[]));

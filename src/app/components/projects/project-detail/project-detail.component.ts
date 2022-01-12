@@ -24,7 +24,7 @@ export class ProjectDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getProject();
   }
-
+  //Get the projects from firebase and filter to match the id from the url
   getProject(): void {
     const id = String(this.route.snapshot.paramMap.get('id'));
     this.projectService
@@ -33,6 +33,11 @@ export class ProjectDetailComponent implements OnInit {
         (projects) => (this.projectDetail = projects.find((p) => p['id'] === id) as Project)
       );
   }
+
+  //These two methods check the route url and based on the url
+  // using ngIf in the template will display the result 
+  // if we are on the page with all the projects or on the page 
+  // for only one project
   hasRoute(route: string) {
     return this.router.url === route;
   }

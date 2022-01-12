@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder,} from "@angular/forms";
 
 export interface cctv {
   type: string;
@@ -37,7 +37,9 @@ export class CalculatorCctvComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    //Generate numbers from 1 to 32
     this.nrOfCameras = this.generateCamNr(32);
+    //Initialize the form
     this.initializeForm();
   }
 
@@ -56,7 +58,7 @@ export class CalculatorCctvComponent implements OnInit {
     this.dataResult = data;
     this.calculate(data.type, data.nr);
   }
-
+  //Will generate numbers from 1 to 32 for the <mat-select> <mat-option>
   generateCamNr(nr: number): Array<number> {
     let result = [];
 
@@ -66,7 +68,7 @@ export class CalculatorCctvComponent implements OnInit {
 
     return result;
   }
-
+  //Calculate the result with data from cctvForm
   calculate(type: string, nr: number) {
     if (type === "IP") {
       if (nr < 5) {

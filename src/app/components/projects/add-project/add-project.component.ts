@@ -14,6 +14,7 @@ export class AddProjectComponent implements OnInit {
   addProjectForm: FormGroup = new FormGroup({});
 
   statusType = ["completa", "in curs", "oferta"];
+  //Configuration for AngularEditorConfig
   config: AngularEditorConfig = {
     editable: true,
     spellcheck: true,
@@ -44,7 +45,8 @@ export class AddProjectComponent implements OnInit {
       description: ["", [Validators.required, Validators.minLength(3)]],
     });
   }
-  //We build the method to submit the project to the server
+  //We build the method to submit the project to Firebase using 
+  // EventEmitter to the ProjectsComponent
 
   onSubmit() {
     const newProject = {

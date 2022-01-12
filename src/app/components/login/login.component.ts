@@ -31,10 +31,15 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    //Check if the form is valid and it pass the validation (ex:Validators.email)
     if (!this.loginForm.valid) {
       return;
     }
     const { email, password } = this.loginForm.value;
+    //Login using the AuthenticationService and the method login defined in the service
+    // Adding the HotToastService to display information
+    // Navigate to frontpage after login
+
     this.authService
       .login(email, password)
       .pipe(

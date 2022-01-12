@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { MaterialService } from "src/app/services/material.service";
 import { Material } from "../../interfaces/Material.interface";
 import { DeleteMaterialComponent } from "./delete-material/delete-material.component";
-import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { MatDialog,} from "@angular/material/dialog";
 
 @Component({
   selector: "app-materials",
@@ -26,10 +26,13 @@ export class MaterialsComponent implements OnInit {
       this.materials = materials as Material[];
     });
   }
+  //Get the material as ($event) from the emitter in Add Material Component
+  //And use MaterialService to add material to Firebase
   addMaterialtoFireBase(material: Material) {
     this.materialService.addMaterialtoFireBase(material);
   }
-
+//Open a dialog with the contents in DeleteMaterialComponent
+//Send the data using MAT_DIALOG_DATA to DeleteMaterialComponent
   openDialog(material: Material) {
     this.dialog.open(DeleteMaterialComponent, {
       data: {

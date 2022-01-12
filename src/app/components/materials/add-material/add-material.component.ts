@@ -41,7 +41,7 @@ export class AddMaterialComponent implements OnInit {
       ],
     });
   }
-
+  //Using <ngb-alert> instead of HotToastService , with ngIf and boolean values.
   onSubmit() {
     if (!this.addMaterialForm.value.text) {
       this.alertFailed = true;
@@ -55,7 +55,15 @@ export class AddMaterialComponent implements OnInit {
       price: this.addMaterialForm.value.price,
       quantity: this.addMaterialForm.value.quantity,
     };
+    
+    //emit the new material using EventEmitter
+    // takes the event and use it in the method
+    // addMaterialtoFireBase($event)
+    // from materials.components.ts
+
     this.onAddMaterial.emit(newMaterial);
+
+    //Reset the form and the errors
     this.addMaterialForm.reset();
     for (let control in this.addMaterialForm.controls) {
       this.addMaterialForm.controls[control].setErrors(null);

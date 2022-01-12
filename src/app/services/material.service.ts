@@ -25,15 +25,13 @@ const httpOptions = {
   providedIn: "root",
 })
 export class MaterialService {
+  //OLD API when using json-server
   private apiUrl = "http://localhost:5000/materials";
 
   constructor(private http: HttpClient, private firestore: Firestore) {}
 
-  getMaterials() {
-    return this.http.get<Material[]>(this.apiUrl);
-  }
   //Firebase Syntaxes : 
-
+  
   getMaterialsFromFireBase(): Observable<DocumentData[]> {
     const materialRef = collection(this.firestore, "materials");
     return collectionData(materialRef, { idField: "id" });
@@ -46,42 +44,55 @@ export class MaterialService {
     const materialRef = collection(this.firestore, "materials");
     return addDoc(materialRef, materialParam);
   }
-
+  
   deleteMaterialFromFirebBase(material: Material) {
     const materialDocRef = doc(this.firestore, `materials/${material.id}`);
     return deleteDoc(materialDocRef)
   }
-
-  updateMaterialFromFirebase(material:Material,newMaterial: Material) {
-
-    const materialDocRef = doc(this.firestore, `materials/${material.id}`);
-    return updateDoc(materialDocRef, { quantity: material.quantity - newMaterial.quantity});
-  }
-  editMaterialFromFirebBase(material:Material) {
-    const materialDocRef = doc(this.firestore, `materials/${material.id}`);
-    return updateDoc(materialDocRef, { text:material.text ,quantity: material.quantity, price: material.price})
-  }
-
-///////
-  deleteMaterial(material: Material): Observable<Material> {
-    const url = `${this.apiUrl}/${material.id}`;
-    return this.http.delete<Material>(url);
-  }
-
-  addMaterial(material: Material): Observable<Material> {
-    return this.http.post<Material>(this.apiUrl, material, httpOptions);
-  }
-  updateMaterial(
-    material: Material,
-    newMaterial: Material
-  ): Observable<Material> {
-    const url = `${this.apiUrl}/${material.id}`;
-    return this.http.patch<Material>(
-      url,
-      {
-        quantity: material.quantity - newMaterial.quantity,
-      },
-      httpOptions
-    );
-  }
+  // //THIS METHOD GET CALLED FROM AddRaportComponent in  this.updateMaterials(
+    //             this.clonedMaterials[j],
+    //             this.materialsFiltered[i]
+    //           );
+    
+    // Gets the new quantity of the material and updates the result to the firebase (OldQ - NewQ)
+    updateMaterialFromFirebase(material:Material,newMaterial: Material) {
+      
+      const materialDocRef = doc(this.firestore, `materials/${material.id}`);
+      return updateDoc(materialDocRef, { quantity: material.quantity - newMaterial.quantity});
+    }
+    
+    //////////////////////////////////////////////////////////////////////////////////////  
+    editMaterialFromFirebBase(material:Material) {
+      const materialDocRef = doc(this.firestore, `materials/${material.id}`);
+      return updateDoc(materialDocRef, { text:material.text ,quantity: material.quantity, price: material.price})
+    }
+    
+    /////// OLD METHODS BEFORE THE SWITCH TO FIREBASE
+    
+    getMaterials() {
+      return this.http.get<Material[]>(this.apiUrl);
+    }
+    
+    deleteMaterial(material: Material): Observable<Material> {
+      const url = `${this.apiUrl}/${material.id}`;
+      return this.http.delete<Material>(url);
+    }
+    
+    addMaterial(material: Material): Observable<Material> {
+      return this.http.post<Material>(this.apiUrl, material, httpOptions);
+    }
+    updateMaterial(
+      material: Material,
+      newMaterial: Material
+      ): Observable<Material> {
+        const url = `${this.apiUrl}/${material.id}`;
+        return this.http.patch<Material>(
+          url,
+          {
+            quantity: material.quantity - newMaterial.quantity,
+          },
+          httpOptions
+          );
+        }
+        ///////////////////////////////////////////////
 }

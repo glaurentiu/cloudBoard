@@ -8,7 +8,6 @@ import { AddMaterialComponent } from "./components/materials/add-material/add-ma
 import { HomeComponent } from "./components/home/home.component";
 import { ProjectsComponent } from "./components/projects/projects.component";
 import { RaportsComponent } from "./components/raports/raports.component";
-import { ComponentsComponent } from "./components/components.component";
 import { RequestsComponent } from "./components/requests/requests.component";
 import { ProjectDetailComponent } from "./components/projects/project-detail/project-detail.component";
 import { AddProjectComponent } from "./components/projects/add-project/add-project.component";
@@ -89,7 +88,6 @@ import { CalculatorCctvComponent } from './components/calculator-cctv/calculator
     HomeComponent,
     ProjectsComponent,
     RaportsComponent,
-    ComponentsComponent,
     RequestsComponent,
     ProjectDetailComponent,
     AddProjectComponent,
