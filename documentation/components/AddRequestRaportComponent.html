@@ -393,8 +393,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="131"
-                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:131</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:134</a></div>
                 </td>
             </tr>
 
@@ -430,8 +430,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="116"
-                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:116</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="119"
+                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:119</a></div>
                 </td>
             </tr>
 
@@ -499,8 +499,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:108</a></div>
                 </td>
             </tr>
 
@@ -536,8 +536,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="99"
-                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:99</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:102</a></div>
                 </td>
             </tr>
 
@@ -647,8 +647,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="73"
-                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:73</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -684,8 +684,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:98</a></div>
                 </td>
             </tr>
 
@@ -721,8 +721,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/components/requests/add-request-raport/add-request-raport.component.ts:94</a></div>
                 </td>
             </tr>
 
@@ -1106,7 +1106,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Output, EventEmitter, Input } from &quot;@angular/core&quot;;
 import { Raport } from &quot;../../../interfaces/Raport.interface&quot;;
-import { FormGroup, FormBuilder, FormControl, FormArray } from &quot;@angular/forms&quot;;
+import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from &quot;@angular/forms&quot;;
 import { MaterialService } from &quot;src/app/services/material.service&quot;;
 import { Material } from &quot;../../../interfaces/Material.interface&quot;;
 import { RequestService } from &#x27;../../../services/request.service&#x27;;
@@ -1168,15 +1168,15 @@ export class AddRequestRaportComponent implements OnInit {
 
   initializeForm(): void {
     this.addRaportRequestForm &#x3D; this.fb.group({
-      projectAndClient: &quot;&quot;,
-      date: &quot;&quot;,
-      team: &quot;&quot;,
+      date: [&quot;&quot;, Validators.required],
+      team: [&quot;&quot;, Validators.required],
       materialsUsed: [],
-      description: &quot;&quot;,
+      description: &quot;&quot;
     });
   }
 
   onSubmit() {
+ 
     const newRaport &#x3D; {
       projectAndClient: this.projectClient,
       date: this.addRaportRequestForm.value.date,
@@ -1192,6 +1192,9 @@ export class AddRequestRaportComponent implements OnInit {
 
     this.onAddRaportRequest.emit(newRaport);
     this.addRaportRequestForm.reset();
+    for (let control in this.addRaportRequestForm.controls) {
+      this.addRaportRequestForm.controls[control].setErrors(null);
+    }
   }
 
   updateMaterials(material: Material, newMaterial: Material): void {
@@ -1256,13 +1259,13 @@ export class AddRequestRaportComponent implements OnInit {
     &lt;p&gt;
       &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
         &lt;mat-label&gt;Data:&lt;/mat-label&gt;
-        &lt;input matInput type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;date&quot; placeholder&#x3D;&quot;&quot;&gt;
+        &lt;input matInput type&#x3D;&quot;date&quot; formControlName&#x3D;&quot;date&quot; placeholder&#x3D;&quot;&quot; required&gt;
       &lt;/mat-form-field&gt;
       &lt;/p&gt;
       &lt;p&gt;
         &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
           &lt;mat-label&gt;Echipa:&lt;/mat-label&gt;
-          &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;team&quot; placeholder&#x3D;&quot;&quot;&gt;
+          &lt;input matInput type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;team&quot; placeholder&#x3D;&quot;&quot; required&gt;
         &lt;/mat-form-field&gt;
         &lt;/p&gt;
           &lt;p&gt;
@@ -1277,7 +1280,7 @@ export class AddRequestRaportComponent implements OnInit {
   &lt;/div&gt;
   &lt;div  fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-evenly center&quot;&gt;
 
-    &lt;angular-editor [config]&#x3D;&quot;config&quot; formControlName&#x3D;&quot;description&quot; &gt;&lt;/angular-editor&gt;
+    &lt;angular-editor [config]&#x3D;&quot;config&quot; formControlName&#x3D;&quot;description&quot;  &gt;&lt;/angular-editor&gt;
 
 
 &lt;/div&gt;
@@ -1300,7 +1303,7 @@ export class AddRequestRaportComponent implements OnInit {
     
    &lt;/div&gt;
   &lt;/div&gt;
-    &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Salveaza&quot; class&#x3D;&quot;form-control&quot;&gt;
+    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;form-control&quot; [disabled]&#x3D;&quot;!addRaportRequestForm.valid&quot;&gt;Salveaza&lt;/button&gt;
   
   &lt;/form&gt;</code></pre>
     </div>
@@ -1337,8 +1340,8 @@ export class AddRequestRaportComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form [formGroup]="addRaportRequestForm" (ngSubmit)="onSubmit()">   <div  fxLayout="row" fxLayoutAlign="space-evenly center">    <p>      <mat-form-field appearance="outline">        <mat-label>Data:</mat-label>        <input matInput type="date" formControlName="date" placeholder="">      </mat-form-field>      </p>      <p>        <mat-form-field appearance="outline">          <mat-label>Echipa:</mat-label>          <input matInput type="text" formControlName="team" placeholder="">        </mat-form-field>        </p>          <p>            <mat-form-field appearance="outline">              <mat-label>Materiale Folosite:</mat-label>              <mat-select  formControlName="materialsUsed" multiple>                <mat-option *ngFor="let material of materials" value="{{material}}">{{material}}</mat-option>              </mat-select>              <input matInput type="select" formControlName="date" placeholder="">            </mat-form-field>            </p>  </div>  <div  fxLayout="row" fxLayoutAlign="space-evenly center">    <angular-editor [config]="config" formControlName="description" ></angular-editor></div>           <input type="button" value="Adauga Cantitate Materiale" class="form-control" (click)="filterMaterials()">        <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">   <div  *ngFor="let matItem of materialsFiltered">    <p>      <mat-form-field appearance="outline">        <mat-label>{{matItem.text}}</mat-label>        <input matInput type="number" name="{{matItem.text}}" [(ngModel)]="matItem.quantity"  [ngModelOptions]="{standalone: true}">      </mat-form-field>      </p>       </div>  </div>    <input type="submit" value="Salveaza" class="form-control">    </form></div>'
-    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
+        var COMPONENT_TEMPLATE = '<div><form [formGroup]="addRaportRequestForm" (ngSubmit)="onSubmit()">   <div  fxLayout="row" fxLayoutAlign="space-evenly center">    <p>      <mat-form-field appearance="outline">        <mat-label>Data:</mat-label>        <input matInput type="date" formControlName="date" placeholder="" required>      </mat-form-field>      </p>      <p>        <mat-form-field appearance="outline">          <mat-label>Echipa:</mat-label>          <input matInput type="text" formControlName="team" placeholder="" required>        </mat-form-field>        </p>          <p>            <mat-form-field appearance="outline">              <mat-label>Materiale Folosite:</mat-label>              <mat-select  formControlName="materialsUsed" multiple>                <mat-option *ngFor="let material of materials" value="{{material}}">{{material}}</mat-option>              </mat-select>              <input matInput type="select" formControlName="date" placeholder="">            </mat-form-field>            </p>  </div>  <div  fxLayout="row" fxLayoutAlign="space-evenly center">    <angular-editor [config]="config" formControlName="description"  ></angular-editor></div>           <input type="button" value="Adauga Cantitate Materiale" class="form-control" (click)="filterMaterials()">        <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">   <div  *ngFor="let matItem of materialsFiltered">    <p>      <mat-form-field appearance="outline">        <mat-label>{{matItem.text}}</mat-label>        <input matInput type="number" name="{{matItem.text}}" [(ngModel)]="matItem.quantity"  [ngModelOptions]="{standalone: true}">      </mat-form-field>      </p>       </div>  </div>    <button type="submit" class="form-control" [disabled]="!addRaportRequestForm.valid">Salveaza</button>    </form></div>'
+    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AddRequestRaportComponent'};
 </script>

@@ -461,10 +461,15 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    //Check if the form is valid and it pass the validation (ex:Validators.email)
     if (!this.loginForm.valid) {
       return;
     }
     const { email, password } &#x3D; this.loginForm.value;
+    //Login using the AuthenticationService and the method login defined in the service
+    // Adding the HotToastService to display information
+    // Navigate to frontpage after login
+
     this.authService
       .login(email, password)
       .pipe(
@@ -580,7 +585,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="form-container mat-elevation-z5">    <h1>Autentificare</h1>    <form [formGroup]="loginForm" (ngSubmit)="submit()">        <mat-form-field>            <input matInput placeholder="Email" formControlName="email">            <mat-error *ngIf="email?.errors?.[\'required\']">                Acest camp este obligatoriu            </mat-error>            <mat-error *ngIf="email?.errors?.[\'email\']">                Introduce un email corect.            </mat-error>        </mat-form-field>        <mat-form-field>            <input matInput placeholder="Parola" formControlName="password" type="password">            <mat-error *ngIf="password?.errors?.[\'required\']">                Acest camp este obligatoriu            </mat-error>        </mat-form-field>        <div class="center margin-top">            <button mat-raised-button color="primary" type="submit">                Autentificare            </button>        </div>        <div class="center margin-top">            <p>                <strong>email:</strong> test@test.com            </p>        </div>        <div class="center">            <p> <strong>parola:</strong>test1234</p>        </div>    </form></div></div>'
-    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
+    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

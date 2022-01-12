@@ -54,13 +54,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' : 'data-target="#xs-components-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' }>
+                                            'data-target="#components-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' : 'data-target="#xs-components-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' :
-                                            'id="xs-components-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' :
+                                            'id="xs-components-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' }>
                                             <li class="link">
                                                 <a href="components/AddMaterialComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AddMaterialComponent</a>
                                             </li>
@@ -84,9 +84,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             </li>
                                             <li class="link">
                                                 <a href="components/CalculatorCctvComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CalculatorCctvComponent</a>
-                                            </li>
-                                            <li class="link">
-                                                <a href="components/ComponentsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ComponentsComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/DeleteMaterialComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DeleteMaterialComponent</a>
@@ -131,13 +128,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' : 'data-target="#xs-pipes-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' }>
+                                            'data-target="#pipes-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' : 'data-target="#xs-pipes-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' :
-                                            'id="xs-pipes-links-module-AppModule-ad1d103126c4253b977a43604a06d88313047edd4ca50068331f99202c77e490e57810f2e208c98b60fdf9f3a4290386ec46a8028671c0b0c761f02512491fed"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' :
+                                            'id="xs-pipes-links-module-AppModule-e8104810b7554b1551cb1eb99d4cd3d9e1cb5c779545c2642ed8b6ad3c5e4b6690f378ce039289837e87e532896986b41f4642fb3a74a8becbeafbf57e866951"' }>
                                             <li class="link">
                                                 <a href="pipes/MaterialSearchPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >MaterialSearchPipe</a>
                                             </li>

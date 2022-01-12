@@ -333,7 +333,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
-import { FormGroup, FormBuilder, Validators } from &quot;@angular/forms&quot;;
+import { FormGroup, FormBuilder,} from &quot;@angular/forms&quot;;
 
 export interface cctv {
   type: string;
@@ -371,7 +371,9 @@ export class CalculatorCctvComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    //Generate numbers from 1 to 32
     this.nrOfCameras &#x3D; this.generateCamNr(32);
+    //Initialize the form
     this.initializeForm();
   }
 
@@ -390,7 +392,7 @@ export class CalculatorCctvComponent implements OnInit {
     this.dataResult &#x3D; data;
     this.calculate(data.type, data.nr);
   }
-
+  //Will generate numbers from 1 to 32 for the &lt;mat-select&gt; &lt;mat-option&gt;
   generateCamNr(nr: number): Array&lt;number&gt; {
     let result &#x3D; [];
 
@@ -400,7 +402,7 @@ export class CalculatorCctvComponent implements OnInit {
 
     return result;
   }
-
+  //Calculate the result with data from cctvForm
   calculate(type: string, nr: number) {
     if (type &#x3D;&#x3D;&#x3D; &quot;IP&quot;) {
       if (nr &lt; 5) {

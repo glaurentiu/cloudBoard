@@ -361,8 +361,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/components/projects/project-detail/project-detail.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/components/projects/project-detail/project-detail.component.ts:41</a></div>
                 </td>
             </tr>
 
@@ -430,8 +430,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/components/projects/project-detail/project-detail.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/components/projects/project-detail/project-detail.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -581,7 +581,7 @@ export class ProjectDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getProject();
   }
-
+  //Get the projects from firebase and filter to match the id from the url
   getProject(): void {
     const id &#x3D; String(this.route.snapshot.paramMap.get(&#x27;id&#x27;));
     this.projectService
@@ -590,6 +590,11 @@ export class ProjectDetailComponent implements OnInit {
         (projects) &#x3D;&gt; (this.projectDetail &#x3D; projects.find((p) &#x3D;&gt; p[&#x27;id&#x27;] &#x3D;&#x3D;&#x3D; id) as Project)
       );
   }
+
+  //These two methods check the route url and based on the url
+  // using ngIf in the template will display the result 
+  // if we are on the page with all the projects or on the page 
+  // for only one project
   hasRoute(route: string) {
     return this.router.url &#x3D;&#x3D;&#x3D; route;
   }
@@ -601,12 +606,11 @@ export class ProjectDetailComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-
+        <pre class="line-numbers"><code class="language-html">&lt;!-- For the page with all the projects --&gt;
 
 &lt;div *ngIf&#x3D;&quot;hasRoute(&#x27;/projects&#x27;)&quot;&gt;
   &lt;div *ngIf&#x3D;&quot;project&quot;&gt;
-   
+
 
     &lt;div class&#x3D;&quot;row&quot;&gt;
 
@@ -628,48 +632,48 @@ export class ProjectDetailComponent implements OnInit {
 &lt;/div&gt;
 &lt;mat-divider&gt;&lt;/mat-divider&gt;
 
+&lt;!-- For the page with project details and raports --&gt;
 
 &lt;div *ngIf&#x3D;&quot;hasRouteDetail(&#x27;/projects&#x27;)&quot; class&#x3D;&quot;container&quot;&gt;
-  
+
   &lt;div *ngIf&#x3D;&quot;projectDetail&quot;&gt;
     &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-evenly center&quot;&gt;
       &lt;h1 [ngStyle]&#x3D;&quot;{color: &#x27;#3f51b5&#x27;}&quot;&gt;{{projectDetail?.client}}&lt;/h1&gt;
-   
 
-       &lt;h3&gt;{{projectDetail?.title}}&lt;/h3&gt;
-      
-    
-        &lt;h3&gt;Locatie: {{projectDetail?.location}}&lt;/h3&gt;
-     
-   
-        &lt;h3&gt;Status: {{projectDetail?.status}}&lt;/h3&gt;
-    
-    
-        &lt;h3&gt;Data: {{projectDetail?.date}}&lt;/h3&gt;
-&lt;/div&gt;
-     &lt;mat-divider&gt;&lt;/mat-divider&gt;
-        &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;left&quot;&gt;
-        &lt;p [innerHTML]&#x3D;&quot;projectDetail?.description&quot;&gt;&lt;/p&gt;
-      &lt;/div&gt;
-     
-  
-  
+
+      &lt;h3&gt;{{projectDetail?.title}}&lt;/h3&gt;
+
+
+      &lt;h3&gt;Locatie: {{projectDetail?.location}}&lt;/h3&gt;
+
+
+      &lt;h3&gt;Status: {{projectDetail?.status}}&lt;/h3&gt;
+
+
+      &lt;h3&gt;Data: {{projectDetail?.date}}&lt;/h3&gt;
     &lt;/div&gt;
+    &lt;mat-divider&gt;&lt;/mat-divider&gt;
+    &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;left&quot;&gt;
+      &lt;p [innerHTML]&#x3D;&quot;projectDetail?.description&quot;&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+
+
+  &lt;/div&gt;
   &lt;mat-divider&gt;&lt;/mat-divider&gt;
-    
-    &lt;mat-card&gt;
-      &lt;mat-card-title [ngStyle]&#x3D;&quot;{color: &#x27;#3f51b5&#x27;}&quot; &gt;Procese Verbale&lt;/mat-card-title&gt;
-   
-      &lt;mat-card-content&gt;
-        &lt;app-raports [projectId]&#x3D;&quot;projectDetail?.id&quot; &gt;&lt;/app-raports&gt;
-      &lt;/mat-card-content&gt;
-    &lt;/mat-card&gt;
-   
+
+  &lt;mat-card&gt;
+    &lt;mat-card-title [ngStyle]&#x3D;&quot;{color: &#x27;#3f51b5&#x27;}&quot;&gt;Procese Verbale&lt;/mat-card-title&gt;
+
+    &lt;mat-card-content&gt;
+      &lt;app-raports [projectId]&#x3D;&quot;projectDetail?.id&quot;&gt;&lt;/app-raports&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
 
 
- 
-&lt;/div&gt;
-</code></pre>
+
+
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -732,8 +736,8 @@ export class ProjectDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="hasRoute(\'/projects\')">  <div *ngIf="project">       <div class="row">      <div class="column">        <h2 [ngStyle]="{color: \'#3f51b5\'}">{{project?.client | uppercase}}</h2>        <h3 [ngStyle]="{color: \'#3f51b5\'}"><strong>{{project?.title | uppercase}}</strong></h3>        <h3>Locatie: {{project?.location}}</h3>        <h3>Status: {{project?.status}}</h3>        <h3>Data: {{project?.date | date}}</h3>      </div>      <div class="column">        <h3 [ngStyle]="{color: \'#3f51b5\'}"><strong>Descriere:</strong></h3>        <p [innerHTML]="project?.description"></p>      </div>    </div>  </div></div><mat-divider></mat-divider><div *ngIf="hasRouteDetail(\'/projects\')" class="container">    <div *ngIf="projectDetail">    <div fxLayout="row" fxLayoutAlign="space-evenly center">      <h1 [ngStyle]="{color: \'#3f51b5\'}">{{projectDetail?.client}}</h1>          <h3>{{projectDetail?.title}}</h3>                  <h3>Locatie: {{projectDetail?.location}}</h3>                <h3>Status: {{projectDetail?.status}}</h3>                <h3>Data: {{projectDetail?.date}}</h3></div>     <mat-divider></mat-divider>        <div fxLayout="row" fxLayoutAlign="left">        <p [innerHTML]="projectDetail?.description"></p>      </div>             </div>  <mat-divider></mat-divider>        <mat-card>      <mat-card-title [ngStyle]="{color: \'#3f51b5\'}" >Procese Verbale</mat-card-title>         <mat-card-content>        <app-raports [projectId]="projectDetail?.id" ></app-raports>      </mat-card-content>    </mat-card>    </div></div>'
-    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
+        var COMPONENT_TEMPLATE = '<div><!-- For the page with all the projects --><div *ngIf="hasRoute(\'/projects\')">  <div *ngIf="project">    <div class="row">      <div class="column">        <h2 [ngStyle]="{color: \'#3f51b5\'}">{{project?.client | uppercase}}</h2>        <h3 [ngStyle]="{color: \'#3f51b5\'}"><strong>{{project?.title | uppercase}}</strong></h3>        <h3>Locatie: {{project?.location}}</h3>        <h3>Status: {{project?.status}}</h3>        <h3>Data: {{project?.date | date}}</h3>      </div>      <div class="column">        <h3 [ngStyle]="{color: \'#3f51b5\'}"><strong>Descriere:</strong></h3>        <p [innerHTML]="project?.description"></p>      </div>    </div>  </div></div><mat-divider></mat-divider><!-- For the page with project details and raports --><div *ngIf="hasRouteDetail(\'/projects\')" class="container">  <div *ngIf="projectDetail">    <div fxLayout="row" fxLayoutAlign="space-evenly center">      <h1 [ngStyle]="{color: \'#3f51b5\'}">{{projectDetail?.client}}</h1>      <h3>{{projectDetail?.title}}</h3>      <h3>Locatie: {{projectDetail?.location}}</h3>      <h3>Status: {{projectDetail?.status}}</h3>      <h3>Data: {{projectDetail?.date}}</h3>    </div>    <mat-divider></mat-divider>    <div fxLayout="row" fxLayoutAlign="left">      <p [innerHTML]="projectDetail?.description"></p>    </div>  </div>  <mat-divider></mat-divider>  <mat-card>    <mat-card-title [ngStyle]="{color: \'#3f51b5\'}">Procese Verbale</mat-card-title>    <mat-card-content>      <app-raports [projectId]="projectDetail?.id"></app-raports>    </mat-card-content>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProjectDetailComponent'};
 </script>

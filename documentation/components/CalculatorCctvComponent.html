@@ -266,8 +266,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -347,8 +347,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:62</a></div>
                 </td>
             </tr>
 
@@ -416,8 +416,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:46</a></div>
                 </td>
             </tr>
 
@@ -490,8 +490,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/components/calculator-cctv/calculator-cctv.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -672,7 +672,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
-import { FormGroup, FormBuilder, Validators } from &quot;@angular/forms&quot;;
+import { FormGroup, FormBuilder,} from &quot;@angular/forms&quot;;
 
 export interface cctv {
   type: string;
@@ -710,7 +710,9 @@ export class CalculatorCctvComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    //Generate numbers from 1 to 32
     this.nrOfCameras &#x3D; this.generateCamNr(32);
+    //Initialize the form
     this.initializeForm();
   }
 
@@ -729,7 +731,7 @@ export class CalculatorCctvComponent implements OnInit {
     this.dataResult &#x3D; data;
     this.calculate(data.type, data.nr);
   }
-
+  //Will generate numbers from 1 to 32 for the &lt;mat-select&gt; &lt;mat-option&gt;
   generateCamNr(nr: number): Array&lt;number&gt; {
     let result &#x3D; [];
 
@@ -739,7 +741,7 @@ export class CalculatorCctvComponent implements OnInit {
 
     return result;
   }
-
+  //Calculate the result with data from cctvForm
   calculate(type: string, nr: number) {
     if (type &#x3D;&#x3D;&#x3D; &quot;IP&quot;) {
       if (nr &lt; 5) {
@@ -847,7 +849,7 @@ export class CalculatorCctvComponent implements OnInit {
         &lt;li&gt;{{res.amp}}&lt;/li&gt;
         &lt;li&gt;{{res.nrMufAl}} mufe de alimentare&lt;/li&gt;
         &lt;li&gt;{{res.nrMufAl}} doze pentru conexiuni&lt;/li&gt;
-        &lt;li&gt;{{res.nrVideoBalun}} mufe video-balun&lt;/li&gt;
+        &lt;li&gt;{{res.nrVideoBalun}}&lt;/li&gt;
         &lt;li&gt;{{res.cable}}&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
@@ -898,8 +900,8 @@ h2 {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mat-elevation-z5">    <h2>Calculator minim necesar oferta CCTV</h2>    <form [formGroup]="cctvForm" (ngSubmit)="onSubmit()">        <div fxLayout="row" fxLayoutAlign="space-evenly center">            <p>                <mat-form-field appearance="outline">                    <mat-label>Tip sistem cctv</mat-label>                    <mat-select formControlName="type" required>                        <mat-option value="IP">IP</mat-option>                        <mat-option value="ANALOGIC">ANALOGIC</mat-option>                    </mat-select>                </mat-form-field>            </p>            <p>                <mat-form-field appearance="outline">                    <mat-label>Numar de camere</mat-label>                    <mat-select formControlName="nr" required>                        <mat-option *ngFor="let nr of nrOfCameras" value={{nr}}>                            {{nr}}                        </mat-option>                    </mat-select>                </mat-form-field>            </p>        </div>        <div fxLayout="row" fxLayoutAlign="space-evenly center">            <button type="submit" mat-raised-button color="primary" [disabled]="!cctvForm.valid">Calculeaza</button>        </div>    </form></div><div class="container mat-elevation-z5" *ngIf="dataResult">    <h2>Necesar minim pentru Sistem CCTV {{dataResult.type}} cu {{dataResult.nr}} camere        supraveghere</h2>    <ul>        <li>{{res.recorder}}</li>        <li>{{res.hdd}}</li>        <li>{{res.amp}}</li>        <li>{{res.nrMufAl}} mufe de alimentare</li>        <li>{{res.nrMufAl}} doze pentru conexiuni</li>        <li>{{res.nrVideoBalun}} mufe video-balun</li>        <li>{{res.cable}}</li>    </ul></div></div>'
-    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container mat-elevation-z5">    <h2>Calculator minim necesar oferta CCTV</h2>    <form [formGroup]="cctvForm" (ngSubmit)="onSubmit()">        <div fxLayout="row" fxLayoutAlign="space-evenly center">            <p>                <mat-form-field appearance="outline">                    <mat-label>Tip sistem cctv</mat-label>                    <mat-select formControlName="type" required>                        <mat-option value="IP">IP</mat-option>                        <mat-option value="ANALOGIC">ANALOGIC</mat-option>                    </mat-select>                </mat-form-field>            </p>            <p>                <mat-form-field appearance="outline">                    <mat-label>Numar de camere</mat-label>                    <mat-select formControlName="nr" required>                        <mat-option *ngFor="let nr of nrOfCameras" value={{nr}}>                            {{nr}}                        </mat-option>                    </mat-select>                </mat-form-field>            </p>        </div>        <div fxLayout="row" fxLayoutAlign="space-evenly center">            <button type="submit" mat-raised-button color="primary" [disabled]="!cctvForm.valid">Calculeaza</button>        </div>    </form></div><div class="container mat-elevation-z5" *ngIf="dataResult">    <h2>Necesar minim pentru Sistem CCTV {{dataResult.type}} cu {{dataResult.nr}} camere        supraveghere</h2>    <ul>        <li>{{res.recorder}}</li>        <li>{{res.hdd}}</li>        <li>{{res.amp}}</li>        <li>{{res.nrMufAl}} mufe de alimentare</li>        <li>{{res.nrMufAl}} doze pentru conexiuni</li>        <li>{{res.nrVideoBalun}}</li>        <li>{{res.cable}}</li>    </ul></div></div>'
+    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CalculatorCctvComponent'};
 </script>

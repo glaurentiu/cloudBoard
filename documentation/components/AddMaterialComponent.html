@@ -551,7 +551,7 @@ export class AddMaterialComponent implements OnInit {
       ],
     });
   }
-
+  //Using &lt;ngb-alert&gt; instead of HotToastService , with ngIf and boolean values.
   onSubmit() {
     if (!this.addMaterialForm.value.text) {
       this.alertFailed &#x3D; true;
@@ -565,7 +565,15 @@ export class AddMaterialComponent implements OnInit {
       price: this.addMaterialForm.value.price,
       quantity: this.addMaterialForm.value.quantity,
     };
+    
+    //emit the new material using EventEmitter
+    // takes the event and use it in the method
+    // addMaterialtoFireBase($event)
+    // from materials.components.ts
+
     this.onAddMaterial.emit(newMaterial);
+
+    //Reset the form and the errors
     this.addMaterialForm.reset();
     for (let control in this.addMaterialForm.controls) {
       this.addMaterialForm.controls[control].setErrors(null);
@@ -654,7 +662,7 @@ export class AddMaterialComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><p>  <ngb-alert  *ngIf="alertSucces" type="success" [dismissible]=false ><strong>Materialul a fost adaugat cu succes</strong></ngb-alert>  <ngb-alert  *ngIf="alertFailed" type="danger" [dismissible]=false ><strong>Introduce numele materialului</strong></ngb-alert></p><form [formGroup]="addMaterialForm" (ngSubmit)="onSubmit()">  <div  fxLayout="row" fxLayoutAlign="space-evenly center">    <p>      <mat-form-field appearance="outline">        <mat-label>Denumire material</mat-label>        <input matInput formControlName="text" placeholder="ex: CABLU UTP">        <mat-error>Acest camp este necesar</mat-error>      </mat-form-field>      </p><p>      <mat-form-field appearance="outline">        <mat-label>Pret:</mat-label>        <input matInput formControlName="price" placeholder="ex: 12.97">        <mat-error>De ex: 12.97</mat-error>      </mat-form-field></p><p>      <mat-form-field appearance="outline">        <mat-label>Cantitate:</mat-label>        <input matInput formControlName="quantity" placeholder="ex: 1000">        <mat-error>De ex: 1000</mat-error>      </mat-form-field>    </p>   </div>  <div  fxLayout="row" fxLayoutAlign="space-evenly center">  <p>    <button type="submit" mat-raised-button color="primary" [disabled]="!addMaterialForm.valid">Adauga material</button></p></div></form></div>'
-    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
+    var COMPONENTS = [{'name': 'AddMaterialComponent', 'selector': 'app-add-material'},{'name': 'AddProjectComponent', 'selector': 'app-add-project'},{'name': 'AddRaportComponent', 'selector': 'app-add-raport'},{'name': 'AddRequestComponent', 'selector': 'app-add-request'},{'name': 'AddRequestRaportComponent', 'selector': 'app-add-request-raport'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'CalculatorCctvComponent', 'selector': 'app-calculator-cctv'},{'name': 'DeleteMaterialComponent', 'selector': 'app-delete-material'},{'name': 'DeleteRequestComponent', 'selector': 'app-delete-request'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MaterialsComponent', 'selector': 'app-materials'},{'name': 'ProjectDetailComponent', 'selector': 'app-project-detail'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'RaportBillingComponent', 'selector': 'app-raport-billing'},{'name': 'RaportDetailComponent', 'selector': 'app-raport-detail'},{'name': 'RaportsComponent', 'selector': 'app-raports'},{'name': 'RequestItemComponent', 'selector': 'app-request-item'},{'name': 'RequestsComponent', 'selector': 'app-requests'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AddMaterialComponent'};
 </script>

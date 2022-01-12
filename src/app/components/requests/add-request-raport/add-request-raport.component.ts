@@ -86,6 +86,9 @@ export class AddRequestRaportComponent implements OnInit {
 
     this.onAddRaportRequest.emit(newRaport);
     this.addRaportRequestForm.reset();
+    for (let control in this.addRaportRequestForm.controls) {
+      this.addRaportRequestForm.controls[control].setErrors(null);
+    }
   }
 
   updateMaterials(material: Material, newMaterial: Material): void {
